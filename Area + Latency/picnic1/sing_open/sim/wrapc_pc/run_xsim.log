@@ -1,0 +1,332 @@
+Num bytes = 55
+Known Answer Tests PASSED. 
+
+
+Num bytes = 55
+Known Answer Tests PASSED. 
+
+
+
+C:\Users\Sanil\Downloads\Project\Latency\Area\picnic1\sing_open\sim\verilog>set PATH= 
+
+C:\Users\Sanil\Downloads\Project\Latency\Area\picnic1\sing_open\sim\verilog>call C:/Xilinx/Vivado/2019.2/bin/xelab xil_defaultlib.apatb_crypto_sign_open_top glbl -prj crypto_sign_open.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s crypto_sign_open  
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_crypto_sign_open_top glbl -prj crypto_sign_open.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s crypto_sign_open 
+Multi-threading is on. Using 2 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/AESL_automem_m.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_m
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/AESL_automem_mlen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_mlen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/AESL_automem_pk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_pk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/AESL_automem_sm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_sm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/AESL_automem_viewOutputs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_viewOutputs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/chi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_crypto_sign_open_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb_div_u
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb_div
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open_Ee0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_Ee0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open_g8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_g8j_DSP48_0
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_g8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open_Mgi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_Mgi_ram
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_Mgi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/deserializeSignature.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deserializeSignature
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/HashFinal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashFinal
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/HashInit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashInit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakP1600_Permucud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permucud_rom
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permucud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakP1600_PermudEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermudEe_rom
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermudEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakP1600_PermueOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermueOg_ram
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermueOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakP1600_Permute_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permute_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_10.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_10
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_11.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_12.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_12
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_13.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_13
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_14.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_14
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_9.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_9
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul_1_temphbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_1_temphbi_rom
+INFO: [VRFC 10-311] analyzing module matrix_mul_1_temphbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul_prod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_prod_ram
+INFO: [VRFC 10-311] analyzing module matrix_mul_prod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_ram
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/matrix_mul_temp_mfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_mfYi_rom
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_mfYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/mpc_AND_verify_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_AND_verify_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/mpc_LowMC_verify_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/mpc_LowMC_verify_ibs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_ibs_rom
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_ibs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/pi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify_sigFfa.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigFfa_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigFfa
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify_sigHfu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigHfu_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigHfu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify_sigIfE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigIfE_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigIfE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify_sigJfO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigJfO_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigJfO
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/picnic_verify_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_temp_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/pi_tempA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pi_tempA_ram
+INFO: [VRFC 10-311] analyzing module pi_tempA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/theta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/theta_C.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta_C_ram
+INFO: [VRFC 10-311] analyzing module theta_C
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/theta_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta_D_ram
+INFO: [VRFC 10-311] analyzing module theta_D
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_as_hashes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_as_hashes_ram
+INFO: [VRFC 10-311] analyzing module verify_as_hashes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_challenge_vdy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_challenge_vdy_ram
+INFO: [VRFC 10-311] analyzing module verify_challenge_vdy
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_ctx_spongejbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_ctx_spongejbC_ram
+INFO: [VRFC 10-311] analyzing module verify_ctx_spongejbC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_digest_0_axdS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_digest_0_axdS_ram
+INFO: [VRFC 10-311] analyzing module verify_digest_0_axdS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_digest_asswdI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_digest_asswdI_ram
+INFO: [VRFC 10-311] analyzing module verify_digest_asswdI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_hash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_hash_ram
+INFO: [VRFC 10-311] analyzing module verify_hash
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_temp_ram
+INFO: [VRFC 10-311] analyzing module verify_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_temp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_temp_1_ram
+INFO: [VRFC 10-311] analyzing module verify_temp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_view1s_comzec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view1s_comzec_ram
+INFO: [VRFC 10-311] analyzing module verify_view1s_comzec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_view1s_inpyd2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view1s_inpyd2_ram
+INFO: [VRFC 10-311] analyzing module verify_view1s_inpyd2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/verify_view3Slab.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view3Slab_ram
+INFO: [VRFC 10-311] analyzing module verify_view3Slab
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.crypto_sign_open_Mgi_ram
+Compiling module xil_defaultlib.crypto_sign_open_Mgi(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigFfa_ram
+Compiling module xil_defaultlib.picnic_verify_sigFfa(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigHfu_ram
+Compiling module xil_defaultlib.picnic_verify_sigHfu(DataWidth=3...
+Compiling module xil_defaultlib.picnic_verify_sigIfE_ram
+Compiling module xil_defaultlib.picnic_verify_sigIfE(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigJfO_ram
+Compiling module xil_defaultlib.picnic_verify_sigJfO(DataWidth=8...
+Compiling module xil_defaultlib.verify_challenge_vdy_ram
+Compiling module xil_defaultlib.verify_challenge_vdy(DataWidth=8...
+Compiling module xil_defaultlib.verify_hash_ram
+Compiling module xil_defaultlib.verify_hash(DataWidth=8,AddressR...
+Compiling module xil_defaultlib.picnic_verify_temp_ram
+Compiling module xil_defaultlib.picnic_verify_temp(DataWidth=32,...
+Compiling module xil_defaultlib.verify_temp_1_ram
+Compiling module xil_defaultlib.verify_temp_1(DataWidth=8,Addres...
+Compiling module xil_defaultlib.verify_ctx_spongejbC_ram
+Compiling module xil_defaultlib.verify_ctx_spongejbC(DataWidth=8...
+Compiling module xil_defaultlib.verify_temp_ram_default
+Compiling module xil_defaultlib.verify_temp(DataWidth=32,Address...
+Compiling module xil_defaultlib.verify_as_hashes_ram
+Compiling module xil_defaultlib.verify_as_hashes(DataWidth=8,Add...
+Compiling module xil_defaultlib.verify_view3Slab_ram
+Compiling module xil_defaultlib.verify_view3Slab(DataWidth=32,Ad...
+Compiling module xil_defaultlib.verify_digest_asswdI_ram
+Compiling module xil_defaultlib.verify_digest_asswdI(DataWidth=8...
+Compiling module xil_defaultlib.verify_digest_0_axdS_ram
+Compiling module xil_defaultlib.verify_digest_0_axdS(DataWidth=8...
+Compiling module xil_defaultlib.verify_view1s_inpyd2_ram
+Compiling module xil_defaultlib.verify_view1s_inpyd2(DataWidth=3...
+Compiling module xil_defaultlib.verify_view1s_comzec_ram
+Compiling module xil_defaultlib.verify_view1s_comzec(DataWidth=8...
+Compiling module xil_defaultlib.mpc_LowMC_verify_ibs_rom
+Compiling module xil_defaultlib.mpc_LowMC_verify_ibs(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_temp_mfYi_rom
+Compiling module xil_defaultlib.matrix_mul_temp_mfYi(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_prod_ram
+Compiling module xil_defaultlib.matrix_mul_prod(DataWidth=32,Add...
+Compiling module xil_defaultlib.matrix_mul_temp_ram_default
+Compiling module xil_defaultlib.matrix_mul_temp(DataWidth=32,Add...
+Compiling module xil_defaultlib.matrix_mul
+Compiling module xil_defaultlib.matrix_mul_1_temphbi_rom
+Compiling module xil_defaultlib.matrix_mul_1_temphbi(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_1
+Compiling module xil_defaultlib.crypto_sign_open_g8j_DSP48_0
+Compiling module xil_defaultlib.crypto_sign_open_g8j(ID=1,NUM_ST...
+Compiling module xil_defaultlib.mpc_AND_verify_2
+Compiling module xil_defaultlib.mpc_LowMC_verify_2
+Compiling module xil_defaultlib.KeccakP1600_Permucud_rom
+Compiling module xil_defaultlib.KeccakP1600_Permucud(DataWidth=6...
+Compiling module xil_defaultlib.KeccakP1600_PermudEe_rom
+Compiling module xil_defaultlib.KeccakP1600_PermudEe(DataWidth=6...
+Compiling module xil_defaultlib.KeccakP1600_PermueOg_ram
+Compiling module xil_defaultlib.KeccakP1600_PermueOg(DataWidth=6...
+Compiling module xil_defaultlib.theta_C_ram
+Compiling module xil_defaultlib.theta_C(DataWidth=64,AddressRang...
+Compiling module xil_defaultlib.theta_D_ram
+Compiling module xil_defaultlib.theta_D(DataWidth=64,AddressRang...
+Compiling module xil_defaultlib.theta
+Compiling module xil_defaultlib.chi
+Compiling module xil_defaultlib.pi_tempA_ram
+Compiling module xil_defaultlib.pi_tempA(DataWidth=64,AddressRan...
+Compiling module xil_defaultlib.crypto_sign_open_bkb_div_u(in0_W...
+Compiling module xil_defaultlib.crypto_sign_open_bkb_div(in0_WID...
+Compiling module xil_defaultlib.crypto_sign_open_bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.pi
+Compiling module xil_defaultlib.KeccakP1600_Permute_s
+Compiling module xil_defaultlib.KeccakWidth1600_Spon
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_2
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_1
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_3
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_7
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_13
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_5
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_10
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_4
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_12
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_11
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_6
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_14
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_8
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_9
+Compiling module xil_defaultlib.HashInit
+Compiling module xil_defaultlib.HashFinal
+Compiling module xil_defaultlib.crypto_sign_open_Ee0(ID=1,din4_W...
+Compiling module xil_defaultlib.verify
+Compiling module xil_defaultlib.deserializeSignature
+Compiling module xil_defaultlib.picnic_verify
+Compiling module xil_defaultlib.crypto_sign_open
+Compiling module xil_defaultlib.AESL_automem_m
+Compiling module xil_defaultlib.AESL_automem_mlen
+Compiling module xil_defaultlib.AESL_automem_sm
+Compiling module xil_defaultlib.AESL_automem_pk
+Compiling module xil_defaultlib.AESL_automem_viewOutputs
+Compiling module xil_defaultlib.apatb_crypto_sign_open_top
+Compiling module work.glbl
+Built simulation snapshot crypto_sign_open
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/xsim.dir/crypto_sign_open/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/xsim.dir/crypto_sign_open/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri May  8 13:23:24 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri May  8 13:23:24 2020...
+
+****** xsim v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/crypto_sign_open/xsim_script.tcl
+# xsim {crypto_sign_open} -autoloadwcfg -tclbatch {crypto_sign_open.tcl}
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source crypto_sign_open.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 0 / 1 [n/a] @ "100000145000"
+// RTL Simulation : 0 / 1 [n/a] @ "200000155000"
+// RTL Simulation : 0 / 1 [n/a] @ "300000165000"
+// RTL Simulation : 0 / 1 [n/a] @ "400000175000"
+// RTL Simulation : 0 / 1 [n/a] @ "500000185000"
+// RTL Simulation : 0 / 1 [n/a] @ "600000195000"
+// RTL Simulation : 0 / 1 [n/a] @ "700000205000"
+// RTL Simulation : 0 / 1 [n/a] @ "800000215000"
+// RTL Simulation : 1 / 1 [n/a] @ "878697815000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 878697855 ns : File "C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/sim/verilog/crypto_sign_open.autotb.v" Line 536
+run: Time (s): cpu = 00:00:00 ; elapsed = 09:00:18 . Memory (MB): peak = 240.406 ; gain = 0.000
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri May  8 22:23:54 2020...
+Known Answer Tests PASSED. 
+
+

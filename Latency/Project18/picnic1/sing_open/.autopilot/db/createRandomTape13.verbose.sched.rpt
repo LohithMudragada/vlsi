@@ -1,0 +1,316 @@
+
+
+================================================================
+== Vivado HLS Report for 'createRandomTape13'
+================================================================
+* Date:           Thu May  7 18:00:02 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ctx_sponge_state = alloca [200 x i8], align 1" [picnic_impl.c:224]   --->   Operation 25 'alloca' 'ctx_sponge_state' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)" [picnic_impl.c:231]   --->   Operation 26 'call' 'ctx_sponge_byteIOInd' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.35>
+ST_2 : Operation 27 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)" [picnic_impl.c:231]   --->   Operation 27 'call' 'ctx_sponge_byteIOInd' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.45>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%seed_offset1_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %seed_offset1)"   --->   Operation 28 'read' 'seed_offset1_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [2/2] (1.45ns)   --->   "%ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232]   --->   Operation 29 'call' 'ctx_sponge_byteIOInd_37' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 30 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232]   --->   Operation 30 'call' 'ctx_sponge_byteIOInd_37' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 4.12>
+ST_5 : Operation 31 [2/2] (4.12ns)   --->   "%call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)" [picnic_impl.c:233]   --->   Operation 31 'call' 'call_ret9' <Predicate = true> <Delay = 4.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 32 [1/2] (0.00ns)   --->   "%call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)" [picnic_impl.c:233]   --->   Operation 32 'call' 'call_ret9' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_38 = extractvalue { i32, i32 } %call_ret9, 0" [picnic_impl.c:233]   --->   Operation 33 'extractvalue' 'ctx_sponge_byteIOInd_38' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing = extractvalue { i32, i32 } %call_ret9, 1" [picnic_impl.c:233]   --->   Operation 34 'extractvalue' 'ctx_sponge_squeezing' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 4.81>
+ST_7 : Operation 35 [2/2] (4.81ns)   --->   "call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234]   --->   Operation 35 'call' <Predicate = true> <Delay = 4.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 36 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234]   --->   Operation 36 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 1.35>
+ST_9 : Operation 37 [2/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)" [picnic_impl.c:238]   --->   Operation 37 'call' 'ctx_sponge_byteIOInd_39' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 1.35>
+ST_10 : Operation 38 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)" [picnic_impl.c:238]   --->   Operation 38 'call' 'ctx_sponge_byteIOInd_39' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 1.45>
+ST_11 : Operation 39 [2/2] (1.45ns)   --->   "%ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239]   --->   Operation 39 'call' 'ctx_sponge_byteIOInd_40' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 40 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239]   --->   Operation 40 'call' 'ctx_sponge_byteIOInd_40' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 1.45>
+ST_13 : Operation 41 [2/2] (1.45ns)   --->   "%ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240]   --->   Operation 41 'call' 'ctx_sponge_byteIOInd_41' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 42 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240]   --->   Operation 42 'call' 'ctx_sponge_byteIOInd_41' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 2.90>
+ST_15 : Operation 43 [1/1] (0.00ns)   --->   "%roundNumber_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %roundNumber)"   --->   Operation 43 'read' 'roundNumber_read' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 44 [2/2] (2.90ns)   --->   "%ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241]   --->   Operation 44 'call' 'ctx_sponge_byteIOInd_42' <Predicate = true> <Delay = 2.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 45 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241]   --->   Operation 45 'call' 'ctx_sponge_byteIOInd_42' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 2.90>
+ST_17 : Operation 46 [1/1] (0.00ns)   --->   "%playerNumber_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %playerNumber)"   --->   Operation 46 'read' 'playerNumber_read' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 47 [1/1] (0.00ns)   --->   "%temp_0 = zext i1 %playerNumber_read to i8" [hash.c:113->picnic_impl.c:242]   --->   Operation 47 'zext' 'temp_0' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 48 [2/2] (2.90ns)   --->   "%ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242]   --->   Operation 48 'call' 'ctx_sponge_byteIOInd_43' <Predicate = true> <Delay = 2.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 49 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242]   --->   Operation 49 'call' 'ctx_sponge_byteIOInd_43' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 2.90>
+ST_19 : Operation 50 [2/2] (2.90ns)   --->   "%ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243]   --->   Operation 50 'call' 'ctx_sponge_byteIOInd_44' <Predicate = true> <Delay = 2.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 0.00>
+ST_20 : Operation 51 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243]   --->   Operation 51 'call' 'ctx_sponge_byteIOInd_44' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 4.12>
+ST_21 : Operation 52 [2/2] (4.12ns)   --->   "%call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)" [picnic_impl.c:244]   --->   Operation 52 'call' 'call_ret3' <Predicate = true> <Delay = 4.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 53 [1/2] (0.00ns)   --->   "%call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)" [picnic_impl.c:244]   --->   Operation 53 'call' 'call_ret3' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 54 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_45 = extractvalue { i32, i32 } %call_ret3, 0" [picnic_impl.c:244]   --->   Operation 54 'extractvalue' 'ctx_sponge_byteIOInd_45' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 55 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing_7 = extractvalue { i32, i32 } %call_ret3, 1" [picnic_impl.c:244]   --->   Operation 55 'extractvalue' 'ctx_sponge_squeezing_7' <Predicate = true> <Delay = 0.00>
+
+State 23 <SV = 22> <Delay = 4.81>
+ST_23 : Operation 56 [2/2] (4.81ns)   --->   "call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245]   --->   Operation 56 'call' <Predicate = true> <Delay = 4.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 0.00>
+ST_24 : Operation 57 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245]   --->   Operation 57 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 58 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 58 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	'alloca' operation ('ctx.sponge.state', picnic_impl.c:224) [14]  (0 ns)
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:231) to 'HashInit' [15]  (1.35 ns)
+
+ <State 2>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:231) to 'HashInit' [15]  (1.35 ns)
+
+ <State 3>: 1.45ns
+The critical path consists of the following:
+	wire read on port 'seed_offset1' [13]  (0 ns)
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232) to 'KeccakWidth1600_Spon.4' [16]  (1.45 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 4.12ns
+The critical path consists of the following:
+	'call' operation ('call_ret9', picnic_impl.c:233) to 'HashFinal' [17]  (4.12 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 4.81ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234) to 'KeccakWidth1600_Spon.3' [20]  (4.81 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238) to 'HashInit' [21]  (1.35 ns)
+
+ <State 10>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238) to 'HashInit' [21]  (1.35 ns)
+
+ <State 11>: 1.45ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239) to 'KeccakWidth1600_Spon.15' [22]  (1.45 ns)
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 1.45ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240) to 'KeccakWidth1600_Spon.8' [23]  (1.45 ns)
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 2.9ns
+The critical path consists of the following:
+	wire read on port 'roundNumber' [12]  (0 ns)
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241) to 'KeccakWidth1600_Spon.10' [24]  (2.9 ns)
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+ <State 17>: 2.9ns
+The critical path consists of the following:
+	wire read on port 'playerNumber' [11]  (0 ns)
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242) to 'KeccakWidth1600_Spon.10' [26]  (2.9 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 2.9ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243) to 'KeccakWidth1600_Spon.10' [27]  (2.9 ns)
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+ <State 21>: 4.12ns
+The critical path consists of the following:
+	'call' operation ('call_ret3', picnic_impl.c:244) to 'HashFinal' [28]  (4.12 ns)
+
+ <State 22>: 0ns
+The critical path consists of the following:
+
+ <State 23>: 4.81ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245) to 'KeccakWidth1600_Spon.3' [31]  (4.81 ns)
+
+ <State 24>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

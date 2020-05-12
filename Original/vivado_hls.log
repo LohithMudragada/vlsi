@@ -1,0 +1,565 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:45:37 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original'
+Sourcing Tcl script 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/cosim.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/Sanil/Downloads/Project/Original/picnic1'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a200t-fbg676-2'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vivado/2019.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling apatb_crypto_sign_open.cpp
+   Compiling (apcc) aes.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:22 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) hash.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:29 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) api.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:35 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) lowmc_constants.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:41 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) KeccakP-1600-reference.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:47 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) newtest_sign_2.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:53 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) picnic_impl.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:46:59 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/Sanil/Downloads/Project/Original/picnic_impl.c:1:
+C:/Users/Sanil/Downloads/Project/Original/picnic_impl.c:682:16: warning: incompatible integer to pointer conversion passing 'uint8_t' (aka 'unsigned char') to parameter of type 'void *' [-Wint-conversion]
+        memcpy(proof->view3UnruhG, gs->G[(challenge + 2) % 3], view3UnruhLength);
+               ^~~~~~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2019.2/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\string.h:41:44: note: passing argument to parameter '_Dst' here
+  void *__cdecl memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _Size) ;
+                                           ^
+In file included from C:/Users/Sanil/Downloads/Project/Original/picnic_impl.c:1:
+C:/Users/Sanil/Downloads/Project/Original/picnic_impl.c:1630:12: warning: incompatible pointer types returning 'seeds_2t *' (aka 'struct seeds_2t *') from a function with result type 'seeds_t *' (aka 'struct seeds_t *') [-Wincompatible-pointer-types]
+    return allSeeds;
+           ^~~~~~~~
+2 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) KeccakHash.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:12 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/Sanil/Downloads/Project/Original/sha3/KeccakHash.c:1:
+C:/Users/Sanil/Downloads/Project/Original/sha3/KeccakHash.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) rng.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:17 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) picnic2_impl.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:24 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/Sanil/Downloads/Project/Original/picnic2_impl.c:1:
+C:/Users/Sanil/Downloads/Project/Original/picnic2_impl.c:749:65: warning: format specifies type 'unsigned long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+                printf("Failed to reconstruct seeds for round %lu\n", t);
+                                                              ~~^     ~
+                                                              %llu
+C:/Users/Sanil/Downloads/Project/Original/picnic2_impl.c:818:59: warning: format specifies type 'unsigned long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+                printf("MPC simulation failed for round %lu, signature invalid\n", t);
+                                                        ~~^                        ~
+                                                        %llu
+C:/Users/Sanil/Downloads/Project/Original/picnic2_impl.c:1140:37: warning: format specifies type 'unsigned long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+        printf("%s: sigBytesLen = %lu, expected bytesRequired = %lu\n", __func__, sigBytesLen, bytesRequired);
+                                  ~~^                                             ~~~~~~~~~~~
+                                  %llu
+C:/Users/Sanil/Downloads/Project/Original/picnic2_impl.c:1140:67: warning: format specifies type 'unsigned long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+        printf("%s: sigBytesLen = %lu, expected bytesRequired = %lu\n", __func__, sigBytesLen, bytesRequired);
+                                                                ~~^                            ~~~~~~~~~~~~~
+                                                                %llu
+4 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) picnic.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:33 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/Sanil/Downloads/Project/Original/picnic.c:1:
+C:/Users/Sanil/Downloads/Project/Original/picnic.c:756:20: warning: incompatible integer to pointer conversion passing 'uint8_t' (aka 'unsigned char') to parameter of type 'void *' [-Wint-conversion]
+            memcpy(proofs[i].view3UnruhG, sigBytes, view3UnruhLength);
+                   ^~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2019.2/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\memory.h:28:44: note: passing argument to parameter '_Dst' here
+  void *__cdecl memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _Size) ;
+                                           ^
+In file included from C:/Users/Sanil/Downloads/Project/Original/picnic.c:1:
+C:/Users/Sanil/Downloads/Project/Original/picnic.c:759:29: warning: incompatible integer to pointer conversion passing 'uint8_t' (aka 'unsigned char') to parameter of type 'const uint8_t *' (aka 'const unsigned char *'); take the address with & [-Wint-conversion]
+            printHex(label, proofs[i].view3UnruhG, view3UnruhLength);
+                            ^~~~~~~~~~~~~~~~~~~~~
+                            &
+C:/Users/Sanil/Downloads/Project/Original/picnic_impl.h:88:45: note: passing argument to parameter 'data' here
+void printHex(const char* s, const uint8_t* data, size_t len);
+                                            ^
+2 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) picnic_types.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:40 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) tree.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:46 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/Sanil/Downloads/Project/Original/tree.c:1:
+C:/Users/Sanil/Downloads/Project/Original/tree.c:221:24: warning: format specifies type 'unsigned long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+        printf("seed %lu", i);
+                     ~~^   ~
+                     %llu
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) KeccakSpongeWidth1600.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Thu May 07 18:47:53 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Num bytes = 55
+Known Answer Tests PASSED. 
+
+
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+C:\Users\Sanil\Downloads\Project\Original\picnic1\sing_open\sim\verilog>set PATH= 
+
+C:\Users\Sanil\Downloads\Project\Original\picnic1\sing_open\sim\verilog>call C:/Xilinx/Vivado/2019.2/bin/xelab xil_defaultlib.apatb_crypto_sign_open_top glbl -prj crypto_sign_open.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s crypto_sign_open  
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_crypto_sign_open_top glbl -prj crypto_sign_open.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s crypto_sign_open 
+Multi-threading is on. Using 2 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/AESL_automem_m.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_m
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/AESL_automem_mlen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_mlen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/AESL_automem_pk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_pk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/AESL_automem_sm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_sm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/AESL_automem_viewOutputs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_viewOutputs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/chi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/createRandomTape13.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module createRandomTape13
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/createRandomTape1fYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module createRandomTape1fYi_ram
+INFO: [VRFC 10-311] analyzing module createRandomTape1fYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_crypto_sign_open_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb_div_u
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb_div
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open_hbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_hbi_DSP48_0
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_hbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open_JfO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_JfO_ram
+INFO: [VRFC 10-311] analyzing module crypto_sign_open_JfO
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/deserializeSignature.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deserializeSignature
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/H3_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module H3_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/H3_2_ctx_sponge_smb6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module H3_2_ctx_sponge_smb6_ram
+INFO: [VRFC 10-311] analyzing module H3_2_ctx_sponge_smb6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/H3_2_hash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module H3_2_hash_ram
+INFO: [VRFC 10-311] analyzing module H3_2_hash
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/HashFinal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashFinal
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/HashInit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashInit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/HashUpdate_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashUpdate_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/HashUpdate_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashUpdate_2_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/HashUpdate_2_1_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HashUpdate_2_1_temp_ram
+INFO: [VRFC 10-311] analyzing module HashUpdate_2_1_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakP1600_Permucud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permucud_rom
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permucud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakP1600_PermudEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermudEe_rom
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermudEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakP1600_PermueOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermueOg_ram
+INFO: [VRFC 10-311] analyzing module KeccakP1600_PermueOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakP1600_Permute_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakP1600_Permute_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_10.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_10
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_11.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_12.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_12
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_13.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_13
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_14.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_14
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_15.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_15
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/KeccakWidth1600_Spon_9.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeccakWidth1600_Spon_9
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul_1_tempibs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_1_tempibs_rom
+INFO: [VRFC 10-311] analyzing module matrix_mul_1_tempibs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul_prod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_prod_ram
+INFO: [VRFC 10-311] analyzing module matrix_mul_prod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_ram
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/matrix_mul_temp_mg8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_mg8j_rom
+INFO: [VRFC 10-311] analyzing module matrix_mul_temp_mg8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/mpc_AND_verify_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_AND_verify_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/mpc_LowMC_verify_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/mpc_LowMC_verify_jbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_jbC_rom
+INFO: [VRFC 10-311] analyzing module mpc_LowMC_verify_jbC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/pi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_sigCeG.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigCeG_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigCeG
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_sigEe0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigEe0_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigEe0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_sigFfa.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigFfa_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigFfa
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_sigGfk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigGfk_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigGfk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_sigHfu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigHfu_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_sigHfu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/picnic_verify_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module picnic_verify_temp_ram
+INFO: [VRFC 10-311] analyzing module picnic_verify_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/pi_tempA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pi_tempA_ram
+INFO: [VRFC 10-311] analyzing module pi_tempA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/theta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/theta_C.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta_C_ram
+INFO: [VRFC 10-311] analyzing module theta_C
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/theta_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module theta_D_ram
+INFO: [VRFC 10-311] analyzing module theta_D
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verifyProof_23.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verifyProof_23
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verifyProof_23_ctkbM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verifyProof_23_ctkbM_ram
+INFO: [VRFC 10-311] analyzing module verifyProof_23_ctkbM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verifyProof_23_temp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verifyProof_23_temp_ram
+INFO: [VRFC 10-311] analyzing module verifyProof_23_temp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_as_hashes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_as_hashes_ram
+INFO: [VRFC 10-311] analyzing module verify_as_hashes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_computed_cvdy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_computed_cvdy_ram
+INFO: [VRFC 10-311] analyzing module verify_computed_cvdy
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_ctx_spongencg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_ctx_spongencg_ram
+INFO: [VRFC 10-311] analyzing module verify_ctx_spongencg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_data_assigpcA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_data_assigpcA_ram
+INFO: [VRFC 10-311] analyzing module verify_data_assigpcA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_tape_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_tape_0_0_ram
+INFO: [VRFC 10-311] analyzing module verify_tape_0_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_tmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_tmp_ram
+INFO: [VRFC 10-311] analyzing module verify_tmp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_view1s_comxdS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view1s_comxdS_ram
+INFO: [VRFC 10-311] analyzing module verify_view1s_comxdS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_view1s_inpwdI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view1s_inpwdI_ram
+INFO: [VRFC 10-311] analyzing module verify_view1s_inpwdI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_view2s_outocq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view2s_outocq_ram
+INFO: [VRFC 10-311] analyzing module verify_view2s_outocq
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/verify_view3Slab.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module verify_view3Slab_ram
+INFO: [VRFC 10-311] analyzing module verify_view3Slab
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.crypto_sign_open_JfO_ram
+Compiling module xil_defaultlib.crypto_sign_open_JfO(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigCeG_ram
+Compiling module xil_defaultlib.picnic_verify_sigCeG(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigEe0_ram
+Compiling module xil_defaultlib.picnic_verify_sigEe0(DataWidth=3...
+Compiling module xil_defaultlib.picnic_verify_sigFfa_ram
+Compiling module xil_defaultlib.picnic_verify_sigFfa(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigGfk_ram
+Compiling module xil_defaultlib.picnic_verify_sigGfk(DataWidth=8...
+Compiling module xil_defaultlib.picnic_verify_sigHfu_ram
+Compiling module xil_defaultlib.picnic_verify_sigHfu(DataWidth=8...
+Compiling module xil_defaultlib.H3_2_hash_ram
+Compiling module xil_defaultlib.H3_2_hash(DataWidth=8,AddressRan...
+Compiling module xil_defaultlib.picnic_verify_temp_ram
+Compiling module xil_defaultlib.picnic_verify_temp(DataWidth=32,...
+Compiling module xil_defaultlib.verify_ctx_spongencg_ram
+Compiling module xil_defaultlib.verify_ctx_spongencg(DataWidth=8...
+Compiling module xil_defaultlib.verify_view2s_outocq_ram
+Compiling module xil_defaultlib.verify_view2s_outocq(DataWidth=3...
+Compiling module xil_defaultlib.verify_data_assigpcA_ram
+Compiling module xil_defaultlib.verify_data_assigpcA(DataWidth=8...
+Compiling module xil_defaultlib.verify_as_hashes_ram
+Compiling module xil_defaultlib.verify_as_hashes(DataWidth=8,Add...
+Compiling module xil_defaultlib.verify_computed_cvdy_ram
+Compiling module xil_defaultlib.verify_computed_cvdy(DataWidth=8...
+Compiling module xil_defaultlib.verify_view3Slab_ram
+Compiling module xil_defaultlib.verify_view3Slab(DataWidth=32,Ad...
+Compiling module xil_defaultlib.verify_tmp_ram
+Compiling module xil_defaultlib.verify_tmp(DataWidth=8,AddressRa...
+Compiling module xil_defaultlib.verify_tape_0_0_ram
+Compiling module xil_defaultlib.verify_tape_0_0(DataWidth=8,Addr...
+Compiling module xil_defaultlib.verify_view1s_inpwdI_ram
+Compiling module xil_defaultlib.verify_view1s_inpwdI(DataWidth=3...
+Compiling module xil_defaultlib.verify_view1s_comxdS_ram
+Compiling module xil_defaultlib.verify_view1s_comxdS(DataWidth=8...
+Compiling module xil_defaultlib.verifyProof_23_ctkbM_ram
+Compiling module xil_defaultlib.verifyProof_23_ctkbM(DataWidth=8...
+Compiling module xil_defaultlib.verifyProof_23_temp_ram_default
+Compiling module xil_defaultlib.verifyProof_23_temp(DataWidth=32...
+Compiling module xil_defaultlib.createRandomTape1fYi_ram
+Compiling module xil_defaultlib.createRandomTape1fYi(DataWidth=8...
+Compiling module xil_defaultlib.KeccakP1600_Permucud_rom
+Compiling module xil_defaultlib.KeccakP1600_Permucud(DataWidth=6...
+Compiling module xil_defaultlib.KeccakP1600_PermudEe_rom
+Compiling module xil_defaultlib.KeccakP1600_PermudEe(DataWidth=6...
+Compiling module xil_defaultlib.KeccakP1600_PermueOg_ram
+Compiling module xil_defaultlib.KeccakP1600_PermueOg(DataWidth=6...
+Compiling module xil_defaultlib.theta_C_ram
+Compiling module xil_defaultlib.theta_C(DataWidth=64,AddressRang...
+Compiling module xil_defaultlib.theta_D_ram
+Compiling module xil_defaultlib.theta_D(DataWidth=64,AddressRang...
+Compiling module xil_defaultlib.theta
+Compiling module xil_defaultlib.chi
+Compiling module xil_defaultlib.pi_tempA_ram
+Compiling module xil_defaultlib.pi_tempA(DataWidth=64,AddressRan...
+Compiling module xil_defaultlib.crypto_sign_open_bkb_div_u(in0_W...
+Compiling module xil_defaultlib.crypto_sign_open_bkb_div(in0_WID...
+Compiling module xil_defaultlib.crypto_sign_open_bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.pi
+Compiling module xil_defaultlib.KeccakP1600_Permute_s
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_3
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_4
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_15
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_8
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_10
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_12
+Compiling module xil_defaultlib.HashInit
+Compiling module xil_defaultlib.HashFinal
+Compiling module xil_defaultlib.createRandomTape13
+Compiling module xil_defaultlib.mpc_LowMC_verify_jbC_rom
+Compiling module xil_defaultlib.mpc_LowMC_verify_jbC(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_temp_mg8j_rom
+Compiling module xil_defaultlib.matrix_mul_temp_mg8j(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_prod_ram
+Compiling module xil_defaultlib.matrix_mul_prod(DataWidth=32,Add...
+Compiling module xil_defaultlib.matrix_mul_temp_ram_default
+Compiling module xil_defaultlib.matrix_mul_temp(DataWidth=32,Add...
+Compiling module xil_defaultlib.matrix_mul
+Compiling module xil_defaultlib.matrix_mul_1_tempibs_rom
+Compiling module xil_defaultlib.matrix_mul_1_tempibs(DataWidth=3...
+Compiling module xil_defaultlib.matrix_mul_1
+Compiling module xil_defaultlib.crypto_sign_open_hbi_DSP48_0
+Compiling module xil_defaultlib.crypto_sign_open_hbi(ID=1,NUM_ST...
+Compiling module xil_defaultlib.mpc_AND_verify_2
+Compiling module xil_defaultlib.mpc_LowMC_verify_2
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_1
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_7
+Compiling module xil_defaultlib.verifyProof_23
+Compiling module xil_defaultlib.HashUpdate_2_1_temp_ram
+Compiling module xil_defaultlib.HashUpdate_2_1_temp(DataWidth=8,...
+Compiling module xil_defaultlib.H3_2_ctx_sponge_smb6_ram
+Compiling module xil_defaultlib.H3_2_ctx_sponge_smb6(DataWidth=8...
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_9
+Compiling module xil_defaultlib.HashUpdate_2
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_2
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_14
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_6
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_13
+Compiling module xil_defaultlib.H3_2
+Compiling module xil_defaultlib.KeccakWidth1600_Spon
+Compiling module xil_defaultlib.HashUpdate_2_1
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_5
+Compiling module xil_defaultlib.KeccakWidth1600_Spon_11
+Compiling module xil_defaultlib.verify
+Compiling module xil_defaultlib.deserializeSignature
+Compiling module xil_defaultlib.picnic_verify
+Compiling module xil_defaultlib.crypto_sign_open
+Compiling module xil_defaultlib.AESL_automem_m
+Compiling module xil_defaultlib.AESL_automem_mlen
+Compiling module xil_defaultlib.AESL_automem_sm
+Compiling module xil_defaultlib.AESL_automem_pk
+Compiling module xil_defaultlib.AESL_automem_viewOutputs
+Compiling module xil_defaultlib.apatb_crypto_sign_open_top
+Compiling module work.glbl
+Built simulation snapshot crypto_sign_open
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/xsim.dir/crypto_sign_open/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/xsim.dir/crypto_sign_open/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu May  7 18:51:02 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu May  7 18:51:02 2020...
+
+****** xsim v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/crypto_sign_open/xsim_script.tcl
+# xsim {crypto_sign_open} -autoloadwcfg -tclbatch {crypto_sign_open.tcl}
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source crypto_sign_open.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 0 / 1 [n/a] @ "100000145000"
+// RTL Simulation : 0 / 1 [n/a] @ "200000155000"
+// RTL Simulation : 0 / 1 [n/a] @ "300000165000"
+// RTL Simulation : 0 / 1 [n/a] @ "400000175000"
+// RTL Simulation : 0 / 1 [n/a] @ "500000185000"
+// RTL Simulation : 0 / 1 [n/a] @ "600000195000"
+// RTL Simulation : 0 / 1 [n/a] @ "700000205000"
+// RTL Simulation : 0 / 1 [n/a] @ "800000215000"
+// RTL Simulation : 0 / 1 [n/a] @ "900000225000"
+// RTL Simulation : 1 / 1 [n/a] @ "922734235000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 922734275 ns : File "C:/Users/Sanil/Downloads/Project/Original/picnic1/sing_open/sim/verilog/crypto_sign_open.autotb.v" Line 536
+run: Time (s): cpu = 00:00:01 ; elapsed = 14:02:50 . Memory (MB): peak = 240.426 ; gain = 4.410
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri May  8 08:54:16 2020...
+INFO: [COSIM 212-316] Starting C post checking ...
+Known Answer Tests PASSED. 
+
+
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

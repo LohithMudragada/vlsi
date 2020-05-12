@@ -1,0 +1,333 @@
+
+
+================================================================
+== Vivado HLS Report for 'pi'
+================================================================
+* Date:           Thu May  7 18:30:41 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      372|      372| 3.720 us | 3.720 us |  372|  372|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |       60|       60|        12|          -|          -|     5|    no    |
+        | + Loop 1.1  |       10|       10|         2|          -|          -|     5|    no    |
+        |- Loop 2     |      310|      310|        62|          -|          -|     5|    no    |
+        | + Loop 2.1  |       60|       60|        12|          -|          -|     5|    no    |
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 17
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 5 
+3 --> 4 2 
+4 --> 3 
+5 --> 6 
+6 --> 7 5 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 6 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tempA = alloca [25 x i64], align 16" [sha3/KeccakP-1600-reference.c:359]   --->   Operation 18 'alloca' 'tempA' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_1 : Operation 19 [1/1] (1.35ns)   --->   "br label %.loopexit" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 19 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 1.35>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%x_0 = phi i3 [ 0, %0 ], [ %x, %.loopexit.loopexit ]"   --->   Operation 20 'phi' 'x_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.00ns)   --->   "%icmp_ln361 = icmp eq i3 %x_0, -3" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 21 'icmp' 'icmp_ln361' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 22 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (1.34ns)   --->   "%x = add i3 %x_0, 1" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 23 'add' 'x' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "br i1 %icmp_ln361, label %.preheader1.preheader, label %.preheader2.preheader" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 24 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln362_1 = zext i3 %x_0 to i4" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 25 'zext' 'zext_ln362_1' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (1.35ns)   --->   "br label %.preheader2" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 26 'br' <Predicate = (!icmp_ln361)> <Delay = 1.35>
+ST_2 : Operation 27 [1/1] (1.35ns)   --->   "br label %.preheader1" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 27 'br' <Predicate = (icmp_ln361)> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 5.66>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%y_0 = phi i3 [ %y, %1 ], [ 0, %.preheader2.preheader ]"   --->   Operation 28 'phi' 'y_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (1.00ns)   --->   "%icmp_ln361_1 = icmp eq i3 %y_0, -3" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 29 'icmp' 'icmp_ln361_1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%empty_143 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 30 'speclooptripcount' 'empty_143' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (1.34ns)   --->   "%y = add i3 %y_0, 1" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 31 'add' 'y' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %icmp_ln361_1, label %.loopexit.loopexit, label %1" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln362_2 = zext i3 %y_0 to i4" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 33 'zext' 'zext_ln362_2' <Predicate = (!icmp_ln361_1)> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%shl_ln3 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %y_0, i2 0)" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 34 'bitconcatenate' 'shl_ln3' <Predicate = (!icmp_ln361_1)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (1.34ns)   --->   "%add_ln362_1 = add i4 %zext_ln362_1, %zext_ln362_2" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 35 'add' 'add_ln362_1' <Predicate = (!icmp_ln361_1)> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln362_3 = zext i4 %add_ln362_1 to i5" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 36 'zext' 'zext_ln362_3' <Predicate = (!icmp_ln361_1)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.54ns)   --->   "%add_ln362 = add i5 %shl_ln3, %zext_ln362_3" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 37 'add' 'add_ln362' <Predicate = (!icmp_ln361_1)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln362 = zext i5 %add_ln362 to i64" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 38 'zext' 'zext_ln362' <Predicate = (!icmp_ln361_1)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%A_addr = getelementptr [25 x i64]* %A, i64 0, i64 %zext_ln362" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 39 'getelementptr' 'A_addr' <Predicate = (!icmp_ln361_1)> <Delay = 0.00>
+ST_3 : Operation 40 [2/2] (2.77ns)   --->   "%A_load = load i64* %A_addr, align 8" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 40 'load' 'A_load' <Predicate = (!icmp_ln361_1)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 41 'br' <Predicate = (icmp_ln361_1)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.54>
+ST_4 : Operation 42 [1/2] (2.77ns)   --->   "%A_load = load i64* %A_addr, align 8" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 42 'load' 'A_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tempA_addr = getelementptr inbounds [25 x i64]* %tempA, i64 0, i64 %zext_ln362" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 43 'getelementptr' 'tempA_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (2.77ns)   --->   "store i64 %A_load, i64* %tempA_addr, align 8" [sha3/KeccakP-1600-reference.c:362]   --->   Operation 44 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "br label %.preheader2" [sha3/KeccakP-1600-reference.c:361]   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 1.35>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%x_1 = phi i3 [ %x_5, %.preheader1.loopexit ], [ 0, %.preheader1.preheader ]"   --->   Operation 46 'phi' 'x_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (1.00ns)   --->   "%icmp_ln363 = icmp eq i3 %x_1, -3" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 47 'icmp' 'icmp_ln363' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%empty_144 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 48 'speclooptripcount' 'empty_144' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (1.34ns)   --->   "%x_5 = add i3 %x_1, 1" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 49 'add' 'x_5' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "br i1 %icmp_ln363, label %3, label %.preheader.preheader" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 50 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln364_2 = zext i3 %x_1 to i4" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 51 'zext' 'zext_ln364_2' <Predicate = (!icmp_ln363)> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%shl_ln = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %x_1, i1 false)" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 52 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln363)> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%zext_ln364_3 = zext i4 %shl_ln to i8" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 53 'zext' 'zext_ln364_3' <Predicate = (!icmp_ln363)> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (1.35ns)   --->   "br label %.preheader" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 54 'br' <Predicate = (!icmp_ln363)> <Delay = 1.35>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "ret void" [sha3/KeccakP-1600-reference.c:365]   --->   Operation 55 'ret' <Predicate = (icmp_ln363)> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 5.92>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%y_1 = phi i3 [ %y_3, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 56 'phi' 'y_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%zext_ln363 = zext i3 %y_1 to i6" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 57 'zext' 'zext_ln363' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (1.00ns)   --->   "%icmp_ln363_1 = icmp eq i3 %y_1, -3" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 58 'icmp' 'icmp_ln363_1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%empty_145 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 59 'speclooptripcount' 'empty_145' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (1.34ns)   --->   "%y_3 = add i3 %y_1, 1" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 60 'add' 'y_3' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "br i1 %icmp_ln363_1, label %.preheader1.loopexit, label %2" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 61 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%zext_ln364_4 = zext i3 %y_1 to i4" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 62 'zext' 'zext_ln364_4' <Predicate = (!icmp_ln363_1)> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%shl_ln364_1 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %y_1, i2 0)" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 63 'bitconcatenate' 'shl_ln364_1' <Predicate = (!icmp_ln363_1)> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (1.34ns)   --->   "%add_ln364_3 = add i4 %zext_ln364_4, %zext_ln364_2" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 64 'add' 'add_ln364_3' <Predicate = (!icmp_ln363_1)> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln364_5 = zext i4 %add_ln364_3 to i5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 65 'zext' 'zext_ln364_5' <Predicate = (!icmp_ln363_1)> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (1.54ns)   --->   "%add_ln364 = add i5 %zext_ln364_5, %shl_ln364_1" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 66 'add' 'add_ln364' <Predicate = (!icmp_ln363_1)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln364_6 = zext i5 %shl_ln364_1 to i6" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 67 'zext' 'zext_ln364_6' <Predicate = (!icmp_ln363_1)> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (1.54ns)   --->   "%sub_ln364 = sub i6 %zext_ln364_6, %zext_ln363" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 68 'sub' 'sub_ln364' <Predicate = (!icmp_ln363_1)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%sext_ln364 = sext i6 %sub_ln364 to i8" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 69 'sext' 'sext_ln364' <Predicate = (!icmp_ln363_1)> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (1.60ns)   --->   "%add_ln364_1 = add i8 %zext_ln364_3, %sext_ln364" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 70 'add' 'add_ln364_1' <Predicate = (!icmp_ln363_1)> <Delay = 1.60> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 71 [12/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 71 'urem' 'urem_ln364' <Predicate = (!icmp_ln363_1)> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "br label %.preheader1"   --->   Operation 72 'br' <Predicate = (icmp_ln363_1)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 2.76>
+ST_7 : Operation 73 [11/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 73 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 5> <Delay = 2.76>
+ST_8 : Operation 74 [10/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 74 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 6> <Delay = 2.76>
+ST_9 : Operation 75 [9/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 75 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 7> <Delay = 2.76>
+ST_10 : Operation 76 [8/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 76 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 8> <Delay = 2.76>
+ST_11 : Operation 77 [7/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 77 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 9> <Delay = 2.76>
+ST_12 : Operation 78 [6/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 78 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 10> <Delay = 2.76>
+ST_13 : Operation 79 [5/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 79 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 11> <Delay = 2.76>
+ST_14 : Operation 80 [4/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 80 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 12> <Delay = 2.76>
+ST_15 : Operation 81 [3/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 81 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 13> <Delay = 2.77>
+ST_16 : Operation 82 [1/1] (0.00ns)   --->   "%zext_ln364 = zext i5 %add_ln364 to i64" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 82 'zext' 'zext_ln364' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 83 [1/1] (0.00ns)   --->   "%tempA_addr_1 = getelementptr inbounds [25 x i64]* %tempA, i64 0, i64 %zext_ln364" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 83 'getelementptr' 'tempA_addr_1' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 84 [2/2] (2.77ns)   --->   "%tempA_load = load i64* %tempA_addr_1, align 8" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 84 'load' 'tempA_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_16 : Operation 85 [2/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 85 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 14> <Delay = 8.57>
+ST_17 : Operation 86 [1/2] (2.77ns)   --->   "%tempA_load = load i64* %tempA_addr_1, align 8" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 86 'load' 'tempA_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_17 : Operation 87 [1/12] (2.76ns)   --->   "%urem_ln364 = urem i8 %add_ln364_1, 5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 87 'urem' 'urem_ln364' <Predicate = true> <Delay = 2.76> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 11> <II = 4> <Delay = 2.76> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 88 [1/1] (0.00ns)   --->   "%trunc_ln364 = trunc i8 %urem_ln364 to i4" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 88 'trunc' 'trunc_ln364' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 89 [1/1] (0.00ns)   --->   "%trunc_ln364_1 = trunc i8 %urem_ln364 to i3" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 89 'trunc' 'trunc_ln364_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 90 [1/1] (0.00ns)   --->   "%shl_ln364_3 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %trunc_ln364_1, i2 0)" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 90 'bitconcatenate' 'shl_ln364_3' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 91 [1/1] (1.49ns)   --->   "%add_ln364_4 = add i4 %trunc_ln364, %zext_ln364_4" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 91 'add' 'add_ln364_4' <Predicate = true> <Delay = 1.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 92 [1/1] (0.00ns)   --->   "%zext_ln364_7 = zext i4 %add_ln364_4 to i5" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 92 'zext' 'zext_ln364_7' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 93 [1/1] (1.54ns)   --->   "%add_ln364_2 = add i5 %zext_ln364_7, %shl_ln364_3" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 93 'add' 'add_ln364_2' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln364_1 = zext i5 %add_ln364_2 to i64" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 94 'zext' 'zext_ln364_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 95 [1/1] (0.00ns)   --->   "%A_addr_2 = getelementptr [25 x i64]* %A, i64 0, i64 %zext_ln364_1" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 95 'getelementptr' 'A_addr_2' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 96 [1/1] (2.77ns)   --->   "store i64 %tempA_load, i64* %A_addr_2, align 8" [sha3/KeccakP-1600-reference.c:364]   --->   Operation 96 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 25> <RAM>
+ST_17 : Operation 97 [1/1] (0.00ns)   --->   "br label %.preheader" [sha3/KeccakP-1600-reference.c:363]   --->   Operation 97 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('x') with incoming values : ('x', sha3/KeccakP-1600-reference.c:361) [5]  (1.35 ns)
+
+ <State 2>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('y') with incoming values : ('y', sha3/KeccakP-1600-reference.c:361) [14]  (1.35 ns)
+
+ <State 3>: 5.67ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', sha3/KeccakP-1600-reference.c:361) [14]  (0 ns)
+	'add' operation ('add_ln362_1', sha3/KeccakP-1600-reference.c:362) [22]  (1.35 ns)
+	'add' operation ('add_ln362', sha3/KeccakP-1600-reference.c:362) [24]  (1.55 ns)
+	'getelementptr' operation ('A_addr', sha3/KeccakP-1600-reference.c:362) [26]  (0 ns)
+	'load' operation ('A_load', sha3/KeccakP-1600-reference.c:362) on array 'A' [27]  (2.77 ns)
+
+ <State 4>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('A_load', sha3/KeccakP-1600-reference.c:362) on array 'A' [27]  (2.77 ns)
+	'store' operation ('store_ln362', sha3/KeccakP-1600-reference.c:362) of variable 'A_load', sha3/KeccakP-1600-reference.c:362 on array 'tempA', sha3/KeccakP-1600-reference.c:359 [29]  (2.77 ns)
+
+ <State 5>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('y') with incoming values : ('y', sha3/KeccakP-1600-reference.c:363) [47]  (1.35 ns)
+
+ <State 6>: 5.92ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', sha3/KeccakP-1600-reference.c:363) [47]  (0 ns)
+	'sub' operation ('sub_ln364', sha3/KeccakP-1600-reference.c:364) [63]  (1.55 ns)
+	'add' operation ('add_ln364_1', sha3/KeccakP-1600-reference.c:364) [65]  (1.6 ns)
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 7>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 8>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 9>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 10>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 11>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 12>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 13>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 14>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 15>: 2.77ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+
+ <State 16>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('tempA_addr_1', sha3/KeccakP-1600-reference.c:364) [60]  (0 ns)
+	'load' operation ('tempA_load', sha3/KeccakP-1600-reference.c:364) on array 'tempA', sha3/KeccakP-1600-reference.c:359 [61]  (2.77 ns)
+
+ <State 17>: 8.58ns
+The critical path consists of the following:
+	'urem' operation ('urem_ln364', sha3/KeccakP-1600-reference.c:364) [66]  (2.77 ns)
+	'add' operation ('add_ln364_4', sha3/KeccakP-1600-reference.c:364) [70]  (1.49 ns)
+	'add' operation ('add_ln364_2', sha3/KeccakP-1600-reference.c:364) [72]  (1.55 ns)
+	'getelementptr' operation ('A_addr_2', sha3/KeccakP-1600-reference.c:364) [74]  (0 ns)
+	'store' operation ('store_ln364', sha3/KeccakP-1600-reference.c:364) of variable 'tempA_load', sha3/KeccakP-1600-reference.c:364 on array 'A' [75]  (2.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

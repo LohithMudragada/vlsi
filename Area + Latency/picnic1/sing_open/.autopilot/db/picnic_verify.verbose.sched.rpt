@@ -1,0 +1,301 @@
+
+
+================================================================
+== Vivado HLS Report for 'picnic_verify'
+================================================================
+* Date:           Fri May  8 13:16:03 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 9.122 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- memset_temp   |        7|        7|         1|          -|          -|     8|    no    |
+        |- memset_temp2  |        7|        7|         1|          -|          -|     8|    no    |
+        |- Loop 3        |       24|       24|         3|          -|          -|     8|    no    |
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 9 3 
+3 --> 3 4 
+4 --> 4 5 
+5 --> 6 8 
+6 --> 7 
+7 --> 5 
+8 --> 9 
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.88>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%signature_len_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %signature_len)"   --->   Operation 10 'read' 'signature_len_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%signature_offset_rea = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %signature_offset)"   --->   Operation 11 'read' 'signature_offset_rea' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%pk_0_params_read_1 = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %pk_0_params_read)"   --->   Operation 12 'read' 'pk_0_params_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%sig_0_proofs_seed1 = alloca [3504 x i8], align 1" [picnic.c:393]   --->   Operation 13 'alloca' 'sig_0_proofs_seed1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%sig_0_proofs_seed2 = alloca [3504 x i8], align 1" [picnic.c:393]   --->   Operation 14 'alloca' 'sig_0_proofs_seed2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%sig_0_proofs_inputS = alloca [876 x i32], align 4" [picnic.c:393]   --->   Operation 15 'alloca' 'sig_0_proofs_inputS' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%sig_0_proofs_commun = alloca [16425 x i8], align 1" [picnic.c:393]   --->   Operation 16 'alloca' 'sig_0_proofs_commun' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%sig_0_proofs_view3C = alloca [7008 x i8], align 1" [picnic.c:393]   --->   Operation 17 'alloca' 'sig_0_proofs_view3C' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%sig_0_challengeBits = alloca [55 x i8], align 1" [picnic.c:393]   --->   Operation 18 'alloca' 'sig_0_challengeBits' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%sig_0_salt = alloca [32 x i8], align 1" [picnic.c:393]   --->   Operation 19 'alloca' 'sig_0_salt' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%temp = alloca [8 x i32], align 16" [picnic.c:465]   --->   Operation 20 'alloca' 'temp' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%temp2 = alloca [8 x i32], align 16" [picnic.c:465]   --->   Operation 21 'alloca' 'temp2' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 22 [1/1] (1.21ns)   --->   "%icmp_ln33 = icmp eq i4 %pk_0_params_read_1, 2" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 22 'icmp' 'icmp_ln33' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (1.21ns)   --->   "%icmp_ln33_1 = icmp eq i4 %pk_0_params_read_1, 4" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 23 'icmp' 'icmp_ln33_1' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (1.21ns)   --->   "%icmp_ln33_2 = icmp eq i4 %pk_0_params_read_1, 6" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 24 'icmp' 'icmp_ln33_2' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node paramset_transform)   --->   "%or_ln33 = or i1 %icmp_ln33_1, %icmp_ln33_2" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 25 'or' 'or_ln33' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node paramset_transform)   --->   "%or_ln33_1 = or i1 %or_ln33, %icmp_ln33" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 26 'or' 'or_ln33_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (1.21ns)   --->   "%icmp_ln33_3 = icmp eq i4 %pk_0_params_read_1, 1" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 27 'icmp' 'icmp_ln33_3' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (1.21ns)   --->   "%icmp_ln33_4 = icmp eq i4 %pk_0_params_read_1, 3" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 28 'icmp' 'icmp_ln33_4' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (1.21ns)   --->   "%icmp_ln33_5 = icmp eq i4 %pk_0_params_read_1, 5" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 29 'icmp' 'icmp_ln33_5' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (1.21ns)   --->   "%icmp_ln33_6 = icmp eq i4 %pk_0_params_read_1, 7" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 30 'icmp' 'icmp_ln33_6' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (1.21ns)   --->   "%icmp_ln33_7 = icmp eq i4 %pk_0_params_read_1, -8" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 31 'icmp' 'icmp_ln33_7' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (1.21ns)   --->   "%icmp_ln33_8 = icmp eq i4 %pk_0_params_read_1, -7" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 32 'icmp' 'icmp_ln33_8' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns) (grouped into LUT with out node or_ln33_6)   --->   "%or_ln33_2 = or i1 %icmp_ln33_4, %icmp_ln33_5" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 33 'or' 'or_ln33_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [1/1] (0.00ns) (grouped into LUT with out node or_ln33_6)   --->   "%or_ln33_3 = or i1 %or_ln33_2, %icmp_ln33_3" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 34 'or' 'or_ln33_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (0.00ns) (grouped into LUT with out node or_ln33_6)   --->   "%or_ln33_4 = or i1 %icmp_ln33_7, %icmp_ln33_8" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 35 'or' 'or_ln33_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (0.00ns) (grouped into LUT with out node or_ln33_6)   --->   "%or_ln33_5 = or i1 %or_ln33_4, %icmp_ln33_6" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 36 'or' 'or_ln33_5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [1/1] (0.80ns) (out node of the LUT)   --->   "%or_ln33_6 = or i1 %or_ln33_5, %or_ln33_3" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 37 'or' 'or_ln33_6' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns) (grouped into LUT with out node paramset_transform)   --->   "%select_ln33 = select i1 %or_ln33_6, i2 0, i2 1" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 38 'select' 'select_ln33' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 39 [1/1] (0.00ns) (grouped into LUT with out node paramset_transform)   --->   "%or_ln33_7 = or i1 %or_ln33_6, %or_ln33_1" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 39 'or' 'or_ln33_7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.81ns) (out node of the LUT)   --->   "%paramset_transform = select i1 %or_ln33_7, i2 %select_ln33, i2 -1" [picnic.c:33->picnic.c:154->picnic.c:385]   --->   Operation 40 'select' 'paramset_transform' <Predicate = true> <Delay = 0.81> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 41 [1/1] (0.79ns)   --->   "%icmp_ln157 = icmp eq i2 %paramset_transform, 1" [picnic.c:157->picnic.c:385]   --->   Operation 41 'icmp' 'icmp_ln157' <Predicate = true> <Delay = 0.79> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 42 [1/1] (0.80ns)   --->   "%paramset_UnruhGWitho = select i1 %icmp_ln157, i7 -37, i7 0" [picnic.c:157->picnic.c:385]   --->   Operation 42 'select' 'paramset_UnruhGWitho' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 43 [2/2] (3.46ns)   --->   "%ret2 = call fastcc i1 @deserializeSignature([3504 x i8]* %sig_0_proofs_seed1, [3504 x i8]* %sig_0_proofs_seed2, [876 x i32]* %sig_0_proofs_inputS, [16425 x i8]* %sig_0_proofs_commun, [7008 x i8]* %sig_0_proofs_view3C, [55 x i8]* %sig_0_challengeBits, [32 x i8]* %sig_0_salt, [37336 x i8]* %message, i64 %signature_offset_rea, i32 %signature_len_read, i7 %paramset_UnruhGWitho, i2 %paramset_transform)" [picnic.c:455]   --->   Operation 43 'call' 'ret2' <Predicate = true> <Delay = 3.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.35>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%message_len_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %message_len)"   --->   Operation 44 'read' 'message_len_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/2] (0.00ns)   --->   "%ret2 = call fastcc i1 @deserializeSignature([3504 x i8]* %sig_0_proofs_seed1, [3504 x i8]* %sig_0_proofs_seed2, [876 x i32]* %sig_0_proofs_inputS, [16425 x i8]* %sig_0_proofs_commun, [7008 x i8]* %sig_0_proofs_view3C, [55 x i8]* %sig_0_challengeBits, [32 x i8]* %sig_0_salt, [37336 x i8]* %message, i64 %signature_offset_rea, i32 %signature_len_read, i7 %paramset_UnruhGWitho, i2 %paramset_transform)" [picnic.c:455]   --->   Operation 45 'call' 'ret2' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 46 [1/1] (1.35ns)   --->   "br i1 %ret2, label %UnifiedReturnBlock, label %meminst.preheader" [picnic.c:456]   --->   Operation 46 'br' <Predicate = true> <Delay = 1.35>
+ST_2 : Operation 47 [1/1] (1.35ns)   --->   "br label %meminst" [picnic.c:465]   --->   Operation 47 'br' <Predicate = (!ret2)> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 1.75>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%phi_ln465 = phi i3 [ %add_ln465, %meminst ], [ 0, %meminst.preheader ]" [picnic.c:465]   --->   Operation 48 'phi' 'phi_ln465' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (1.34ns)   --->   "%add_ln465 = add i3 %phi_ln465, 1" [picnic.c:465]   --->   Operation 49 'add' 'add_ln465' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.60> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln465 = zext i3 %phi_ln465 to i64" [picnic.c:465]   --->   Operation 50 'zext' 'zext_ln465' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%temp_addr = getelementptr [8 x i32]* %temp, i64 0, i64 %zext_ln465" [picnic.c:465]   --->   Operation 51 'getelementptr' 'temp_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (1.75ns)   --->   "store i32 0, i32* %temp_addr, align 4" [picnic.c:465]   --->   Operation 52 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 53 [1/1] (1.00ns)   --->   "%icmp_ln465 = icmp eq i3 %phi_ln465, -1" [picnic.c:465]   --->   Operation 53 'icmp' 'icmp_ln465' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @memset_temp_str)"   --->   Operation 54 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 55 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %icmp_ln465, label %meminst2.preheader, label %meminst" [picnic.c:465]   --->   Operation 56 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (1.35ns)   --->   "br label %meminst2" [picnic.c:465]   --->   Operation 57 'br' <Predicate = (icmp_ln465)> <Delay = 1.35>
+
+State 4 <SV = 3> <Delay = 1.75>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%phi_ln465_1 = phi i3 [ %add_ln465_1, %meminst2 ], [ 0, %meminst2.preheader ]" [picnic.c:465]   --->   Operation 58 'phi' 'phi_ln465_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (1.34ns)   --->   "%add_ln465_1 = add i3 %phi_ln465_1, 1" [picnic.c:465]   --->   Operation 59 'add' 'add_ln465_1' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.60> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%zext_ln465_1 = zext i3 %phi_ln465_1 to i64" [picnic.c:465]   --->   Operation 60 'zext' 'zext_ln465_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%temp2_addr = getelementptr [8 x i32]* %temp2, i64 0, i64 %zext_ln465_1" [picnic.c:465]   --->   Operation 61 'getelementptr' 'temp2_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (1.75ns)   --->   "store i32 0, i32* %temp2_addr, align 4" [picnic.c:465]   --->   Operation 62 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 63 [1/1] (1.00ns)   --->   "%icmp_ln465_1 = icmp eq i3 %phi_ln465_1, -1" [picnic.c:465]   --->   Operation 63 'icmp' 'icmp_ln465_1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @memset_temp2_str)"   --->   Operation 64 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%empty_143 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 65 'speclooptripcount' 'empty_143' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "br i1 %icmp_ln465_1, label %.preheader.preheader, label %meminst2" [picnic.c:465]   --->   Operation 66 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (1.35ns)   --->   "br label %.preheader" [picnic.c:466]   --->   Operation 67 'br' <Predicate = (icmp_ln465_1)> <Delay = 1.35>
+
+State 5 <SV = 4> <Delay = 1.75>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%loop_0 = phi i6 [ %loop, %0 ], [ 0, %.preheader.preheader ]"   --->   Operation 68 'phi' 'loop_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %loop_0, i32 5)" [picnic.c:466]   --->   Operation 69 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%empty_144 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 70 'speclooptripcount' 'empty_144' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "br i1 %tmp, label %1, label %0" [picnic.c:466]   --->   Operation 71 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln467 = zext i6 %loop_0 to i64" [picnic.c:467]   --->   Operation 72 'zext' 'zext_ln467' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%pk_0_ciphertext_add = getelementptr [32 x i8]* %pk_0_ciphertext, i64 0, i64 %zext_ln467" [picnic.c:467]   --->   Operation 73 'getelementptr' 'pk_0_ciphertext_add' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 74 [2/2] (1.75ns)   --->   "%pk_0_ciphertext_loa = load i8* %pk_0_ciphertext_add, align 1" [picnic.c:467]   --->   Operation 74 'load' 'pk_0_ciphertext_loa' <Predicate = (!tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%trunc_ln466 = trunc i6 %loop_0 to i5" [picnic.c:466]   --->   Operation 75 'trunc' 'trunc_ln466' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%or_ln467 = or i5 %trunc_ln466, 1" [picnic.c:467]   --->   Operation 76 'or' 'or_ln467' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%zext_ln467_1 = zext i5 %or_ln467 to i64" [picnic.c:467]   --->   Operation 77 'zext' 'zext_ln467_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%pk_0_ciphertext_add_1 = getelementptr [32 x i8]* %pk_0_ciphertext, i64 0, i64 %zext_ln467_1" [picnic.c:467]   --->   Operation 78 'getelementptr' 'pk_0_ciphertext_add_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 79 [2/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_1 = load i8* %pk_0_ciphertext_add_1, align 1" [picnic.c:467]   --->   Operation 79 'load' 'pk_0_ciphertext_loa_1' <Predicate = (!tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%trunc_ln467_1 = call i3 @_ssdm_op_PartSelect.i3.i6.i32.i32(i6 %loop_0, i32 2, i32 4)" [picnic.c:467]   --->   Operation 80 'partselect' 'trunc_ln467_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%pk_0_plaintext_addr = getelementptr [32 x i8]* %pk_0_plaintext, i64 0, i64 %zext_ln467" [picnic.c:468]   --->   Operation 81 'getelementptr' 'pk_0_plaintext_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 82 [2/2] (1.75ns)   --->   "%pk_0_plaintext_load = load i8* %pk_0_plaintext_addr, align 1" [picnic.c:468]   --->   Operation 82 'load' 'pk_0_plaintext_load' <Predicate = (!tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%pk_0_plaintext_addr_1 = getelementptr [32 x i8]* %pk_0_plaintext, i64 0, i64 %zext_ln467_1" [picnic.c:468]   --->   Operation 83 'getelementptr' 'pk_0_plaintext_addr_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_5 : Operation 84 [2/2] (1.75ns)   --->   "%pk_0_plaintext_load_1 = load i8* %pk_0_plaintext_addr_1, align 1" [picnic.c:468]   --->   Operation 84 'load' 'pk_0_plaintext_load_1' <Predicate = (!tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 85 [1/1] (1.60ns)   --->   "%loop = add i6 4, %loop_0" [picnic.c:466]   --->   Operation 85 'add' 'loop' <Predicate = (!tmp)> <Delay = 1.60> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.60> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 86 [2/2] (0.00ns)   --->   "%ret = call fastcc i32 @verify([3504 x i8]* %sig_0_proofs_seed1, [3504 x i8]* %sig_0_proofs_seed2, [876 x i32]* %sig_0_proofs_inputS, [16425 x i8]* %sig_0_proofs_commun, [7008 x i8]* %sig_0_proofs_view3C, [55 x i8]* %sig_0_challengeBits, [32 x i8]* %sig_0_salt, [8 x i32]* %temp, [8 x i32]* %temp2, [37336 x i8]* %message, i64 %message_len_read)" [picnic.c:470]   --->   Operation 86 'call' 'ret' <Predicate = (tmp)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.75>
+ST_6 : Operation 87 [1/2] (1.75ns)   --->   "%pk_0_ciphertext_loa = load i8* %pk_0_ciphertext_add, align 1" [picnic.c:467]   --->   Operation 87 'load' 'pk_0_ciphertext_loa' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 88 [1/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_1 = load i8* %pk_0_ciphertext_add_1, align 1" [picnic.c:467]   --->   Operation 88 'load' 'pk_0_ciphertext_loa_1' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%or_ln467_1 = or i5 %trunc_ln466, 2" [picnic.c:467]   --->   Operation 89 'or' 'or_ln467_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln467_2 = zext i5 %or_ln467_1 to i64" [picnic.c:467]   --->   Operation 90 'zext' 'zext_ln467_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%pk_0_ciphertext_add_2 = getelementptr [32 x i8]* %pk_0_ciphertext, i64 0, i64 %zext_ln467_2" [picnic.c:467]   --->   Operation 91 'getelementptr' 'pk_0_ciphertext_add_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 92 [2/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_2 = load i8* %pk_0_ciphertext_add_2, align 1" [picnic.c:467]   --->   Operation 92 'load' 'pk_0_ciphertext_loa_2' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%or_ln467_2 = or i5 %trunc_ln466, 3" [picnic.c:467]   --->   Operation 93 'or' 'or_ln467_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln467_3 = zext i5 %or_ln467_2 to i64" [picnic.c:467]   --->   Operation 94 'zext' 'zext_ln467_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%pk_0_ciphertext_add_3 = getelementptr [32 x i8]* %pk_0_ciphertext, i64 0, i64 %zext_ln467_3" [picnic.c:467]   --->   Operation 95 'getelementptr' 'pk_0_ciphertext_add_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 96 [2/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_3 = load i8* %pk_0_ciphertext_add_3, align 1" [picnic.c:467]   --->   Operation 96 'load' 'pk_0_ciphertext_loa_3' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 97 [1/2] (1.75ns)   --->   "%pk_0_plaintext_load = load i8* %pk_0_plaintext_addr, align 1" [picnic.c:468]   --->   Operation 97 'load' 'pk_0_plaintext_load' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 98 [1/2] (1.75ns)   --->   "%pk_0_plaintext_load_1 = load i8* %pk_0_plaintext_addr_1, align 1" [picnic.c:468]   --->   Operation 98 'load' 'pk_0_plaintext_load_1' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%pk_0_plaintext_addr_2 = getelementptr [32 x i8]* %pk_0_plaintext, i64 0, i64 %zext_ln467_2" [picnic.c:468]   --->   Operation 99 'getelementptr' 'pk_0_plaintext_addr_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 100 [2/2] (1.75ns)   --->   "%pk_0_plaintext_load_2 = load i8* %pk_0_plaintext_addr_2, align 1" [picnic.c:468]   --->   Operation 100 'load' 'pk_0_plaintext_load_2' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%pk_0_plaintext_addr_3 = getelementptr [32 x i8]* %pk_0_plaintext, i64 0, i64 %zext_ln467_3" [picnic.c:468]   --->   Operation 101 'getelementptr' 'pk_0_plaintext_addr_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 102 [2/2] (1.75ns)   --->   "%pk_0_plaintext_load_3 = load i8* %pk_0_plaintext_addr_3, align 1" [picnic.c:468]   --->   Operation 102 'load' 'pk_0_plaintext_load_3' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 7 <SV = 6> <Delay = 3.51>
+ST_7 : Operation 103 [1/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_2 = load i8* %pk_0_ciphertext_add_2, align 1" [picnic.c:467]   --->   Operation 103 'load' 'pk_0_ciphertext_loa_2' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 104 [1/2] (1.75ns)   --->   "%pk_0_ciphertext_loa_3 = load i8* %pk_0_ciphertext_add_3, align 1" [picnic.c:467]   --->   Operation 104 'load' 'pk_0_ciphertext_loa_3' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 105 [1/1] (0.00ns)   --->   "%or_ln467_5 = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %pk_0_ciphertext_loa_3, i8 %pk_0_ciphertext_loa_2, i8 %pk_0_ciphertext_loa_1, i8 %pk_0_ciphertext_loa)" [picnic.c:467]   --->   Operation 105 'bitconcatenate' 'or_ln467_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 106 [1/1] (0.00ns)   --->   "%zext_ln467_4 = zext i3 %trunc_ln467_1 to i64" [picnic.c:467]   --->   Operation 106 'zext' 'zext_ln467_4' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 107 [1/1] (0.00ns)   --->   "%temp_addr_3 = getelementptr inbounds [8 x i32]* %temp, i64 0, i64 %zext_ln467_4" [picnic.c:467]   --->   Operation 107 'getelementptr' 'temp_addr_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 108 [1/1] (1.75ns)   --->   "store i32 %or_ln467_5, i32* %temp_addr_3, align 4" [picnic.c:467]   --->   Operation 108 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 109 [1/2] (1.75ns)   --->   "%pk_0_plaintext_load_2 = load i8* %pk_0_plaintext_addr_2, align 1" [picnic.c:468]   --->   Operation 109 'load' 'pk_0_plaintext_load_2' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 110 [1/2] (1.75ns)   --->   "%pk_0_plaintext_load_3 = load i8* %pk_0_plaintext_addr_3, align 1" [picnic.c:468]   --->   Operation 110 'load' 'pk_0_plaintext_load_3' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%or_ln468_2 = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %pk_0_plaintext_load_3, i8 %pk_0_plaintext_load_2, i8 %pk_0_plaintext_load_1, i8 %pk_0_plaintext_load)" [picnic.c:468]   --->   Operation 111 'bitconcatenate' 'or_ln468_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 112 [1/1] (0.00ns)   --->   "%temp2_addr_1 = getelementptr inbounds [8 x i32]* %temp2, i64 0, i64 %zext_ln467_4" [picnic.c:468]   --->   Operation 112 'getelementptr' 'temp2_addr_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 113 [1/1] (1.75ns)   --->   "store i32 %or_ln468_2, i32* %temp2_addr_1, align 4" [picnic.c:468]   --->   Operation 113 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 114 [1/1] (0.00ns)   --->   "br label %.preheader" [picnic.c:466]   --->   Operation 114 'br' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 5> <Delay = 2.11>
+ST_8 : Operation 115 [1/2] (0.00ns)   --->   "%ret = call fastcc i32 @verify([3504 x i8]* %sig_0_proofs_seed1, [3504 x i8]* %sig_0_proofs_seed2, [876 x i32]* %sig_0_proofs_inputS, [16425 x i8]* %sig_0_proofs_commun, [7008 x i8]* %sig_0_proofs_view3C, [55 x i8]* %sig_0_challengeBits, [32 x i8]* %sig_0_salt, [8 x i32]* %temp, [8 x i32]* %temp2, [37336 x i8]* %message, i64 %message_len_read)" [picnic.c:470]   --->   Operation 115 'call' 'ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 116 [1/1] (2.11ns)   --->   "%icmp_ln474 = icmp ne i32 %ret, 0" [picnic.c:474]   --->   Operation 116 'icmp' 'icmp_ln474' <Predicate = true> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 117 [1/1] (1.35ns)   --->   "br label %UnifiedReturnBlock" [picnic.c:514]   --->   Operation 117 'br' <Predicate = true> <Delay = 1.35>
+
+State 9 <SV = 6> <Delay = 0.00>
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%UnifiedRetVal = phi i1 [ %icmp_ln474, %1 ], [ true, %_ifconv ]" [picnic.c:474]   --->   Operation 118 'phi' 'UnifiedRetVal' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "ret i1 %UnifiedRetVal" [picnic.c:514]   --->   Operation 119 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 7.88ns
+The critical path consists of the following:
+	wire read on port 'pk_0_params_read' [23]  (0 ns)
+	'icmp' operation ('icmp_ln33_6', picnic.c:33->picnic.c:154->picnic.c:385) [41]  (1.21 ns)
+	'or' operation ('or_ln33_5', picnic.c:33->picnic.c:154->picnic.c:385) [47]  (0 ns)
+	'or' operation ('or_ln33_6', picnic.c:33->picnic.c:154->picnic.c:385) [48]  (0.8 ns)
+	'select' operation ('select_ln33', picnic.c:33->picnic.c:154->picnic.c:385) [49]  (0 ns)
+	'select' operation ('paramset.transform', picnic.c:33->picnic.c:154->picnic.c:385) [51]  (0.813 ns)
+	'icmp' operation ('icmp_ln157', picnic.c:157->picnic.c:385) [52]  (0.794 ns)
+	'select' operation ('paramset.UnruhGWithoutInputBytes', picnic.c:157->picnic.c:385) [53]  (0.806 ns)
+	'call' operation ('ret2', picnic.c:455) to 'deserializeSignature' [54]  (3.46 ns)
+
+ <State 2>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ret2', picnic.c:455) to 'deserializeSignature' [54]  (0 ns)
+	multiplexor before 'phi' operation ('UnifiedRetVal', picnic.c:474) with incoming values : ('icmp_ln474', picnic.c:474) [127]  (1.35 ns)
+
+ <State 3>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln465', picnic.c:465) with incoming values : ('add_ln465', picnic.c:465) [59]  (0 ns)
+	'getelementptr' operation ('temp_addr', picnic.c:465) [62]  (0 ns)
+	'store' operation ('store_ln465', picnic.c:465) of constant 0 on array 'temp', picnic.c:465 [63]  (1.75 ns)
+
+ <State 4>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln465_1', picnic.c:465) with incoming values : ('add_ln465_1', picnic.c:465) [71]  (0 ns)
+	'getelementptr' operation ('temp2_addr', picnic.c:465) [74]  (0 ns)
+	'store' operation ('store_ln465', picnic.c:465) of constant 0 on array 'temp2', picnic.c:465 [75]  (1.75 ns)
+
+ <State 5>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic.c:466) [83]  (0 ns)
+	'getelementptr' operation ('pk_0_ciphertext_add', picnic.c:467) [89]  (0 ns)
+	'load' operation ('pk_0_ciphertext_loa', picnic.c:467) on array 'pk_0_ciphertext' [90]  (1.75 ns)
+
+ <State 6>: 1.75ns
+The critical path consists of the following:
+	'load' operation ('pk_0_ciphertext_loa', picnic.c:467) on array 'pk_0_ciphertext' [90]  (1.75 ns)
+
+ <State 7>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('pk_0_ciphertext_loa_2', picnic.c:467) on array 'pk_0_ciphertext' [99]  (1.75 ns)
+	'store' operation ('store_ln467', picnic.c:467) of variable 'or_ln467_5', picnic.c:467 on array 'temp', picnic.c:465 [108]  (1.75 ns)
+
+ <State 8>: 2.11ns
+The critical path consists of the following:
+	'call' operation ('ret', picnic.c:470) to 'verify' [123]  (0 ns)
+	'icmp' operation ('icmp_ln474', picnic.c:474) [124]  (2.11 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

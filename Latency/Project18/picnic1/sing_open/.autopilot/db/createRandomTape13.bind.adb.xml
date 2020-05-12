@@ -1,0 +1,1087 @@
+<stg><name>createRandomTape13</name>
+
+
+<trans_list>
+
+<trans id="59" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="60" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="61" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="62" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="63" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="64" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="65" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="66" from="8" to="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="67" from="9" to="10">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="68" from="10" to="11">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="69" from="11" to="12">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="70" from="12" to="13">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="71" from="13" to="14">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="72" from="14" to="15">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="73" from="15" to="16">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="74" from="16" to="17">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="75" from="17" to="18">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="76" from="18" to="19">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="77" from="19" to="20">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="78" from="20" to="21">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="79" from="21" to="22">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="80" from="22" to="23">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="81" from="23" to="24">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="8" op_0_bw="64">
+<![CDATA[
+._crit_edge:3  %ctx_sponge_state = alloca [200 x i8], align 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_state"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64">
+<![CDATA[
+._crit_edge:4  %ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="27" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64">
+<![CDATA[
+._crit_edge:4  %ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="28" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+._crit_edge:2  %seed_offset1_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %seed_offset1)
+
+]]></Node>
+<StgValue><ssdm name="seed_offset1_read"/></StgValue>
+</operation>
+
+<operation id="29" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="64" op_7_bw="32" op_8_bw="32">
+<![CDATA[
+._crit_edge:5  %ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_37"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="30" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="64" op_7_bw="32" op_8_bw="32">
+<![CDATA[
+._crit_edge:5  %ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_37"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="31" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:6  %call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)
+
+]]></Node>
+<StgValue><ssdm name="call_ret9"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="32" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:6  %call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)
+
+]]></Node>
+<StgValue><ssdm name="call_ret9"/></StgValue>
+</operation>
+
+<operation id="33" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:7  %ctx_sponge_byteIOInd_38 = extractvalue { i32, i32 } %call_ret9, 0
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_38"/></StgValue>
+</operation>
+
+<operation id="34" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:8  %ctx_sponge_squeezing = extractvalue { i32, i32 } %call_ret9, 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_squeezing"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="35" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:9  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="36" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:9  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="37" st_id="9" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+._crit_edge:10  %ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_39"/></StgValue>
+</operation>
+</state>
+
+<state id="10" st_id="10">
+
+<operation id="38" st_id="10" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+._crit_edge:10  %ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_39"/></StgValue>
+</operation>
+</state>
+
+<state id="11" st_id="11">
+
+<operation id="39" st_id="11" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:11  %ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_40"/></StgValue>
+</operation>
+</state>
+
+<state id="12" st_id="12">
+
+<operation id="40" st_id="12" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:11  %ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_40"/></StgValue>
+</operation>
+</state>
+
+<state id="13" st_id="13">
+
+<operation id="41" st_id="13" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:12  %ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_41"/></StgValue>
+</operation>
+</state>
+
+<state id="14" st_id="14">
+
+<operation id="42" st_id="14" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:12  %ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_41"/></StgValue>
+</operation>
+</state>
+
+<state id="15" st_id="15">
+
+<operation id="43" st_id="15" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+._crit_edge:1  %roundNumber_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %roundNumber)
+
+]]></Node>
+<StgValue><ssdm name="roundNumber_read"/></StgValue>
+</operation>
+
+<operation id="44" st_id="15" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:13  %ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_42"/></StgValue>
+</operation>
+</state>
+
+<state id="16" st_id="16">
+
+<operation id="45" st_id="16" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:13  %ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_42"/></StgValue>
+</operation>
+</state>
+
+<state id="17" st_id="17">
+
+<operation id="46" st_id="17" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge:0  %playerNumber_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %playerNumber)
+
+]]></Node>
+<StgValue><ssdm name="playerNumber_read"/></StgValue>
+</operation>
+
+<operation id="47" st_id="17" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="8" op_0_bw="1">
+<![CDATA[
+._crit_edge:14  %temp_0 = zext i1 %playerNumber_read to i8
+
+]]></Node>
+<StgValue><ssdm name="temp_0"/></StgValue>
+</operation>
+
+<operation id="48" st_id="17" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:15  %ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_43"/></StgValue>
+</operation>
+</state>
+
+<state id="18" st_id="18">
+
+<operation id="49" st_id="18" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:15  %ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_43"/></StgValue>
+</operation>
+</state>
+
+<state id="19" st_id="19">
+
+<operation id="50" st_id="19" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:16  %ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_44"/></StgValue>
+</operation>
+</state>
+
+<state id="20" st_id="20">
+
+<operation id="51" st_id="20" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:16  %ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_44"/></StgValue>
+</operation>
+</state>
+
+<state id="21" st_id="21">
+
+<operation id="52" st_id="21" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:17  %call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)
+
+]]></Node>
+<StgValue><ssdm name="call_ret3"/></StgValue>
+</operation>
+</state>
+
+<state id="22" st_id="22">
+
+<operation id="53" st_id="22" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:17  %call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)
+
+]]></Node>
+<StgValue><ssdm name="call_ret3"/></StgValue>
+</operation>
+
+<operation id="54" st_id="22" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:18  %ctx_sponge_byteIOInd_45 = extractvalue { i32, i32 } %call_ret3, 0
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_45"/></StgValue>
+</operation>
+
+<operation id="55" st_id="22" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:19  %ctx_sponge_squeezing_7 = extractvalue { i32, i32 } %call_ret3, 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_squeezing_7"/></StgValue>
+</operation>
+</state>
+
+<state id="23" st_id="23">
+
+<operation id="56" st_id="23" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:20  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="24" st_id="24">
+
+<operation id="57" st_id="24" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:20  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+
+<operation id="58" st_id="24" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="0">
+<![CDATA[
+._crit_edge:21  ret void
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="82" name="seed_0" dir="0" iftype="1">
+<core>RAM</core><StgValue><ssdm name="seed_0"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="83" name="seed_offset1" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="seed_offset1"/></StgValue>
+</port>
+<port id="84" name="salt_0" dir="0" iftype="1">
+<core>RAM</core><StgValue><ssdm name="salt_0"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="85" name="roundNumber" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="roundNumber"/></StgValue>
+</port>
+<port id="86" name="playerNumber" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="playerNumber"/></StgValue>
+</port>
+<port id="87" name="tape" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="tape"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="88" name="KeccakRhoOffsets" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="KeccakRhoOffsets"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="89" name="KeccakRoundConstants" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="KeccakRoundConstants"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="91" from="StgValue_90" to="ctx_sponge_state" fromId="90" toId="25">
+</dataflow>
+<dataflow id="93" from="HashInit" to="ctx_sponge_byteIOInd" fromId="92" toId="26">
+</dataflow>
+<dataflow id="94" from="ctx_sponge_state" to="ctx_sponge_byteIOInd" fromId="25" toId="26">
+</dataflow>
+<dataflow id="96" from="StgValue_95" to="ctx_sponge_byteIOInd" fromId="95" toId="26">
+</dataflow>
+<dataflow id="97" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd" fromId="88" toId="26">
+</dataflow>
+<dataflow id="98" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd" fromId="89" toId="26">
+</dataflow>
+<dataflow id="99" from="HashInit" to="ctx_sponge_byteIOInd" fromId="92" toId="27">
+</dataflow>
+<dataflow id="100" from="ctx_sponge_state" to="ctx_sponge_byteIOInd" fromId="25" toId="27">
+</dataflow>
+<dataflow id="101" from="StgValue_95" to="ctx_sponge_byteIOInd" fromId="95" toId="27">
+</dataflow>
+<dataflow id="102" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd" fromId="88" toId="27">
+</dataflow>
+<dataflow id="103" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd" fromId="89" toId="27">
+</dataflow>
+<dataflow id="105" from="_ssdm_op_Read.ap_auto.i8" to="seed_offset1_read" fromId="104" toId="28">
+</dataflow>
+<dataflow id="106" from="seed_offset1" to="seed_offset1_read" fromId="83" toId="28">
+</dataflow>
+<dataflow id="108" from="KeccakWidth1600_Spon.4" to="ctx_sponge_byteIOInd_37" fromId="107" toId="29">
+</dataflow>
+<dataflow id="109" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_37" fromId="25" toId="29">
+</dataflow>
+<dataflow id="110" from="ctx_sponge_byteIOInd" to="ctx_sponge_byteIOInd_37" fromId="27" toId="29">
+</dataflow>
+<dataflow id="111" from="seed_0" to="ctx_sponge_byteIOInd_37" fromId="82" toId="29">
+</dataflow>
+<dataflow id="112" from="seed_offset1_read" to="ctx_sponge_byteIOInd_37" fromId="28" toId="29">
+</dataflow>
+<dataflow id="113" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_37" fromId="88" toId="29">
+</dataflow>
+<dataflow id="114" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_37" fromId="89" toId="29">
+</dataflow>
+<dataflow id="115" from="KeccakWidth1600_Spon.4" to="ctx_sponge_byteIOInd_37" fromId="107" toId="30">
+</dataflow>
+<dataflow id="116" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_37" fromId="25" toId="30">
+</dataflow>
+<dataflow id="117" from="ctx_sponge_byteIOInd" to="ctx_sponge_byteIOInd_37" fromId="27" toId="30">
+</dataflow>
+<dataflow id="118" from="seed_0" to="ctx_sponge_byteIOInd_37" fromId="82" toId="30">
+</dataflow>
+<dataflow id="119" from="seed_offset1_read" to="ctx_sponge_byteIOInd_37" fromId="28" toId="30">
+</dataflow>
+<dataflow id="120" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_37" fromId="88" toId="30">
+</dataflow>
+<dataflow id="121" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_37" fromId="89" toId="30">
+</dataflow>
+<dataflow id="123" from="HashFinal" to="call_ret9" fromId="122" toId="31">
+</dataflow>
+<dataflow id="124" from="ctx_sponge_state" to="call_ret9" fromId="25" toId="31">
+</dataflow>
+<dataflow id="125" from="ctx_sponge_byteIOInd_37" to="call_ret9" fromId="30" toId="31">
+</dataflow>
+<dataflow id="126" from="KeccakRhoOffsets" to="call_ret9" fromId="88" toId="31">
+</dataflow>
+<dataflow id="127" from="KeccakRoundConstants" to="call_ret9" fromId="89" toId="31">
+</dataflow>
+<dataflow id="128" from="HashFinal" to="call_ret9" fromId="122" toId="32">
+</dataflow>
+<dataflow id="129" from="ctx_sponge_state" to="call_ret9" fromId="25" toId="32">
+</dataflow>
+<dataflow id="130" from="ctx_sponge_byteIOInd_37" to="call_ret9" fromId="30" toId="32">
+</dataflow>
+<dataflow id="131" from="KeccakRhoOffsets" to="call_ret9" fromId="88" toId="32">
+</dataflow>
+<dataflow id="132" from="KeccakRoundConstants" to="call_ret9" fromId="89" toId="32">
+</dataflow>
+<dataflow id="133" from="call_ret9" to="ctx_sponge_byteIOInd_38" fromId="32" toId="33">
+</dataflow>
+<dataflow id="134" from="call_ret9" to="ctx_sponge_squeezing" fromId="32" toId="34">
+</dataflow>
+<dataflow id="136" from="KeccakWidth1600_Spon.3" to="call_ln81" fromId="135" toId="35">
+</dataflow>
+<dataflow id="137" from="ctx_sponge_state" to="call_ln81" fromId="25" toId="35">
+</dataflow>
+<dataflow id="138" from="ctx_sponge_byteIOInd_38" to="call_ln81" fromId="33" toId="35">
+</dataflow>
+<dataflow id="139" from="ctx_sponge_squeezing" to="call_ln81" fromId="34" toId="35">
+</dataflow>
+<dataflow id="140" from="tape" to="call_ln81" fromId="87" toId="35">
+</dataflow>
+<dataflow id="142" from="StgValue_141" to="call_ln81" fromId="141" toId="35">
+</dataflow>
+<dataflow id="143" from="KeccakRhoOffsets" to="call_ln81" fromId="88" toId="35">
+</dataflow>
+<dataflow id="144" from="KeccakRoundConstants" to="call_ln81" fromId="89" toId="35">
+</dataflow>
+<dataflow id="145" from="KeccakWidth1600_Spon.3" to="call_ln81" fromId="135" toId="36">
+</dataflow>
+<dataflow id="146" from="ctx_sponge_state" to="call_ln81" fromId="25" toId="36">
+</dataflow>
+<dataflow id="147" from="ctx_sponge_byteIOInd_38" to="call_ln81" fromId="33" toId="36">
+</dataflow>
+<dataflow id="148" from="ctx_sponge_squeezing" to="call_ln81" fromId="34" toId="36">
+</dataflow>
+<dataflow id="149" from="tape" to="call_ln81" fromId="87" toId="36">
+</dataflow>
+<dataflow id="150" from="StgValue_141" to="call_ln81" fromId="141" toId="36">
+</dataflow>
+<dataflow id="151" from="KeccakRhoOffsets" to="call_ln81" fromId="88" toId="36">
+</dataflow>
+<dataflow id="152" from="KeccakRoundConstants" to="call_ln81" fromId="89" toId="36">
+</dataflow>
+<dataflow id="153" from="HashInit" to="ctx_sponge_byteIOInd_39" fromId="92" toId="37">
+</dataflow>
+<dataflow id="154" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_39" fromId="25" toId="37">
+</dataflow>
+<dataflow id="156" from="StgValue_155" to="ctx_sponge_byteIOInd_39" fromId="155" toId="37">
+</dataflow>
+<dataflow id="157" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_39" fromId="88" toId="37">
+</dataflow>
+<dataflow id="158" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_39" fromId="89" toId="37">
+</dataflow>
+<dataflow id="159" from="HashInit" to="ctx_sponge_byteIOInd_39" fromId="92" toId="38">
+</dataflow>
+<dataflow id="160" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_39" fromId="25" toId="38">
+</dataflow>
+<dataflow id="161" from="StgValue_155" to="ctx_sponge_byteIOInd_39" fromId="155" toId="38">
+</dataflow>
+<dataflow id="162" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_39" fromId="88" toId="38">
+</dataflow>
+<dataflow id="163" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_39" fromId="89" toId="38">
+</dataflow>
+<dataflow id="165" from="KeccakWidth1600_Spon.15" to="ctx_sponge_byteIOInd_40" fromId="164" toId="39">
+</dataflow>
+<dataflow id="166" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_40" fromId="25" toId="39">
+</dataflow>
+<dataflow id="167" from="ctx_sponge_byteIOInd_39" to="ctx_sponge_byteIOInd_40" fromId="38" toId="39">
+</dataflow>
+<dataflow id="168" from="tape" to="ctx_sponge_byteIOInd_40" fromId="87" toId="39">
+</dataflow>
+<dataflow id="169" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_40" fromId="88" toId="39">
+</dataflow>
+<dataflow id="170" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_40" fromId="89" toId="39">
+</dataflow>
+<dataflow id="171" from="KeccakWidth1600_Spon.15" to="ctx_sponge_byteIOInd_40" fromId="164" toId="40">
+</dataflow>
+<dataflow id="172" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_40" fromId="25" toId="40">
+</dataflow>
+<dataflow id="173" from="ctx_sponge_byteIOInd_39" to="ctx_sponge_byteIOInd_40" fromId="38" toId="40">
+</dataflow>
+<dataflow id="174" from="tape" to="ctx_sponge_byteIOInd_40" fromId="87" toId="40">
+</dataflow>
+<dataflow id="175" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_40" fromId="88" toId="40">
+</dataflow>
+<dataflow id="176" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_40" fromId="89" toId="40">
+</dataflow>
+<dataflow id="178" from="KeccakWidth1600_Spon.8" to="ctx_sponge_byteIOInd_41" fromId="177" toId="41">
+</dataflow>
+<dataflow id="179" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_41" fromId="25" toId="41">
+</dataflow>
+<dataflow id="180" from="ctx_sponge_byteIOInd_40" to="ctx_sponge_byteIOInd_41" fromId="40" toId="41">
+</dataflow>
+<dataflow id="181" from="salt_0" to="ctx_sponge_byteIOInd_41" fromId="84" toId="41">
+</dataflow>
+<dataflow id="182" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_41" fromId="88" toId="41">
+</dataflow>
+<dataflow id="183" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_41" fromId="89" toId="41">
+</dataflow>
+<dataflow id="184" from="KeccakWidth1600_Spon.8" to="ctx_sponge_byteIOInd_41" fromId="177" toId="42">
+</dataflow>
+<dataflow id="185" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_41" fromId="25" toId="42">
+</dataflow>
+<dataflow id="186" from="ctx_sponge_byteIOInd_40" to="ctx_sponge_byteIOInd_41" fromId="40" toId="42">
+</dataflow>
+<dataflow id="187" from="salt_0" to="ctx_sponge_byteIOInd_41" fromId="84" toId="42">
+</dataflow>
+<dataflow id="188" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_41" fromId="88" toId="42">
+</dataflow>
+<dataflow id="189" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_41" fromId="89" toId="42">
+</dataflow>
+<dataflow id="190" from="_ssdm_op_Read.ap_auto.i8" to="roundNumber_read" fromId="104" toId="43">
+</dataflow>
+<dataflow id="191" from="roundNumber" to="roundNumber_read" fromId="85" toId="43">
+</dataflow>
+<dataflow id="193" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_42" fromId="192" toId="44">
+</dataflow>
+<dataflow id="194" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_42" fromId="25" toId="44">
+</dataflow>
+<dataflow id="195" from="ctx_sponge_byteIOInd_41" to="ctx_sponge_byteIOInd_42" fromId="42" toId="44">
+</dataflow>
+<dataflow id="196" from="roundNumber_read" to="ctx_sponge_byteIOInd_42" fromId="43" toId="44">
+</dataflow>
+<dataflow id="197" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_42" fromId="88" toId="44">
+</dataflow>
+<dataflow id="198" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_42" fromId="89" toId="44">
+</dataflow>
+<dataflow id="199" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_42" fromId="192" toId="45">
+</dataflow>
+<dataflow id="200" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_42" fromId="25" toId="45">
+</dataflow>
+<dataflow id="201" from="ctx_sponge_byteIOInd_41" to="ctx_sponge_byteIOInd_42" fromId="42" toId="45">
+</dataflow>
+<dataflow id="202" from="roundNumber_read" to="ctx_sponge_byteIOInd_42" fromId="43" toId="45">
+</dataflow>
+<dataflow id="203" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_42" fromId="88" toId="45">
+</dataflow>
+<dataflow id="204" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_42" fromId="89" toId="45">
+</dataflow>
+<dataflow id="206" from="_ssdm_op_Read.ap_auto.i1" to="playerNumber_read" fromId="205" toId="46">
+</dataflow>
+<dataflow id="207" from="playerNumber" to="playerNumber_read" fromId="86" toId="46">
+</dataflow>
+<dataflow id="208" from="playerNumber_read" to="temp_0" fromId="46" toId="47">
+</dataflow>
+<dataflow id="209" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_43" fromId="192" toId="48">
+</dataflow>
+<dataflow id="210" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_43" fromId="25" toId="48">
+</dataflow>
+<dataflow id="211" from="ctx_sponge_byteIOInd_42" to="ctx_sponge_byteIOInd_43" fromId="45" toId="48">
+</dataflow>
+<dataflow id="212" from="temp_0" to="ctx_sponge_byteIOInd_43" fromId="47" toId="48">
+</dataflow>
+<dataflow id="213" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_43" fromId="88" toId="48">
+</dataflow>
+<dataflow id="214" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_43" fromId="89" toId="48">
+</dataflow>
+<dataflow id="215" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_43" fromId="192" toId="49">
+</dataflow>
+<dataflow id="216" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_43" fromId="25" toId="49">
+</dataflow>
+<dataflow id="217" from="ctx_sponge_byteIOInd_42" to="ctx_sponge_byteIOInd_43" fromId="45" toId="49">
+</dataflow>
+<dataflow id="218" from="temp_0" to="ctx_sponge_byteIOInd_43" fromId="47" toId="49">
+</dataflow>
+<dataflow id="219" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_43" fromId="88" toId="49">
+</dataflow>
+<dataflow id="220" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_43" fromId="89" toId="49">
+</dataflow>
+<dataflow id="221" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_44" fromId="192" toId="50">
+</dataflow>
+<dataflow id="222" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_44" fromId="25" toId="50">
+</dataflow>
+<dataflow id="223" from="ctx_sponge_byteIOInd_43" to="ctx_sponge_byteIOInd_44" fromId="49" toId="50">
+</dataflow>
+<dataflow id="225" from="StgValue_224" to="ctx_sponge_byteIOInd_44" fromId="224" toId="50">
+</dataflow>
+<dataflow id="226" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_44" fromId="88" toId="50">
+</dataflow>
+<dataflow id="227" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_44" fromId="89" toId="50">
+</dataflow>
+<dataflow id="228" from="KeccakWidth1600_Spon.10" to="ctx_sponge_byteIOInd_44" fromId="192" toId="51">
+</dataflow>
+<dataflow id="229" from="ctx_sponge_state" to="ctx_sponge_byteIOInd_44" fromId="25" toId="51">
+</dataflow>
+<dataflow id="230" from="ctx_sponge_byteIOInd_43" to="ctx_sponge_byteIOInd_44" fromId="49" toId="51">
+</dataflow>
+<dataflow id="231" from="StgValue_224" to="ctx_sponge_byteIOInd_44" fromId="224" toId="51">
+</dataflow>
+<dataflow id="232" from="KeccakRhoOffsets" to="ctx_sponge_byteIOInd_44" fromId="88" toId="51">
+</dataflow>
+<dataflow id="233" from="KeccakRoundConstants" to="ctx_sponge_byteIOInd_44" fromId="89" toId="51">
+</dataflow>
+<dataflow id="234" from="HashFinal" to="call_ret3" fromId="122" toId="52">
+</dataflow>
+<dataflow id="235" from="ctx_sponge_state" to="call_ret3" fromId="25" toId="52">
+</dataflow>
+<dataflow id="236" from="ctx_sponge_byteIOInd_44" to="call_ret3" fromId="51" toId="52">
+</dataflow>
+<dataflow id="237" from="KeccakRhoOffsets" to="call_ret3" fromId="88" toId="52">
+</dataflow>
+<dataflow id="238" from="KeccakRoundConstants" to="call_ret3" fromId="89" toId="52">
+</dataflow>
+<dataflow id="239" from="HashFinal" to="call_ret3" fromId="122" toId="53">
+</dataflow>
+<dataflow id="240" from="ctx_sponge_state" to="call_ret3" fromId="25" toId="53">
+</dataflow>
+<dataflow id="241" from="ctx_sponge_byteIOInd_44" to="call_ret3" fromId="51" toId="53">
+</dataflow>
+<dataflow id="242" from="KeccakRhoOffsets" to="call_ret3" fromId="88" toId="53">
+</dataflow>
+<dataflow id="243" from="KeccakRoundConstants" to="call_ret3" fromId="89" toId="53">
+</dataflow>
+<dataflow id="244" from="call_ret3" to="ctx_sponge_byteIOInd_45" fromId="53" toId="54">
+</dataflow>
+<dataflow id="245" from="call_ret3" to="ctx_sponge_squeezing_7" fromId="53" toId="55">
+</dataflow>
+<dataflow id="246" from="KeccakWidth1600_Spon.3" to="call_ln81" fromId="135" toId="56">
+</dataflow>
+<dataflow id="247" from="ctx_sponge_state" to="call_ln81" fromId="25" toId="56">
+</dataflow>
+<dataflow id="248" from="ctx_sponge_byteIOInd_45" to="call_ln81" fromId="54" toId="56">
+</dataflow>
+<dataflow id="249" from="ctx_sponge_squeezing_7" to="call_ln81" fromId="55" toId="56">
+</dataflow>
+<dataflow id="250" from="tape" to="call_ln81" fromId="87" toId="56">
+</dataflow>
+<dataflow id="251" from="StgValue_224" to="call_ln81" fromId="224" toId="56">
+</dataflow>
+<dataflow id="252" from="KeccakRhoOffsets" to="call_ln81" fromId="88" toId="56">
+</dataflow>
+<dataflow id="253" from="KeccakRoundConstants" to="call_ln81" fromId="89" toId="56">
+</dataflow>
+<dataflow id="254" from="KeccakWidth1600_Spon.3" to="call_ln81" fromId="135" toId="57">
+</dataflow>
+<dataflow id="255" from="ctx_sponge_state" to="call_ln81" fromId="25" toId="57">
+</dataflow>
+<dataflow id="256" from="ctx_sponge_byteIOInd_45" to="call_ln81" fromId="54" toId="57">
+</dataflow>
+<dataflow id="257" from="ctx_sponge_squeezing_7" to="call_ln81" fromId="55" toId="57">
+</dataflow>
+<dataflow id="258" from="tape" to="call_ln81" fromId="87" toId="57">
+</dataflow>
+<dataflow id="259" from="StgValue_224" to="call_ln81" fromId="224" toId="57">
+</dataflow>
+<dataflow id="260" from="KeccakRhoOffsets" to="call_ln81" fromId="88" toId="57">
+</dataflow>
+<dataflow id="261" from="KeccakRoundConstants" to="call_ln81" fromId="89" toId="57">
+</dataflow>
+</dataflows>
+
+
+</stg>

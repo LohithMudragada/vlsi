@@ -1,0 +1,1163 @@
+
+
+================================================================
+== Vivado HLS Report for 'verifyProof_23'
+================================================================
+* Date:           Thu May  7 18:42:41 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 9.122 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- memset_temp  |       23|       23|         1|          -|          -|    24|    no    |
+        |- Loop 2       |      150|      150|         2|          -|          -|    75|    no    |
+        |- Loop 3       |       32|       32|         2|          -|          -|    16|    no    |
+        |- Loop 4       |      150|      150|         2|          -|          -|    75|    no    |
+        |- Loop 5       |       32|       32|         2|          -|          -|    16|    no    |
+        |- Loop 6       |      150|      150|         2|          -|          -|    75|    no    |
+        |- Loop 7       |       32|       32|         2|          -|          -|    16|    no    |
+        |- Loop 8       |      150|      150|         2|          -|          -|    75|    no    |
+        |- Loop 9       |        8|        8|         2|          -|          -|     4|    no    |
+        |- Loop 10      |        8|        8|         2|          -|          -|     4|    no    |
+        |- Loop 11      |       32|       32|         2|          -|          -|    16|    no    |
+        |- Loop 12      |      150|      150|         2|          -|          -|    75|    no    |
+        |- Loop 13      |      192|      192|         2|          -|          -|    96|    no    |
+        |- Loop 14      |      192|      192|         2|          -|          -|    96|    no    |
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 78
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 5 35 73 
+4 --> 3 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 30 
+29 --> 28 
+30 --> 31 
+31 --> 32 33 
+32 --> 31 
+33 --> 34 63 73 
+34 --> 33 
+35 --> 36 64 
+36 --> 37 38 
+37 --> 36 
+38 --> 39 40 
+39 --> 38 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 33 
+63 --> 33 
+64 --> 65 66 
+65 --> 64 
+66 --> 67 68 
+67 --> 66 
+68 --> 69 
+69 --> 70 71 
+70 --> 69 
+71 --> 72 33 
+72 --> 71 
+73 --> 74 
+74 --> 75 76 
+75 --> 74 
+76 --> 77 
+77 --> 78 
+78 --> 77 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.63>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%temp_0 = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %roundNumber)"   --->   Operation 79 'read' 'temp_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%challenge_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %challenge)"   --->   Operation 80 'read' 'challenge_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%proof_seed1_offset1_s = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %proof_seed1_offset1)"   --->   Operation 81 'read' 'proof_seed1_offset1_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%zext_ln1010 = zext i8 %proof_seed1_offset1_s to i15" [picnic_impl.c:1010]   --->   Operation 82 'zext' 'zext_ln1010' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_3 = call i10 @_ssdm_op_BitConcatenate.i10.i8.i2(i8 %proof_seed1_offset1_s, i2 0)" [picnic_impl.c:1066]   --->   Operation 83 'bitconcatenate' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%zext_ln1010_1 = zext i10 %tmp_3 to i11" [picnic_impl.c:1010]   --->   Operation 84 'zext' 'zext_ln1010_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (3.63ns)   --->   "%mul_ln1010 = mul i15 %zext_ln1010, 75" [picnic_impl.c:1010]   --->   Operation 85 'mul' 'mul_ln1010' <Predicate = true> <Delay = 3.63> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.63> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%ctx_sponge_state_1 = alloca [200 x i8], align 1" [picnic_impl.c:224->picnic_impl.c:1073]   --->   Operation 86 'alloca' 'ctx_sponge_state_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%ctx_sponge_state = alloca [200 x i8], align 1" [picnic_impl.c:224->picnic_impl.c:1060]   --->   Operation 87 'alloca' 'ctx_sponge_state' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%temp = alloca [24 x i32], align 16" [picnic_impl.c:1007]   --->   Operation 88 'alloca' 'temp' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBRAMWithByteEnable([24 x i32]* %temp)"   --->   Operation 89 'specbramwithbyteenable' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (1.35ns)   --->   "br label %meminst"   --->   Operation 90 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 1.75>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%phi_ln1007 = phi i5 [ 0, %0 ], [ %add_ln1007, %meminst ]" [picnic_impl.c:1007]   --->   Operation 91 'phi' 'phi_ln1007' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (1.54ns)   --->   "%add_ln1007 = add i5 %phi_ln1007, 1" [picnic_impl.c:1007]   --->   Operation 92 'add' 'add_ln1007' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%zext_ln1007 = zext i5 %phi_ln1007 to i64" [picnic_impl.c:1007]   --->   Operation 93 'zext' 'zext_ln1007' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%temp_addr = getelementptr [24 x i32]* %temp, i64 0, i64 %zext_ln1007" [picnic_impl.c:1007]   --->   Operation 94 'getelementptr' 'temp_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.bram.i32(i32* %temp_addr, i32 0, i4 -1)" [picnic_impl.c:1007]   --->   Operation 95 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_2 : Operation 96 [1/1] (1.21ns)   --->   "%icmp_ln1007 = icmp eq i5 %phi_ln1007, -9" [picnic_impl.c:1007]   --->   Operation 96 'icmp' 'icmp_ln1007' <Predicate = true> <Delay = 1.21> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @memset_temp_str)"   --->   Operation 97 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 24, i64 24, i64 24)"   --->   Operation 98 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1007, label %.preheader45.preheader, label %meminst" [picnic_impl.c:1007]   --->   Operation 99 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (1.35ns)   --->   "br label %.preheader45" [picnic_impl.c:1009]   --->   Operation 100 'br' <Predicate = (icmp_ln1007)> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 4.59>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%loop_0 = phi i7 [ %loop, %1 ], [ 0, %.preheader45.preheader ]"   --->   Operation 101 'phi' 'loop_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (1.23ns)   --->   "%icmp_ln1009 = icmp eq i7 %loop_0, -53" [picnic_impl.c:1009]   --->   Operation 102 'icmp' 'icmp_ln1009' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%empty_22 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 0)"   --->   Operation 103 'speclooptripcount' 'empty_22' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (1.66ns)   --->   "%loop = add i7 %loop_0, 1" [picnic_impl.c:1009]   --->   Operation 104 'add' 'loop' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1009, label %2, label %1" [picnic_impl.c:1009]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%zext_ln1010_2 = zext i7 %loop_0 to i15" [picnic_impl.c:1010]   --->   Operation 106 'zext' 'zext_ln1010_2' <Predicate = (!icmp_ln1009)> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (1.82ns)   --->   "%add_ln1010 = add i15 %mul_ln1010, %zext_ln1010_2" [picnic_impl.c:1010]   --->   Operation 107 'add' 'add_ln1010' <Predicate = (!icmp_ln1009)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln1010_3 = zext i15 %add_ln1010 to i64" [picnic_impl.c:1010]   --->   Operation 108 'zext' 'zext_ln1010_3' <Predicate = (!icmp_ln1009)> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%proof_0_communicate = getelementptr [16425 x i8]* %proof_0_communicatedBits, i64 0, i64 %zext_ln1010_3" [picnic_impl.c:1010]   --->   Operation 109 'getelementptr' 'proof_0_communicate' <Predicate = (!icmp_ln1009)> <Delay = 0.00>
+ST_3 : Operation 110 [2/2] (2.77ns)   --->   "%proof_0_communicate_1 = load i8* %proof_0_communicate, align 1" [picnic_impl.c:1010]   --->   Operation 110 'load' 'proof_0_communicate_1' <Predicate = (!icmp_ln1009)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_3 : Operation 111 [1/1] (1.21ns)   --->   "switch i2 %challenge_read, label %.critedge [
+    i2 0, label %3
+    i2 1, label %15
+    i2 -2, label %._crit_edge15
+  ]" [picnic_impl.c:1014]   --->   Operation 111 'switch' <Predicate = (icmp_ln1009)> <Delay = 1.21>
+ST_3 : Operation 112 [2/2] (1.55ns)   --->   "%ctx_sponge_byteIOInd_10 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state_1, i4 2)" [picnic_impl.c:231->picnic_impl.c:1073]   --->   Operation 112 'call' 'ctx_sponge_byteIOInd_10' <Predicate = (icmp_ln1009 & challenge_read == 2)> <Delay = 1.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 113 [2/2] (4.55ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 true, [96 x i8]* %tmp)" [picnic_impl.c:1048]   --->   Operation 113 'call' <Predicate = (icmp_ln1009 & challenge_read == 1)> <Delay = 4.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 114 [2/2] (4.55ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1017]   --->   Operation 114 'call' <Predicate = (icmp_ln1009 & challenge_read == 0)> <Delay = 4.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 5.54>
+ST_4 : Operation 115 [1/1] (0.00ns)   --->   "%view2_communicatedBi = getelementptr [16425 x i8]* %view2_communicatedBits, i64 0, i64 %zext_ln1010_3" [picnic_impl.c:1010]   --->   Operation 115 'getelementptr' 'view2_communicatedBi' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 116 [1/2] (2.77ns)   --->   "%proof_0_communicate_1 = load i8* %proof_0_communicate, align 1" [picnic_impl.c:1010]   --->   Operation 116 'load' 'proof_0_communicate_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_4 : Operation 117 [1/1] (2.77ns)   --->   "store i8 %proof_0_communicate_1, i8* %view2_communicatedBi, align 1" [picnic_impl.c:1010]   --->   Operation 117 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_4 : Operation 118 [1/1] (0.00ns)   --->   "br label %.preheader45" [picnic_impl.c:1009]   --->   Operation 118 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 1.35>
+ST_5 : Operation 119 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd_10 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state_1, i4 2)" [picnic_impl.c:231->picnic_impl.c:1073]   --->   Operation 119 'call' 'ctx_sponge_byteIOInd_10' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 4> <Delay = 2.80>
+ST_6 : Operation 120 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_11 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_10, [3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1073]   --->   Operation 120 'call' 'ctx_sponge_byteIOInd_11' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 5> <Delay = 0.00>
+ST_7 : Operation 121 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_11 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_10, [3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1073]   --->   Operation 121 'call' 'ctx_sponge_byteIOInd_11' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 6> <Delay = 4.32>
+ST_8 : Operation 122 [2/2] (4.32ns)   --->   "%call_ret6_i1 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_11)" [picnic_impl.c:233->picnic_impl.c:1073]   --->   Operation 122 'call' 'call_ret6_i1' <Predicate = true> <Delay = 4.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 7> <Delay = 0.00>
+ST_9 : Operation 123 [1/2] (0.00ns)   --->   "%call_ret6_i1 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_11)" [picnic_impl.c:233->picnic_impl.c:1073]   --->   Operation 123 'call' 'call_ret6_i1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 124 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_12 = extractvalue { i32, i32 } %call_ret6_i1, 0" [picnic_impl.c:233->picnic_impl.c:1073]   --->   Operation 124 'extractvalue' 'ctx_sponge_byteIOInd_12' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 125 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing = extractvalue { i32, i32 } %call_ret6_i1, 1" [picnic_impl.c:233->picnic_impl.c:1073]   --->   Operation 125 'extractvalue' 'ctx_sponge_squeezing' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 8> <Delay = 5.01>
+ST_10 : Operation 126 [2/2] (5.01ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_12, i32 %ctx_sponge_squeezing, [498 x i8]* %tape_0_tape, i1 false, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1073]   --->   Operation 126 'call' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 9> <Delay = 0.00>
+ST_11 : Operation 127 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_12, i32 %ctx_sponge_squeezing, [498 x i8]* %tape_0_tape, i1 false, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1073]   --->   Operation 127 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 10> <Delay = 1.55>
+ST_12 : Operation 128 [2/2] (1.55ns)   --->   "%ctx_sponge_byteIOInd_13 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state_1, i4 -1)" [picnic_impl.c:238->picnic_impl.c:1073]   --->   Operation 128 'call' 'ctx_sponge_byteIOInd_13' <Predicate = true> <Delay = 1.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 11> <Delay = 1.35>
+ST_13 : Operation 129 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd_13 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state_1, i4 -1)" [picnic_impl.c:238->picnic_impl.c:1073]   --->   Operation 129 'call' 'ctx_sponge_byteIOInd_13' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 12> <Delay = 2.80>
+ST_14 : Operation 130 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_14 = call fastcc i32 @KeccakWidth1600_Spon.7([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_13, [498 x i8]* %tape_0_tape, i1 false)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1073]   --->   Operation 130 'call' 'ctx_sponge_byteIOInd_14' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 13> <Delay = 0.00>
+ST_15 : Operation 131 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_14 = call fastcc i32 @KeccakWidth1600_Spon.7([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_13, [498 x i8]* %tape_0_tape, i1 false)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1073]   --->   Operation 131 'call' 'ctx_sponge_byteIOInd_14' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 14> <Delay = 2.80>
+ST_16 : Operation 132 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_15 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_14, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1073]   --->   Operation 132 'call' 'ctx_sponge_byteIOInd_15' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 15> <Delay = 0.00>
+ST_17 : Operation 133 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_15 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_14, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1073]   --->   Operation 133 'call' 'ctx_sponge_byteIOInd_15' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 16> <Delay = 4.55>
+ST_18 : Operation 134 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_16 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_15, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241->picnic_impl.c:1073]   --->   Operation 134 'call' 'ctx_sponge_byteIOInd_16' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 135 [2/2] (4.55ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1075]   --->   Operation 135 'call' <Predicate = true> <Delay = 4.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 17> <Delay = 0.00>
+ST_19 : Operation 136 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_16 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_15, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241->picnic_impl.c:1073]   --->   Operation 136 'call' 'ctx_sponge_byteIOInd_16' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 137 [1/2] (0.00ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1075]   --->   Operation 137 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 18> <Delay = 3.20>
+ST_20 : Operation 138 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_17 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_16, i8 2)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1073]   --->   Operation 138 'call' 'ctx_sponge_byteIOInd_17' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 19> <Delay = 0.00>
+ST_21 : Operation 139 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_17 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_16, i8 2)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1073]   --->   Operation 139 'call' 'ctx_sponge_byteIOInd_17' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 20> <Delay = 3.20>
+ST_22 : Operation 140 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_18 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_17, i8 75)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1073]   --->   Operation 140 'call' 'ctx_sponge_byteIOInd_18' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 21> <Delay = 0.00>
+ST_23 : Operation 141 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_18 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_17, i8 75)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1073]   --->   Operation 141 'call' 'ctx_sponge_byteIOInd_18' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 22> <Delay = 4.32>
+ST_24 : Operation 142 [2/2] (4.32ns)   --->   "%call_ret8_i1 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_18)" [picnic_impl.c:244->picnic_impl.c:1073]   --->   Operation 142 'call' 'call_ret8_i1' <Predicate = true> <Delay = 4.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 23> <Delay = 0.00>
+ST_25 : Operation 143 [1/2] (0.00ns)   --->   "%call_ret8_i1 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_18)" [picnic_impl.c:244->picnic_impl.c:1073]   --->   Operation 143 'call' 'call_ret8_i1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_25 : Operation 144 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_19 = extractvalue { i32, i32 } %call_ret8_i1, 0" [picnic_impl.c:244->picnic_impl.c:1073]   --->   Operation 144 'extractvalue' 'ctx_sponge_byteIOInd_19' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 145 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing_1 = extractvalue { i32, i32 } %call_ret8_i1, 1" [picnic_impl.c:244->picnic_impl.c:1073]   --->   Operation 145 'extractvalue' 'ctx_sponge_squeezing_1' <Predicate = true> <Delay = 0.00>
+
+State 26 <SV = 24> <Delay = 5.01>
+ST_26 : Operation 146 [2/2] (5.01ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_19, i32 %ctx_sponge_squeezing_1, [498 x i8]* %tape_0_tape, i1 false, i8 75)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1073]   --->   Operation 146 'call' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 25> <Delay = 1.35>
+ST_27 : Operation 147 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state_1, i32 %ctx_sponge_byteIOInd_19, i32 %ctx_sponge_squeezing_1, [498 x i8]* %tape_0_tape, i1 false, i8 75)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1073]   --->   Operation 147 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 148 [1/1] (1.35ns)   --->   "br label %23" [picnic_impl.c:1076]   --->   Operation 148 'br' <Predicate = true> <Delay = 1.35>
+
+State 28 <SV = 26> <Delay = 4.55>
+ST_28 : Operation 149 [1/1] (0.00ns)   --->   "%loop_8 = phi i3 [ 0, %._crit_edge15 ], [ %loop_5, %24 ]"   --->   Operation 149 'phi' 'loop_8' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 150 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 0)"   --->   Operation 150 'speclooptripcount' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 151 [1/1] (1.00ns)   --->   "%icmp_ln1076 = icmp eq i3 %loop_8, -4" [picnic_impl.c:1076]   --->   Operation 151 'icmp' 'icmp_ln1076' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 152 [1/1] (1.34ns)   --->   "%loop_5 = add i3 %loop_8, 1" [picnic_impl.c:1076]   --->   Operation 152 'add' 'loop_5' <Predicate = true> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 153 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1076, label %._crit_edge16, label %24" [picnic_impl.c:1076]   --->   Operation 153 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln1077 = zext i3 %loop_8 to i11" [picnic_impl.c:1077]   --->   Operation 154 'zext' 'zext_ln1077' <Predicate = (!icmp_ln1076)> <Delay = 0.00>
+ST_28 : Operation 155 [1/1] (1.74ns)   --->   "%add_ln1077 = add i11 %zext_ln1010_1, %zext_ln1077" [picnic_impl.c:1077]   --->   Operation 155 'add' 'add_ln1077' <Predicate = (!icmp_ln1076)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln1077_1 = zext i11 %add_ln1077 to i64" [picnic_impl.c:1077]   --->   Operation 156 'zext' 'zext_ln1077_1' <Predicate = (!icmp_ln1076)> <Delay = 0.00>
+ST_28 : Operation 157 [1/1] (0.00ns)   --->   "%proof_0_inputShare_2 = getelementptr [876 x i32]* %proof_0_inputShare, i64 0, i64 %zext_ln1077_1" [picnic_impl.c:1077]   --->   Operation 157 'getelementptr' 'proof_0_inputShare_2' <Predicate = (!icmp_ln1076)> <Delay = 0.00>
+ST_28 : Operation 158 [2/2] (2.77ns)   --->   "%proof_0_inputShare_3 = load i32* %proof_0_inputShare_2, align 4" [picnic_impl.c:1077]   --->   Operation 158 'load' 'proof_0_inputShare_3' <Predicate = (!icmp_ln1076)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_28 : Operation 159 [2/2] (4.55ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1078]   --->   Operation 159 'call' <Predicate = (icmp_ln1076)> <Delay = 4.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 27> <Delay = 5.54>
+ST_29 : Operation 160 [1/1] (0.00ns)   --->   "%view1_inputShare_add_4 = getelementptr [876 x i32]* %view1_inputShare, i64 0, i64 %zext_ln1077_1" [picnic_impl.c:1077]   --->   Operation 160 'getelementptr' 'view1_inputShare_add_4' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 161 [1/2] (2.77ns)   --->   "%proof_0_inputShare_3 = load i32* %proof_0_inputShare_2, align 4" [picnic_impl.c:1077]   --->   Operation 161 'load' 'proof_0_inputShare_3' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_29 : Operation 162 [1/1] (2.77ns)   --->   "store i32 %proof_0_inputShare_3, i32* %view1_inputShare_add_4, align 4" [picnic_impl.c:1077]   --->   Operation 162 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_29 : Operation 163 [1/1] (0.00ns)   --->   "br label %23" [picnic_impl.c:1076]   --->   Operation 163 'br' <Predicate = true> <Delay = 0.00>
+
+State 30 <SV = 27> <Delay = 1.35>
+ST_30 : Operation 164 [1/2] (0.00ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1078]   --->   Operation 164 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_30 : Operation 165 [1/1] (1.35ns)   --->   "br label %.preheader56" [picnic_impl.c:1083]   --->   Operation 165 'br' <Predicate = true> <Delay = 1.35>
+
+State 31 <SV = 28> <Delay = 4.52>
+ST_31 : Operation 166 [1/1] (0.00ns)   --->   "%loop_9 = phi i5 [ %add_ln1083, %28 ], [ 15, %._crit_edge16 ]" [picnic_impl.c:1083]   --->   Operation 166 'phi' 'loop_9' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 167 [1/1] (0.00ns)   --->   "%sext_ln1083 = sext i5 %loop_9 to i32" [picnic_impl.c:1083]   --->   Operation 167 'sext' 'sext_ln1083' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %loop_9, i32 4)" [picnic_impl.c:1083]   --->   Operation 168 'bitselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 169 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 169 'speclooptripcount' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 170 [1/1] (0.00ns)   --->   "br i1 %tmp_8, label %.preheader.preheader, label %25" [picnic_impl.c:1083]   --->   Operation 170 'br' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 171 [1/1] (0.00ns)   --->   "%trunc_ln1083 = trunc i5 %loop_9 to i2" [picnic_impl.c:1083]   --->   Operation 171 'trunc' 'trunc_ln1083' <Predicate = (!tmp_8)> <Delay = 0.00>
+ST_31 : Operation 172 [1/1] (0.79ns)   --->   "%icmp_ln1084 = icmp eq i2 %trunc_ln1083, -1" [picnic_impl.c:1084]   --->   Operation 172 'icmp' 'icmp_ln1084' <Predicate = (!tmp_8)> <Delay = 0.79> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 173 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1084, label %26, label %27" [picnic_impl.c:1084]   --->   Operation 173 'br' <Predicate = (!tmp_8)> <Delay = 0.00>
+ST_31 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_11 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_9, i32 2, i32 4)" [picnic_impl.c:1087]   --->   Operation 174 'partselect' 'tmp_11' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 175 [1/1] (0.00ns)   --->   "%zext_ln1087 = zext i3 %tmp_11 to i11" [picnic_impl.c:1087]   --->   Operation 175 'zext' 'zext_ln1087' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 176 [1/1] (1.74ns)   --->   "%add_ln1087 = add i11 %zext_ln1087, %zext_ln1010_1" [picnic_impl.c:1087]   --->   Operation 176 'add' 'add_ln1087' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 177 [1/1] (0.00ns)   --->   "%zext_ln1087_2 = zext i11 %add_ln1087 to i64" [picnic_impl.c:1087]   --->   Operation 177 'zext' 'zext_ln1087_2' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 178 [1/1] (0.00ns)   --->   "%view2_inputShare_add_4 = getelementptr [876 x i32]* %view2_inputShare, i64 0, i64 %zext_ln1087_2" [picnic_impl.c:1087]   --->   Operation 178 'getelementptr' 'view2_inputShare_add_4' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 179 [2/2] (2.77ns)   --->   "%view2_inputShare_loa_1 = load i32* %view2_inputShare_add_4, align 4" [picnic_impl.c:1087]   --->   Operation 179 'load' 'view2_inputShare_loa_1' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_31 : Operation 180 [1/1] (0.00ns)   --->   "%zext_ln1087_1 = zext i32 %sext_ln1083 to i64" [picnic_impl.c:1087]   --->   Operation 180 'zext' 'zext_ln1087_1' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_addr_10 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1087_1" [picnic_impl.c:1087]   --->   Operation 181 'getelementptr' 'tmp_addr_10' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 182 [2/2] (1.80ns)   --->   "%empty_42 = load i8* %tmp_addr_10, align 1" [picnic_impl.c:1087]   --->   Operation 182 'load' 'empty_42' <Predicate = (!tmp_8 & !icmp_ln1084)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_31 : Operation 183 [1/1] (0.00ns)   --->   "%zext_ln1085_1 = zext i32 %sext_ln1083 to i64" [picnic_impl.c:1085]   --->   Operation 183 'zext' 'zext_ln1085_1' <Predicate = (!tmp_8 & icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_addr_9 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1085_1" [picnic_impl.c:1085]   --->   Operation 184 'getelementptr' 'tmp_addr_9' <Predicate = (!tmp_8 & icmp_ln1084)> <Delay = 0.00>
+ST_31 : Operation 185 [2/2] (1.80ns)   --->   "%empty_41 = load i8* %tmp_addr_9, align 1" [picnic_impl.c:1085]   --->   Operation 185 'load' 'empty_41' <Predicate = (!tmp_8 & icmp_ln1084)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_31 : Operation 186 [1/1] (1.35ns)   --->   "br label %.preheader" [picnic_impl.c:1091]   --->   Operation 186 'br' <Predicate = (tmp_8)> <Delay = 1.35>
+
+State 32 <SV = 29> <Delay = 5.54>
+ST_32 : Operation 187 [1/2] (2.77ns)   --->   "%view2_inputShare_loa_1 = load i32* %view2_inputShare_add_4, align 4" [picnic_impl.c:1087]   --->   Operation 187 'load' 'view2_inputShare_loa_1' <Predicate = (!icmp_ln1084)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_32 : Operation 188 [1/2] (1.80ns)   --->   "%empty_42 = load i8* %tmp_addr_10, align 1" [picnic_impl.c:1087]   --->   Operation 188 'load' 'empty_42' <Predicate = (!icmp_ln1084)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_32 : Operation 189 [1/1] (0.00ns)   --->   "%trunc_ln1087 = trunc i32 %view2_inputShare_loa_1 to i24" [picnic_impl.c:1087]   --->   Operation 189 'trunc' 'trunc_ln1087' <Predicate = (!icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 190 [1/1] (0.00ns)   --->   "%or_ln3 = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %trunc_ln1087, i8 %empty_42)" [picnic_impl.c:1087]   --->   Operation 190 'bitconcatenate' 'or_ln3' <Predicate = (!icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 191 [1/1] (2.77ns)   --->   "store i32 %or_ln3, i32* %view2_inputShare_add_4, align 4" [picnic_impl.c:1087]   --->   Operation 191 'store' <Predicate = (!icmp_ln1084)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_32 : Operation 192 [1/1] (0.00ns)   --->   "br label %28"   --->   Operation 192 'br' <Predicate = (!icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 193 [1/2] (1.80ns)   --->   "%empty_41 = load i8* %tmp_addr_9, align 1" [picnic_impl.c:1085]   --->   Operation 193 'load' 'empty_41' <Predicate = (icmp_ln1084)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_32 : Operation 194 [1/1] (0.00ns)   --->   "%zext_ln1085 = zext i8 %empty_41 to i32" [picnic_impl.c:1085]   --->   Operation 194 'zext' 'zext_ln1085' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 195 [1/1] (0.00ns)   --->   "%tmp_10 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_9, i32 2, i32 4)" [picnic_impl.c:1085]   --->   Operation 195 'partselect' 'tmp_10' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 196 [1/1] (0.00ns)   --->   "%zext_ln1085_2 = zext i3 %tmp_10 to i11" [picnic_impl.c:1085]   --->   Operation 196 'zext' 'zext_ln1085_2' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 197 [1/1] (1.74ns)   --->   "%add_ln1085 = add i11 %zext_ln1010_1, %zext_ln1085_2" [picnic_impl.c:1085]   --->   Operation 197 'add' 'add_ln1085' <Predicate = (icmp_ln1084)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 198 [1/1] (0.00ns)   --->   "%zext_ln1085_3 = zext i11 %add_ln1085 to i64" [picnic_impl.c:1085]   --->   Operation 198 'zext' 'zext_ln1085_3' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 199 [1/1] (0.00ns)   --->   "%view2_inputShare_add_3 = getelementptr [876 x i32]* %view2_inputShare, i64 0, i64 %zext_ln1085_3" [picnic_impl.c:1085]   --->   Operation 199 'getelementptr' 'view2_inputShare_add_3' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 200 [1/1] (2.77ns)   --->   "store i32 %zext_ln1085, i32* %view2_inputShare_add_3, align 4" [picnic_impl.c:1085]   --->   Operation 200 'store' <Predicate = (icmp_ln1084)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_32 : Operation 201 [1/1] (0.00ns)   --->   "br label %28" [picnic_impl.c:1085]   --->   Operation 201 'br' <Predicate = (icmp_ln1084)> <Delay = 0.00>
+ST_32 : Operation 202 [1/1] (1.54ns)   --->   "%add_ln1083 = add i5 %loop_9, -1" [picnic_impl.c:1083]   --->   Operation 202 'add' 'add_ln1083' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 203 [1/1] (0.00ns)   --->   "br label %.preheader56" [picnic_impl.c:1083]   --->   Operation 203 'br' <Predicate = true> <Delay = 0.00>
+
+State 33 <SV = 29> <Delay = 4.52>
+ST_33 : Operation 204 [1/1] (0.00ns)   --->   "%loop_10 = phi i7 [ %loop_17, %29 ], [ 0, %.preheader.preheader ]"   --->   Operation 204 'phi' 'loop_10' <Predicate = (challenge_read == 2)> <Delay = 0.00>
+ST_33 : Operation 205 [1/1] (1.23ns)   --->   "%icmp_ln1091 = icmp eq i7 %loop_10, -53" [picnic_impl.c:1091]   --->   Operation 205 'icmp' 'icmp_ln1091' <Predicate = (challenge_read == 2)> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 206 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 0)"   --->   Operation 206 'speclooptripcount' 'empty_43' <Predicate = (challenge_read == 2)> <Delay = 0.00>
+ST_33 : Operation 207 [1/1] (1.66ns)   --->   "%loop_17 = add i7 %loop_10, 1" [picnic_impl.c:1091]   --->   Operation 207 'add' 'loop_17' <Predicate = (challenge_read == 2)> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 208 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1091, label %.loopexit._crit_edge.loopexit, label %29" [picnic_impl.c:1091]   --->   Operation 208 'br' <Predicate = (challenge_read == 2)> <Delay = 0.00>
+ST_33 : Operation 209 [1/1] (1.66ns)   --->   "%add_ln1092 = add i7 %loop_10, 16" [picnic_impl.c:1092]   --->   Operation 209 'add' 'add_ln1092' <Predicate = (challenge_read == 2 & !icmp_ln1091)> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 210 [1/1] (0.00ns)   --->   "%zext_ln1092 = zext i7 %add_ln1092 to i64" [picnic_impl.c:1092]   --->   Operation 210 'zext' 'zext_ln1092' <Predicate = (challenge_read == 2 & !icmp_ln1091)> <Delay = 0.00>
+ST_33 : Operation 211 [1/1] (0.00ns)   --->   "%tmp_addr_11 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1092" [picnic_impl.c:1092]   --->   Operation 211 'getelementptr' 'tmp_addr_11' <Predicate = (challenge_read == 2 & !icmp_ln1091)> <Delay = 0.00>
+ST_33 : Operation 212 [2/2] (1.80ns)   --->   "%empty_44 = load i8* %tmp_addr_11, align 1" [picnic_impl.c:1092]   --->   Operation 212 'load' 'empty_44' <Predicate = (challenge_read == 2 & !icmp_ln1091)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_33 : Operation 213 [1/1] (0.00ns)   --->   "br label %.loopexit._crit_edge"   --->   Operation 213 'br' <Predicate = (challenge_read == 2 & icmp_ln1091)> <Delay = 0.00>
+ST_33 : Operation 214 [1/1] (0.00ns)   --->   "%loop_7 = phi i3 [ %loop_16, %22 ], [ 0, %._crit_edge13 ]"   --->   Operation 214 'phi' 'loop_7' <Predicate = (challenge_read == 1)> <Delay = 0.00>
+ST_33 : Operation 215 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 0)"   --->   Operation 215 'speclooptripcount' 'empty_38' <Predicate = (challenge_read == 1)> <Delay = 0.00>
+ST_33 : Operation 216 [1/1] (1.00ns)   --->   "%icmp_ln1065 = icmp eq i3 %loop_7, -4" [picnic_impl.c:1065]   --->   Operation 216 'icmp' 'icmp_ln1065' <Predicate = (challenge_read == 1)> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 217 [1/1] (1.34ns)   --->   "%loop_16 = add i3 %loop_7, 1" [picnic_impl.c:1065]   --->   Operation 217 'add' 'loop_16' <Predicate = (challenge_read == 1)> <Delay = 1.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 218 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1065, label %.loopexit._crit_edge.loopexit71, label %22" [picnic_impl.c:1065]   --->   Operation 218 'br' <Predicate = (challenge_read == 1)> <Delay = 0.00>
+ST_33 : Operation 219 [1/1] (0.00ns)   --->   "%zext_ln1066 = zext i3 %loop_7 to i11" [picnic_impl.c:1066]   --->   Operation 219 'zext' 'zext_ln1066' <Predicate = (challenge_read == 1 & !icmp_ln1065)> <Delay = 0.00>
+ST_33 : Operation 220 [1/1] (1.74ns)   --->   "%add_ln1066 = add i11 %zext_ln1010_1, %zext_ln1066" [picnic_impl.c:1066]   --->   Operation 220 'add' 'add_ln1066' <Predicate = (challenge_read == 1 & !icmp_ln1065)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 221 [1/1] (0.00ns)   --->   "%zext_ln1066_1 = zext i11 %add_ln1066 to i64" [picnic_impl.c:1066]   --->   Operation 221 'zext' 'zext_ln1066_1' <Predicate = (challenge_read == 1 & !icmp_ln1065)> <Delay = 0.00>
+ST_33 : Operation 222 [1/1] (0.00ns)   --->   "%proof_0_inputShare_s = getelementptr [876 x i32]* %proof_0_inputShare, i64 0, i64 %zext_ln1066_1" [picnic_impl.c:1066]   --->   Operation 222 'getelementptr' 'proof_0_inputShare_s' <Predicate = (challenge_read == 1 & !icmp_ln1065)> <Delay = 0.00>
+ST_33 : Operation 223 [2/2] (2.77ns)   --->   "%proof_0_inputShare_1 = load i32* %proof_0_inputShare_s, align 4" [picnic_impl.c:1066]   --->   Operation 223 'load' 'proof_0_inputShare_1' <Predicate = (challenge_read == 1 & !icmp_ln1065)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_33 : Operation 224 [1/1] (0.00ns)   --->   "br label %.loopexit._crit_edge"   --->   Operation 224 'br' <Predicate = (challenge_read == 1 & icmp_ln1065)> <Delay = 0.00>
+ST_33 : Operation 225 [1/1] (0.00ns)   --->   "br label %.critedge" [picnic_impl.c:1100]   --->   Operation 225 'br' <Predicate = (challenge_read != 1 & challenge_read == 2 & icmp_ln1091) | (challenge_read == 1 & icmp_ln1065) | (challenge_read == 0)> <Delay = 0.00>
+
+State 34 <SV = 30> <Delay = 4.57>
+ST_34 : Operation 226 [1/2] (1.80ns)   --->   "%empty_44 = load i8* %tmp_addr_11, align 1" [picnic_impl.c:1092]   --->   Operation 226 'load' 'empty_44' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_34 : Operation 227 [1/1] (0.00ns)   --->   "%zext_ln1092_1 = zext i7 %loop_10 to i8" [picnic_impl.c:1092]   --->   Operation 227 'zext' 'zext_ln1092_1' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 228 [1/1] (1.71ns)   --->   "%add_ln1092_1 = add i8 %zext_ln1092_1, -90" [picnic_impl.c:1092]   --->   Operation 228 'add' 'add_ln1092_1' <Predicate = true> <Delay = 1.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 229 [1/1] (0.00ns)   --->   "%zext_ln1092_2 = zext i8 %add_ln1092_1 to i64" [picnic_impl.c:1092]   --->   Operation 229 'zext' 'zext_ln1092_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 230 [1/1] (0.00ns)   --->   "%tape_0_tape_addr_3 = getelementptr [498 x i8]* %tape_0_tape, i64 0, i64 %zext_ln1092_2" [picnic_impl.c:1092]   --->   Operation 230 'getelementptr' 'tape_0_tape_addr_3' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 231 [1/1] (2.77ns)   --->   "store i8 %empty_44, i8* %tape_0_tape_addr_3, align 1" [picnic_impl.c:1092]   --->   Operation 231 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_34 : Operation 232 [1/1] (0.00ns)   --->   "br label %.preheader" [picnic_impl.c:1091]   --->   Operation 232 'br' <Predicate = true> <Delay = 0.00>
+
+State 35 <SV = 3> <Delay = 1.35>
+ST_35 : Operation 233 [1/2] (0.00ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 true, [96 x i8]* %tmp)" [picnic_impl.c:1048]   --->   Operation 233 'call' <Predicate = (challenge_read == 1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 234 [1/1] (1.35ns)   --->   "br label %16" [picnic_impl.c:1050]   --->   Operation 234 'br' <Predicate = (challenge_read == 1)> <Delay = 1.35>
+ST_35 : Operation 235 [1/2] (0.00ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed1, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 false, [96 x i8]* %tmp)" [picnic_impl.c:1017]   --->   Operation 235 'call' <Predicate = (challenge_read == 0)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 236 [1/1] (1.35ns)   --->   "br label %4" [picnic_impl.c:1019]   --->   Operation 236 'br' <Predicate = (challenge_read == 0)> <Delay = 1.35>
+
+State 36 <SV = 4> <Delay = 4.52>
+ST_36 : Operation 237 [1/1] (0.00ns)   --->   "%loop_3 = phi i5 [ 15, %15 ], [ %add_ln1050, %20 ]" [picnic_impl.c:1050]   --->   Operation 237 'phi' 'loop_3' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 238 [1/1] (0.00ns)   --->   "%sext_ln1050 = sext i5 %loop_3 to i32" [picnic_impl.c:1050]   --->   Operation 238 'sext' 'sext_ln1050' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 239 [1/1] (0.00ns)   --->   "%tmp_2 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %loop_3, i32 4)" [picnic_impl.c:1050]   --->   Operation 239 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 240 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 240 'speclooptripcount' 'empty_33' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 241 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %.preheader3.preheader, label %17" [picnic_impl.c:1050]   --->   Operation 241 'br' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 242 [1/1] (0.00ns)   --->   "%trunc_ln1050 = trunc i5 %loop_3 to i2" [picnic_impl.c:1050]   --->   Operation 242 'trunc' 'trunc_ln1050' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_36 : Operation 243 [1/1] (0.79ns)   --->   "%icmp_ln1051 = icmp eq i2 %trunc_ln1050, -1" [picnic_impl.c:1051]   --->   Operation 243 'icmp' 'icmp_ln1051' <Predicate = (!tmp_2)> <Delay = 0.79> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 244 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1051, label %18, label %19" [picnic_impl.c:1051]   --->   Operation 244 'br' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_36 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_7 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_3, i32 2, i32 4)" [picnic_impl.c:1054]   --->   Operation 245 'partselect' 'tmp_7' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 246 [1/1] (0.00ns)   --->   "%zext_ln1054 = zext i3 %tmp_7 to i11" [picnic_impl.c:1054]   --->   Operation 246 'zext' 'zext_ln1054' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 247 [1/1] (1.74ns)   --->   "%add_ln1054 = add i11 %zext_ln1054, %zext_ln1010_1" [picnic_impl.c:1054]   --->   Operation 247 'add' 'add_ln1054' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 248 [1/1] (0.00ns)   --->   "%zext_ln1054_2 = zext i11 %add_ln1054 to i64" [picnic_impl.c:1054]   --->   Operation 248 'zext' 'zext_ln1054_2' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 249 [1/1] (0.00ns)   --->   "%view1_inputShare_add_3 = getelementptr [876 x i32]* %view1_inputShare, i64 0, i64 %zext_ln1054_2" [picnic_impl.c:1054]   --->   Operation 249 'getelementptr' 'view1_inputShare_add_3' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 250 [2/2] (2.77ns)   --->   "%view1_inputShare_loa_1 = load i32* %view1_inputShare_add_3, align 4" [picnic_impl.c:1054]   --->   Operation 250 'load' 'view1_inputShare_loa_1' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_36 : Operation 251 [1/1] (0.00ns)   --->   "%zext_ln1054_1 = zext i32 %sext_ln1050 to i64" [picnic_impl.c:1054]   --->   Operation 251 'zext' 'zext_ln1054_1' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 252 [1/1] (0.00ns)   --->   "%tmp_addr_4 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1054_1" [picnic_impl.c:1054]   --->   Operation 252 'getelementptr' 'tmp_addr_4' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 253 [2/2] (1.80ns)   --->   "%empty_35 = load i8* %tmp_addr_4, align 1" [picnic_impl.c:1054]   --->   Operation 253 'load' 'empty_35' <Predicate = (!tmp_2 & !icmp_ln1051)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_36 : Operation 254 [1/1] (0.00ns)   --->   "%zext_ln1052_1 = zext i32 %sext_ln1050 to i64" [picnic_impl.c:1052]   --->   Operation 254 'zext' 'zext_ln1052_1' <Predicate = (!tmp_2 & icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 255 [1/1] (0.00ns)   --->   "%tmp_addr_3 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1052_1" [picnic_impl.c:1052]   --->   Operation 255 'getelementptr' 'tmp_addr_3' <Predicate = (!tmp_2 & icmp_ln1051)> <Delay = 0.00>
+ST_36 : Operation 256 [2/2] (1.80ns)   --->   "%empty_34 = load i8* %tmp_addr_3, align 1" [picnic_impl.c:1052]   --->   Operation 256 'load' 'empty_34' <Predicate = (!tmp_2 & icmp_ln1051)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_36 : Operation 257 [1/1] (1.35ns)   --->   "br label %.preheader3" [picnic_impl.c:1058]   --->   Operation 257 'br' <Predicate = (tmp_2)> <Delay = 1.35>
+
+State 37 <SV = 5> <Delay = 5.54>
+ST_37 : Operation 258 [1/2] (2.77ns)   --->   "%view1_inputShare_loa_1 = load i32* %view1_inputShare_add_3, align 4" [picnic_impl.c:1054]   --->   Operation 258 'load' 'view1_inputShare_loa_1' <Predicate = (!icmp_ln1051)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_37 : Operation 259 [1/2] (1.80ns)   --->   "%empty_35 = load i8* %tmp_addr_4, align 1" [picnic_impl.c:1054]   --->   Operation 259 'load' 'empty_35' <Predicate = (!icmp_ln1051)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_37 : Operation 260 [1/1] (0.00ns)   --->   "%trunc_ln1054 = trunc i32 %view1_inputShare_loa_1 to i24" [picnic_impl.c:1054]   --->   Operation 260 'trunc' 'trunc_ln1054' <Predicate = (!icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 261 [1/1] (0.00ns)   --->   "%or_ln1 = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %trunc_ln1054, i8 %empty_35)" [picnic_impl.c:1054]   --->   Operation 261 'bitconcatenate' 'or_ln1' <Predicate = (!icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 262 [1/1] (2.77ns)   --->   "store i32 %or_ln1, i32* %view1_inputShare_add_3, align 4" [picnic_impl.c:1054]   --->   Operation 262 'store' <Predicate = (!icmp_ln1051)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_37 : Operation 263 [1/1] (0.00ns)   --->   "br label %20"   --->   Operation 263 'br' <Predicate = (!icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 264 [1/2] (1.80ns)   --->   "%empty_34 = load i8* %tmp_addr_3, align 1" [picnic_impl.c:1052]   --->   Operation 264 'load' 'empty_34' <Predicate = (icmp_ln1051)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_37 : Operation 265 [1/1] (0.00ns)   --->   "%zext_ln1052 = zext i8 %empty_34 to i32" [picnic_impl.c:1052]   --->   Operation 265 'zext' 'zext_ln1052' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 266 [1/1] (0.00ns)   --->   "%tmp_6 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_3, i32 2, i32 4)" [picnic_impl.c:1052]   --->   Operation 266 'partselect' 'tmp_6' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 267 [1/1] (0.00ns)   --->   "%zext_ln1052_2 = zext i3 %tmp_6 to i11" [picnic_impl.c:1052]   --->   Operation 267 'zext' 'zext_ln1052_2' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 268 [1/1] (1.74ns)   --->   "%add_ln1052 = add i11 %zext_ln1010_1, %zext_ln1052_2" [picnic_impl.c:1052]   --->   Operation 268 'add' 'add_ln1052' <Predicate = (icmp_ln1051)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln1052_3 = zext i11 %add_ln1052 to i64" [picnic_impl.c:1052]   --->   Operation 269 'zext' 'zext_ln1052_3' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 270 [1/1] (0.00ns)   --->   "%view1_inputShare_add_2 = getelementptr [876 x i32]* %view1_inputShare, i64 0, i64 %zext_ln1052_3" [picnic_impl.c:1052]   --->   Operation 270 'getelementptr' 'view1_inputShare_add_2' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 271 [1/1] (2.77ns)   --->   "store i32 %zext_ln1052, i32* %view1_inputShare_add_2, align 4" [picnic_impl.c:1052]   --->   Operation 271 'store' <Predicate = (icmp_ln1051)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_37 : Operation 272 [1/1] (0.00ns)   --->   "br label %20" [picnic_impl.c:1052]   --->   Operation 272 'br' <Predicate = (icmp_ln1051)> <Delay = 0.00>
+ST_37 : Operation 273 [1/1] (1.54ns)   --->   "%add_ln1050 = add i5 %loop_3, -1" [picnic_impl.c:1050]   --->   Operation 273 'add' 'add_ln1050' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 274 [1/1] (0.00ns)   --->   "br label %16" [picnic_impl.c:1050]   --->   Operation 274 'br' <Predicate = true> <Delay = 0.00>
+
+State 38 <SV = 5> <Delay = 3.46>
+ST_38 : Operation 275 [1/1] (0.00ns)   --->   "%loop_6 = phi i7 [ %loop_14, %21 ], [ 0, %.preheader3.preheader ]"   --->   Operation 275 'phi' 'loop_6' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 276 [1/1] (1.23ns)   --->   "%icmp_ln1058 = icmp eq i7 %loop_6, -53" [picnic_impl.c:1058]   --->   Operation 276 'icmp' 'icmp_ln1058' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 277 [1/1] (0.00ns)   --->   "%empty_36 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 0)"   --->   Operation 277 'speclooptripcount' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 278 [1/1] (1.66ns)   --->   "%loop_14 = add i7 %loop_6, 1" [picnic_impl.c:1058]   --->   Operation 278 'add' 'loop_14' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 279 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1058, label %._crit_edge13, label %21" [picnic_impl.c:1058]   --->   Operation 279 'br' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 280 [1/1] (1.66ns)   --->   "%add_ln1059 = add i7 %loop_6, 16" [picnic_impl.c:1059]   --->   Operation 280 'add' 'add_ln1059' <Predicate = (!icmp_ln1058)> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 281 [1/1] (0.00ns)   --->   "%zext_ln1059 = zext i7 %add_ln1059 to i64" [picnic_impl.c:1059]   --->   Operation 281 'zext' 'zext_ln1059' <Predicate = (!icmp_ln1058)> <Delay = 0.00>
+ST_38 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_addr_5 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1059" [picnic_impl.c:1059]   --->   Operation 282 'getelementptr' 'tmp_addr_5' <Predicate = (!icmp_ln1058)> <Delay = 0.00>
+ST_38 : Operation 283 [2/2] (1.80ns)   --->   "%empty_37 = load i8* %tmp_addr_5, align 1" [picnic_impl.c:1059]   --->   Operation 283 'load' 'empty_37' <Predicate = (!icmp_ln1058)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_38 : Operation 284 [2/2] (1.55ns)   --->   "%ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)" [picnic_impl.c:231->picnic_impl.c:1060]   --->   Operation 284 'call' 'ctx_sponge_byteIOInd' <Predicate = (icmp_ln1058)> <Delay = 1.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 6> <Delay = 4.57>
+ST_39 : Operation 285 [1/2] (1.80ns)   --->   "%empty_37 = load i8* %tmp_addr_5, align 1" [picnic_impl.c:1059]   --->   Operation 285 'load' 'empty_37' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_39 : Operation 286 [1/1] (0.00ns)   --->   "%zext_ln1059_1 = zext i7 %loop_6 to i64" [picnic_impl.c:1059]   --->   Operation 286 'zext' 'zext_ln1059_1' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 287 [1/1] (0.00ns)   --->   "%tape_0_tape_addr_1 = getelementptr [498 x i8]* %tape_0_tape, i64 0, i64 %zext_ln1059_1" [picnic_impl.c:1059]   --->   Operation 287 'getelementptr' 'tape_0_tape_addr_1' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 288 [1/1] (2.77ns)   --->   "store i8 %empty_37, i8* %tape_0_tape_addr_1, align 1" [picnic_impl.c:1059]   --->   Operation 288 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_39 : Operation 289 [1/1] (0.00ns)   --->   "br label %.preheader3" [picnic_impl.c:1058]   --->   Operation 289 'br' <Predicate = true> <Delay = 0.00>
+
+State 40 <SV = 6> <Delay = 1.35>
+ST_40 : Operation 290 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)" [picnic_impl.c:231->picnic_impl.c:1060]   --->   Operation 290 'call' 'ctx_sponge_byteIOInd' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 7> <Delay = 2.80>
+ST_41 : Operation 291 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_1 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1060]   --->   Operation 291 'call' 'ctx_sponge_byteIOInd_1' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 8> <Delay = 0.00>
+ST_42 : Operation 292 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_1 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1060]   --->   Operation 292 'call' 'ctx_sponge_byteIOInd_1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 9> <Delay = 4.32>
+ST_43 : Operation 293 [2/2] (4.32ns)   --->   "%call_ret6_i = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_1)" [picnic_impl.c:233->picnic_impl.c:1060]   --->   Operation 293 'call' 'call_ret6_i' <Predicate = true> <Delay = 4.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 10> <Delay = 0.00>
+ST_44 : Operation 294 [1/2] (0.00ns)   --->   "%call_ret6_i = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_1)" [picnic_impl.c:233->picnic_impl.c:1060]   --->   Operation 294 'call' 'call_ret6_i' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 295 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_2 = extractvalue { i32, i32 } %call_ret6_i, 0" [picnic_impl.c:233->picnic_impl.c:1060]   --->   Operation 295 'extractvalue' 'ctx_sponge_byteIOInd_2' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 296 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing_2 = extractvalue { i32, i32 } %call_ret6_i, 1" [picnic_impl.c:233->picnic_impl.c:1060]   --->   Operation 296 'extractvalue' 'ctx_sponge_squeezing_2' <Predicate = true> <Delay = 0.00>
+
+State 45 <SV = 11> <Delay = 5.01>
+ST_45 : Operation 297 [2/2] (5.01ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_2, i32 %ctx_sponge_squeezing_2, [498 x i8]* %tape_0_tape, i1 true, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1060]   --->   Operation 297 'call' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 12> <Delay = 0.00>
+ST_46 : Operation 298 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_2, i32 %ctx_sponge_squeezing_2, [498 x i8]* %tape_0_tape, i1 true, i8 32)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1060]   --->   Operation 298 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 47 <SV = 13> <Delay = 1.55>
+ST_47 : Operation 299 [2/2] (1.55ns)   --->   "%ctx_sponge_byteIOInd_3 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)" [picnic_impl.c:238->picnic_impl.c:1060]   --->   Operation 299 'call' 'ctx_sponge_byteIOInd_3' <Predicate = true> <Delay = 1.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 48 <SV = 14> <Delay = 1.35>
+ST_48 : Operation 300 [1/2] (1.35ns)   --->   "%ctx_sponge_byteIOInd_3 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)" [picnic_impl.c:238->picnic_impl.c:1060]   --->   Operation 300 'call' 'ctx_sponge_byteIOInd_3' <Predicate = true> <Delay = 1.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 49 <SV = 15> <Delay = 2.80>
+ST_49 : Operation 301 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_4 = call fastcc i32 @KeccakWidth1600_Spon.7([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_3, [498 x i8]* %tape_0_tape, i1 true)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1060]   --->   Operation 301 'call' 'ctx_sponge_byteIOInd_4' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 50 <SV = 16> <Delay = 0.00>
+ST_50 : Operation 302 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_4 = call fastcc i32 @KeccakWidth1600_Spon.7([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_3, [498 x i8]* %tape_0_tape, i1 true)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1060]   --->   Operation 302 'call' 'ctx_sponge_byteIOInd_4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 51 <SV = 17> <Delay = 2.80>
+ST_51 : Operation 303 [2/2] (2.80ns)   --->   "%ctx_sponge_byteIOInd_5 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_4, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1060]   --->   Operation 303 'call' 'ctx_sponge_byteIOInd_5' <Predicate = true> <Delay = 2.80> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 52 <SV = 18> <Delay = 0.00>
+ST_52 : Operation 304 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_5 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_4, [32 x i8]* %salt_0)" [sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1060]   --->   Operation 304 'call' 'ctx_sponge_byteIOInd_5' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 53 <SV = 19> <Delay = 3.20>
+ST_53 : Operation 305 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_6 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_5, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241->picnic_impl.c:1060]   --->   Operation 305 'call' 'ctx_sponge_byteIOInd_6' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 54 <SV = 20> <Delay = 0.00>
+ST_54 : Operation 306 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_6 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_5, i8 %temp_0)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241->picnic_impl.c:1060]   --->   Operation 306 'call' 'ctx_sponge_byteIOInd_6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 55 <SV = 21> <Delay = 3.20>
+ST_55 : Operation 307 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_7 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_6, i8 2)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1060]   --->   Operation 307 'call' 'ctx_sponge_byteIOInd_7' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 56 <SV = 22> <Delay = 0.00>
+ST_56 : Operation 308 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_7 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_6, i8 2)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1060]   --->   Operation 308 'call' 'ctx_sponge_byteIOInd_7' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 57 <SV = 23> <Delay = 3.20>
+ST_57 : Operation 309 [2/2] (3.20ns)   --->   "%ctx_sponge_byteIOInd_8 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_7, i8 75)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1060]   --->   Operation 309 'call' 'ctx_sponge_byteIOInd_8' <Predicate = true> <Delay = 3.20> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 58 <SV = 24> <Delay = 0.00>
+ST_58 : Operation 310 [1/2] (0.00ns)   --->   "%ctx_sponge_byteIOInd_8 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_7, i8 75)" [sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1060]   --->   Operation 310 'call' 'ctx_sponge_byteIOInd_8' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 59 <SV = 25> <Delay = 4.32>
+ST_59 : Operation 311 [2/2] (4.32ns)   --->   "%call_ret8_i = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_8)" [picnic_impl.c:244->picnic_impl.c:1060]   --->   Operation 311 'call' 'call_ret8_i' <Predicate = true> <Delay = 4.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 60 <SV = 26> <Delay = 0.00>
+ST_60 : Operation 312 [1/2] (0.00ns)   --->   "%call_ret8_i = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_8)" [picnic_impl.c:244->picnic_impl.c:1060]   --->   Operation 312 'call' 'call_ret8_i' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_60 : Operation 313 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_9 = extractvalue { i32, i32 } %call_ret8_i, 0" [picnic_impl.c:244->picnic_impl.c:1060]   --->   Operation 313 'extractvalue' 'ctx_sponge_byteIOInd_9' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 314 [1/1] (0.00ns)   --->   "%ctx_sponge_squeezing_3 = extractvalue { i32, i32 } %call_ret8_i, 1" [picnic_impl.c:244->picnic_impl.c:1060]   --->   Operation 314 'extractvalue' 'ctx_sponge_squeezing_3' <Predicate = true> <Delay = 0.00>
+
+State 61 <SV = 27> <Delay = 5.01>
+ST_61 : Operation 315 [2/2] (5.01ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_9, i32 %ctx_sponge_squeezing_3, [498 x i8]* %tape_0_tape, i1 true, i8 75)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1060]   --->   Operation 315 'call' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 62 <SV = 28> <Delay = 1.35>
+ST_62 : Operation 316 [1/2] (0.00ns)   --->   "call fastcc void @KeccakWidth1600_Spon.1([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_9, i32 %ctx_sponge_squeezing_3, [498 x i8]* %tape_0_tape, i1 true, i8 75)" [sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1060]   --->   Operation 316 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_62 : Operation 317 [1/1] (1.35ns)   --->   "br label %.preheader1"   --->   Operation 317 'br' <Predicate = true> <Delay = 1.35>
+
+State 63 <SV = 30> <Delay = 5.54>
+ST_63 : Operation 318 [1/1] (0.00ns)   --->   "%view2_inputShare_add_2 = getelementptr [876 x i32]* %view2_inputShare, i64 0, i64 %zext_ln1066_1" [picnic_impl.c:1066]   --->   Operation 318 'getelementptr' 'view2_inputShare_add_2' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 319 [1/2] (2.77ns)   --->   "%proof_0_inputShare_1 = load i32* %proof_0_inputShare_s, align 4" [picnic_impl.c:1066]   --->   Operation 319 'load' 'proof_0_inputShare_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_63 : Operation 320 [1/1] (2.77ns)   --->   "store i32 %proof_0_inputShare_1, i32* %view2_inputShare_add_2, align 4" [picnic_impl.c:1066]   --->   Operation 320 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_63 : Operation 321 [1/1] (0.00ns)   --->   "br label %.preheader1" [picnic_impl.c:1065]   --->   Operation 321 'br' <Predicate = true> <Delay = 0.00>
+
+State 64 <SV = 4> <Delay = 4.52>
+ST_64 : Operation 322 [1/1] (0.00ns)   --->   "%loop_1 = phi i5 [ 15, %3 ], [ %add_ln1019, %8 ]" [picnic_impl.c:1019]   --->   Operation 322 'phi' 'loop_1' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 323 [1/1] (0.00ns)   --->   "%sext_ln1019 = sext i5 %loop_1 to i32" [picnic_impl.c:1019]   --->   Operation 323 'sext' 'sext_ln1019' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 324 [1/1] (0.00ns)   --->   "%tmp_1 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %loop_1, i32 4)" [picnic_impl.c:1019]   --->   Operation 324 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 325 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 325 'speclooptripcount' 'empty_23' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 326 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %.preheader6.preheader, label %5" [picnic_impl.c:1019]   --->   Operation 326 'br' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 327 [1/1] (0.00ns)   --->   "%trunc_ln1019 = trunc i5 %loop_1 to i2" [picnic_impl.c:1019]   --->   Operation 327 'trunc' 'trunc_ln1019' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_64 : Operation 328 [1/1] (0.79ns)   --->   "%icmp_ln1020 = icmp eq i2 %trunc_ln1019, -1" [picnic_impl.c:1020]   --->   Operation 328 'icmp' 'icmp_ln1020' <Predicate = (!tmp_1)> <Delay = 0.79> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_64 : Operation 329 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1020, label %6, label %7" [picnic_impl.c:1020]   --->   Operation 329 'br' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_64 : Operation 330 [1/1] (0.00ns)   --->   "%tmp_5 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_1, i32 2, i32 4)" [picnic_impl.c:1023]   --->   Operation 330 'partselect' 'tmp_5' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 331 [1/1] (0.00ns)   --->   "%zext_ln1023 = zext i3 %tmp_5 to i11" [picnic_impl.c:1023]   --->   Operation 331 'zext' 'zext_ln1023' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 332 [1/1] (1.74ns)   --->   "%add_ln1023 = add i11 %zext_ln1023, %zext_ln1010_1" [picnic_impl.c:1023]   --->   Operation 332 'add' 'add_ln1023' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_64 : Operation 333 [1/1] (0.00ns)   --->   "%zext_ln1023_2 = zext i11 %add_ln1023 to i64" [picnic_impl.c:1023]   --->   Operation 333 'zext' 'zext_ln1023_2' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 334 [1/1] (0.00ns)   --->   "%view1_inputShare_add_1 = getelementptr [876 x i32]* %view1_inputShare, i64 0, i64 %zext_ln1023_2" [picnic_impl.c:1023]   --->   Operation 334 'getelementptr' 'view1_inputShare_add_1' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 335 [2/2] (2.77ns)   --->   "%view1_inputShare_loa = load i32* %view1_inputShare_add_1, align 4" [picnic_impl.c:1023]   --->   Operation 335 'load' 'view1_inputShare_loa' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_64 : Operation 336 [1/1] (0.00ns)   --->   "%zext_ln1023_1 = zext i32 %sext_ln1019 to i64" [picnic_impl.c:1023]   --->   Operation 336 'zext' 'zext_ln1023_1' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 337 [1/1] (0.00ns)   --->   "%tmp_addr_1 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1023_1" [picnic_impl.c:1023]   --->   Operation 337 'getelementptr' 'tmp_addr_1' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 338 [2/2] (1.80ns)   --->   "%empty_25 = load i8* %tmp_addr_1, align 1" [picnic_impl.c:1023]   --->   Operation 338 'load' 'empty_25' <Predicate = (!tmp_1 & !icmp_ln1020)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_64 : Operation 339 [1/1] (0.00ns)   --->   "%zext_ln1021_1 = zext i32 %sext_ln1019 to i64" [picnic_impl.c:1021]   --->   Operation 339 'zext' 'zext_ln1021_1' <Predicate = (!tmp_1 & icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 340 [1/1] (0.00ns)   --->   "%tmp_addr = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1021_1" [picnic_impl.c:1021]   --->   Operation 340 'getelementptr' 'tmp_addr' <Predicate = (!tmp_1 & icmp_ln1020)> <Delay = 0.00>
+ST_64 : Operation 341 [2/2] (1.80ns)   --->   "%empty_24 = load i8* %tmp_addr, align 1" [picnic_impl.c:1021]   --->   Operation 341 'load' 'empty_24' <Predicate = (!tmp_1 & icmp_ln1020)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_64 : Operation 342 [1/1] (1.35ns)   --->   "br label %.preheader6" [picnic_impl.c:1026]   --->   Operation 342 'br' <Predicate = (tmp_1)> <Delay = 1.35>
+
+State 65 <SV = 5> <Delay = 5.54>
+ST_65 : Operation 343 [1/2] (2.77ns)   --->   "%view1_inputShare_loa = load i32* %view1_inputShare_add_1, align 4" [picnic_impl.c:1023]   --->   Operation 343 'load' 'view1_inputShare_loa' <Predicate = (!icmp_ln1020)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_65 : Operation 344 [1/2] (1.80ns)   --->   "%empty_25 = load i8* %tmp_addr_1, align 1" [picnic_impl.c:1023]   --->   Operation 344 'load' 'empty_25' <Predicate = (!icmp_ln1020)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_65 : Operation 345 [1/1] (0.00ns)   --->   "%trunc_ln1023 = trunc i32 %view1_inputShare_loa to i24" [picnic_impl.c:1023]   --->   Operation 345 'trunc' 'trunc_ln1023' <Predicate = (!icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 346 [1/1] (0.00ns)   --->   "%or_ln = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %trunc_ln1023, i8 %empty_25)" [picnic_impl.c:1023]   --->   Operation 346 'bitconcatenate' 'or_ln' <Predicate = (!icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 347 [1/1] (2.77ns)   --->   "store i32 %or_ln, i32* %view1_inputShare_add_1, align 4" [picnic_impl.c:1023]   --->   Operation 347 'store' <Predicate = (!icmp_ln1020)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_65 : Operation 348 [1/1] (0.00ns)   --->   "br label %8"   --->   Operation 348 'br' <Predicate = (!icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 349 [1/2] (1.80ns)   --->   "%empty_24 = load i8* %tmp_addr, align 1" [picnic_impl.c:1021]   --->   Operation 349 'load' 'empty_24' <Predicate = (icmp_ln1020)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_65 : Operation 350 [1/1] (0.00ns)   --->   "%zext_ln1021 = zext i8 %empty_24 to i32" [picnic_impl.c:1021]   --->   Operation 350 'zext' 'zext_ln1021' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 351 [1/1] (0.00ns)   --->   "%tmp_4 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_1, i32 2, i32 4)" [picnic_impl.c:1021]   --->   Operation 351 'partselect' 'tmp_4' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 352 [1/1] (0.00ns)   --->   "%zext_ln1021_2 = zext i3 %tmp_4 to i11" [picnic_impl.c:1021]   --->   Operation 352 'zext' 'zext_ln1021_2' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 353 [1/1] (1.74ns)   --->   "%add_ln1021 = add i11 %zext_ln1010_1, %zext_ln1021_2" [picnic_impl.c:1021]   --->   Operation 353 'add' 'add_ln1021' <Predicate = (icmp_ln1020)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_65 : Operation 354 [1/1] (0.00ns)   --->   "%zext_ln1021_3 = zext i11 %add_ln1021 to i64" [picnic_impl.c:1021]   --->   Operation 354 'zext' 'zext_ln1021_3' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 355 [1/1] (0.00ns)   --->   "%view1_inputShare_add = getelementptr [876 x i32]* %view1_inputShare, i64 0, i64 %zext_ln1021_3" [picnic_impl.c:1021]   --->   Operation 355 'getelementptr' 'view1_inputShare_add' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 356 [1/1] (2.77ns)   --->   "store i32 %zext_ln1021, i32* %view1_inputShare_add, align 4" [picnic_impl.c:1021]   --->   Operation 356 'store' <Predicate = (icmp_ln1020)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_65 : Operation 357 [1/1] (0.00ns)   --->   "br label %8" [picnic_impl.c:1021]   --->   Operation 357 'br' <Predicate = (icmp_ln1020)> <Delay = 0.00>
+ST_65 : Operation 358 [1/1] (1.54ns)   --->   "%add_ln1019 = add i5 %loop_1, -1" [picnic_impl.c:1019]   --->   Operation 358 'add' 'add_ln1019' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_65 : Operation 359 [1/1] (0.00ns)   --->   "br label %4" [picnic_impl.c:1019]   --->   Operation 359 'br' <Predicate = true> <Delay = 0.00>
+
+State 66 <SV = 5> <Delay = 4.55>
+ST_66 : Operation 360 [1/1] (0.00ns)   --->   "%loop_2 = phi i7 [ %loop_13, %9 ], [ 0, %.preheader6.preheader ]"   --->   Operation 360 'phi' 'loop_2' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 361 [1/1] (1.23ns)   --->   "%icmp_ln1026 = icmp eq i7 %loop_2, -53" [picnic_impl.c:1026]   --->   Operation 361 'icmp' 'icmp_ln1026' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 362 [1/1] (0.00ns)   --->   "%empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 0)"   --->   Operation 362 'speclooptripcount' 'empty_26' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 363 [1/1] (1.66ns)   --->   "%loop_13 = add i7 %loop_2, 1" [picnic_impl.c:1026]   --->   Operation 363 'add' 'loop_13' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 364 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1026, label %._crit_edge, label %9" [picnic_impl.c:1026]   --->   Operation 364 'br' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 365 [1/1] (1.66ns)   --->   "%add_ln1027 = add i7 %loop_2, 16" [picnic_impl.c:1027]   --->   Operation 365 'add' 'add_ln1027' <Predicate = (!icmp_ln1026)> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 366 [1/1] (0.00ns)   --->   "%zext_ln1027 = zext i7 %add_ln1027 to i64" [picnic_impl.c:1027]   --->   Operation 366 'zext' 'zext_ln1027' <Predicate = (!icmp_ln1026)> <Delay = 0.00>
+ST_66 : Operation 367 [1/1] (0.00ns)   --->   "%tmp_addr_2 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1027" [picnic_impl.c:1027]   --->   Operation 367 'getelementptr' 'tmp_addr_2' <Predicate = (!icmp_ln1026)> <Delay = 0.00>
+ST_66 : Operation 368 [2/2] (1.80ns)   --->   "%empty_27 = load i8* %tmp_addr_2, align 1" [picnic_impl.c:1027]   --->   Operation 368 'load' 'empty_27' <Predicate = (!icmp_ln1026)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_66 : Operation 369 [2/2] (4.55ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 true, [96 x i8]* %tmp)" [picnic_impl.c:1028]   --->   Operation 369 'call' <Predicate = (icmp_ln1026)> <Delay = 4.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 67 <SV = 6> <Delay = 4.57>
+ST_67 : Operation 370 [1/2] (1.80ns)   --->   "%empty_27 = load i8* %tmp_addr_2, align 1" [picnic_impl.c:1027]   --->   Operation 370 'load' 'empty_27' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_67 : Operation 371 [1/1] (0.00ns)   --->   "%zext_ln1027_1 = zext i7 %loop_2 to i64" [picnic_impl.c:1027]   --->   Operation 371 'zext' 'zext_ln1027_1' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 372 [1/1] (0.00ns)   --->   "%tape_0_tape_addr = getelementptr [498 x i8]* %tape_0_tape, i64 0, i64 %zext_ln1027_1" [picnic_impl.c:1027]   --->   Operation 372 'getelementptr' 'tape_0_tape_addr' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 373 [1/1] (2.77ns)   --->   "store i8 %empty_27, i8* %tape_0_tape_addr, align 1" [picnic_impl.c:1027]   --->   Operation 373 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_67 : Operation 374 [1/1] (0.00ns)   --->   "br label %.preheader6" [picnic_impl.c:1026]   --->   Operation 374 'br' <Predicate = true> <Delay = 0.00>
+
+State 68 <SV = 6> <Delay = 1.35>
+ST_68 : Operation 375 [1/2] (0.00ns)   --->   "call fastcc void @createRandomTape13([3504 x i8]* %proof_0_seed2, i8 %proof_seed1_offset1_s, [32 x i8]* %salt_0, i8 %temp_0, i1 true, [96 x i8]* %tmp)" [picnic_impl.c:1028]   --->   Operation 375 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_68 : Operation 376 [1/1] (1.35ns)   --->   "br label %.preheader59" [picnic_impl.c:1033]   --->   Operation 376 'br' <Predicate = true> <Delay = 1.35>
+
+State 69 <SV = 7> <Delay = 4.52>
+ST_69 : Operation 377 [1/1] (0.00ns)   --->   "%loop_15 = phi i5 [ %add_ln1033, %13 ], [ 15, %._crit_edge ]" [picnic_impl.c:1033]   --->   Operation 377 'phi' 'loop_15' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 378 [1/1] (0.00ns)   --->   "%sext_ln1033 = sext i5 %loop_15 to i32" [picnic_impl.c:1033]   --->   Operation 378 'sext' 'sext_ln1033' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 379 [1/1] (0.00ns)   --->   "%tmp_9 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %loop_15, i32 4)" [picnic_impl.c:1033]   --->   Operation 379 'bitselect' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 380 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 380 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 381 [1/1] (0.00ns)   --->   "br i1 %tmp_9, label %.preheader4.preheader, label %10" [picnic_impl.c:1033]   --->   Operation 381 'br' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 382 [1/1] (0.00ns)   --->   "%trunc_ln1033 = trunc i5 %loop_15 to i2" [picnic_impl.c:1033]   --->   Operation 382 'trunc' 'trunc_ln1033' <Predicate = (!tmp_9)> <Delay = 0.00>
+ST_69 : Operation 383 [1/1] (0.79ns)   --->   "%icmp_ln1034 = icmp eq i2 %trunc_ln1033, -1" [picnic_impl.c:1034]   --->   Operation 383 'icmp' 'icmp_ln1034' <Predicate = (!tmp_9)> <Delay = 0.79> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 384 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1034, label %11, label %12" [picnic_impl.c:1034]   --->   Operation 384 'br' <Predicate = (!tmp_9)> <Delay = 0.00>
+ST_69 : Operation 385 [1/1] (0.00ns)   --->   "%tmp_13 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_15, i32 2, i32 4)" [picnic_impl.c:1037]   --->   Operation 385 'partselect' 'tmp_13' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 386 [1/1] (0.00ns)   --->   "%zext_ln1037 = zext i3 %tmp_13 to i11" [picnic_impl.c:1037]   --->   Operation 386 'zext' 'zext_ln1037' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 387 [1/1] (1.74ns)   --->   "%add_ln1037 = add i11 %zext_ln1037, %zext_ln1010_1" [picnic_impl.c:1037]   --->   Operation 387 'add' 'add_ln1037' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 388 [1/1] (0.00ns)   --->   "%zext_ln1037_2 = zext i11 %add_ln1037 to i64" [picnic_impl.c:1037]   --->   Operation 388 'zext' 'zext_ln1037_2' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 389 [1/1] (0.00ns)   --->   "%view2_inputShare_add_1 = getelementptr [876 x i32]* %view2_inputShare, i64 0, i64 %zext_ln1037_2" [picnic_impl.c:1037]   --->   Operation 389 'getelementptr' 'view2_inputShare_add_1' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 390 [2/2] (2.77ns)   --->   "%view2_inputShare_loa = load i32* %view2_inputShare_add_1, align 4" [picnic_impl.c:1037]   --->   Operation 390 'load' 'view2_inputShare_loa' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_69 : Operation 391 [1/1] (0.00ns)   --->   "%zext_ln1037_1 = zext i32 %sext_ln1033 to i64" [picnic_impl.c:1037]   --->   Operation 391 'zext' 'zext_ln1037_1' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 392 [1/1] (0.00ns)   --->   "%tmp_addr_7 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1037_1" [picnic_impl.c:1037]   --->   Operation 392 'getelementptr' 'tmp_addr_7' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 393 [2/2] (1.80ns)   --->   "%empty_30 = load i8* %tmp_addr_7, align 1" [picnic_impl.c:1037]   --->   Operation 393 'load' 'empty_30' <Predicate = (!tmp_9 & !icmp_ln1034)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_69 : Operation 394 [1/1] (0.00ns)   --->   "%zext_ln1035_1 = zext i32 %sext_ln1033 to i64" [picnic_impl.c:1035]   --->   Operation 394 'zext' 'zext_ln1035_1' <Predicate = (!tmp_9 & icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 395 [1/1] (0.00ns)   --->   "%tmp_addr_6 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1035_1" [picnic_impl.c:1035]   --->   Operation 395 'getelementptr' 'tmp_addr_6' <Predicate = (!tmp_9 & icmp_ln1034)> <Delay = 0.00>
+ST_69 : Operation 396 [2/2] (1.80ns)   --->   "%empty_29 = load i8* %tmp_addr_6, align 1" [picnic_impl.c:1035]   --->   Operation 396 'load' 'empty_29' <Predicate = (!tmp_9 & icmp_ln1034)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_69 : Operation 397 [1/1] (1.35ns)   --->   "br label %.preheader4" [picnic_impl.c:1040]   --->   Operation 397 'br' <Predicate = (tmp_9)> <Delay = 1.35>
+
+State 70 <SV = 8> <Delay = 5.54>
+ST_70 : Operation 398 [1/2] (2.77ns)   --->   "%view2_inputShare_loa = load i32* %view2_inputShare_add_1, align 4" [picnic_impl.c:1037]   --->   Operation 398 'load' 'view2_inputShare_loa' <Predicate = (!icmp_ln1034)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_70 : Operation 399 [1/2] (1.80ns)   --->   "%empty_30 = load i8* %tmp_addr_7, align 1" [picnic_impl.c:1037]   --->   Operation 399 'load' 'empty_30' <Predicate = (!icmp_ln1034)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_70 : Operation 400 [1/1] (0.00ns)   --->   "%trunc_ln1037 = trunc i32 %view2_inputShare_loa to i24" [picnic_impl.c:1037]   --->   Operation 400 'trunc' 'trunc_ln1037' <Predicate = (!icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 401 [1/1] (0.00ns)   --->   "%or_ln2 = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %trunc_ln1037, i8 %empty_30)" [picnic_impl.c:1037]   --->   Operation 401 'bitconcatenate' 'or_ln2' <Predicate = (!icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 402 [1/1] (2.77ns)   --->   "store i32 %or_ln2, i32* %view2_inputShare_add_1, align 4" [picnic_impl.c:1037]   --->   Operation 402 'store' <Predicate = (!icmp_ln1034)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_70 : Operation 403 [1/1] (0.00ns)   --->   "br label %13"   --->   Operation 403 'br' <Predicate = (!icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 404 [1/2] (1.80ns)   --->   "%empty_29 = load i8* %tmp_addr_6, align 1" [picnic_impl.c:1035]   --->   Operation 404 'load' 'empty_29' <Predicate = (icmp_ln1034)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_70 : Operation 405 [1/1] (0.00ns)   --->   "%zext_ln1035 = zext i8 %empty_29 to i32" [picnic_impl.c:1035]   --->   Operation 405 'zext' 'zext_ln1035' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 406 [1/1] (0.00ns)   --->   "%tmp_12 = call i3 @_ssdm_op_PartSelect.i3.i5.i32.i32(i5 %loop_15, i32 2, i32 4)" [picnic_impl.c:1035]   --->   Operation 406 'partselect' 'tmp_12' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 407 [1/1] (0.00ns)   --->   "%zext_ln1035_2 = zext i3 %tmp_12 to i11" [picnic_impl.c:1035]   --->   Operation 407 'zext' 'zext_ln1035_2' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 408 [1/1] (1.74ns)   --->   "%add_ln1035 = add i11 %zext_ln1010_1, %zext_ln1035_2" [picnic_impl.c:1035]   --->   Operation 408 'add' 'add_ln1035' <Predicate = (icmp_ln1034)> <Delay = 1.74> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 409 [1/1] (0.00ns)   --->   "%zext_ln1035_3 = zext i11 %add_ln1035 to i64" [picnic_impl.c:1035]   --->   Operation 409 'zext' 'zext_ln1035_3' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 410 [1/1] (0.00ns)   --->   "%view2_inputShare_add = getelementptr [876 x i32]* %view2_inputShare, i64 0, i64 %zext_ln1035_3" [picnic_impl.c:1035]   --->   Operation 410 'getelementptr' 'view2_inputShare_add' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 411 [1/1] (2.77ns)   --->   "store i32 %zext_ln1035, i32* %view2_inputShare_add, align 4" [picnic_impl.c:1035]   --->   Operation 411 'store' <Predicate = (icmp_ln1034)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_70 : Operation 412 [1/1] (0.00ns)   --->   "br label %13" [picnic_impl.c:1035]   --->   Operation 412 'br' <Predicate = (icmp_ln1034)> <Delay = 0.00>
+ST_70 : Operation 413 [1/1] (1.54ns)   --->   "%add_ln1033 = add i5 %loop_15, -1" [picnic_impl.c:1033]   --->   Operation 413 'add' 'add_ln1033' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 414 [1/1] (0.00ns)   --->   "br label %.preheader59" [picnic_impl.c:1033]   --->   Operation 414 'br' <Predicate = true> <Delay = 0.00>
+
+State 71 <SV = 8> <Delay = 3.46>
+ST_71 : Operation 415 [1/1] (0.00ns)   --->   "%loop_4 = phi i7 [ %loop_18, %14 ], [ 0, %.preheader4.preheader ]"   --->   Operation 415 'phi' 'loop_4' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 416 [1/1] (1.23ns)   --->   "%icmp_ln1040 = icmp eq i7 %loop_4, -53" [picnic_impl.c:1040]   --->   Operation 416 'icmp' 'icmp_ln1040' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 417 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 0)"   --->   Operation 417 'speclooptripcount' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 418 [1/1] (1.66ns)   --->   "%loop_18 = add i7 %loop_4, 1" [picnic_impl.c:1040]   --->   Operation 418 'add' 'loop_18' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 419 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1040, label %.loopexit._crit_edge.loopexit72, label %14" [picnic_impl.c:1040]   --->   Operation 419 'br' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 420 [1/1] (1.66ns)   --->   "%add_ln1041 = add i7 %loop_4, 16" [picnic_impl.c:1041]   --->   Operation 420 'add' 'add_ln1041' <Predicate = (!icmp_ln1040)> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 421 [1/1] (0.00ns)   --->   "%zext_ln1041 = zext i7 %add_ln1041 to i64" [picnic_impl.c:1041]   --->   Operation 421 'zext' 'zext_ln1041' <Predicate = (!icmp_ln1040)> <Delay = 0.00>
+ST_71 : Operation 422 [1/1] (0.00ns)   --->   "%tmp_addr_8 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1041" [picnic_impl.c:1041]   --->   Operation 422 'getelementptr' 'tmp_addr_8' <Predicate = (!icmp_ln1040)> <Delay = 0.00>
+ST_71 : Operation 423 [2/2] (1.80ns)   --->   "%empty_32 = load i8* %tmp_addr_8, align 1" [picnic_impl.c:1041]   --->   Operation 423 'load' 'empty_32' <Predicate = (!icmp_ln1040)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_71 : Operation 424 [1/1] (0.00ns)   --->   "br label %.loopexit._crit_edge"   --->   Operation 424 'br' <Predicate = (icmp_ln1040)> <Delay = 0.00>
+
+State 72 <SV = 9> <Delay = 4.57>
+ST_72 : Operation 425 [1/2] (1.80ns)   --->   "%empty_32 = load i8* %tmp_addr_8, align 1" [picnic_impl.c:1041]   --->   Operation 425 'load' 'empty_32' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_72 : Operation 426 [1/1] (0.00ns)   --->   "%zext_ln1041_1 = zext i7 %loop_4 to i8" [picnic_impl.c:1041]   --->   Operation 426 'zext' 'zext_ln1041_1' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 427 [1/1] (1.71ns)   --->   "%add_ln1041_1 = add i8 %zext_ln1041_1, -90" [picnic_impl.c:1041]   --->   Operation 427 'add' 'add_ln1041_1' <Predicate = true> <Delay = 1.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 428 [1/1] (0.00ns)   --->   "%zext_ln1041_2 = zext i8 %add_ln1041_1 to i64" [picnic_impl.c:1041]   --->   Operation 428 'zext' 'zext_ln1041_2' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 429 [1/1] (0.00ns)   --->   "%tape_0_tape_addr_2 = getelementptr [498 x i8]* %tape_0_tape, i64 0, i64 %zext_ln1041_2" [picnic_impl.c:1041]   --->   Operation 429 'getelementptr' 'tape_0_tape_addr_2' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 430 [1/1] (2.77ns)   --->   "store i8 %empty_32, i8* %tape_0_tape_addr_2, align 1" [picnic_impl.c:1041]   --->   Operation 430 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_72 : Operation 431 [1/1] (0.00ns)   --->   "br label %.preheader4" [picnic_impl.c:1040]   --->   Operation 431 'br' <Predicate = true> <Delay = 0.00>
+
+State 73 <SV = 30> <Delay = 1.35>
+ST_73 : Operation 432 [1/1] (1.35ns)   --->   "br label %30" [picnic_impl.c:1104]   --->   Operation 432 'br' <Predicate = true> <Delay = 1.35>
+
+State 74 <SV = 31> <Delay = 1.80>
+ST_74 : Operation 433 [1/1] (0.00ns)   --->   "%loop_11 = phi i8 [ 95, %.critedge ], [ %loop_19, %31 ]"   --->   Operation 433 'phi' 'loop_11' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 434 [1/1] (0.00ns)   --->   "%sext_ln1104 = sext i8 %loop_11 to i32" [picnic_impl.c:1104]   --->   Operation 434 'sext' 'sext_ln1104' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 435 [1/1] (0.00ns)   --->   "%tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %loop_11, i32 7)" [picnic_impl.c:1104]   --->   Operation 435 'bitselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 436 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 96, i64 96, i64 96)"   --->   Operation 436 'speclooptripcount' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 437 [1/1] (0.00ns)   --->   "br i1 %tmp_14, label %32, label %31" [picnic_impl.c:1104]   --->   Operation 437 'br' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 438 [1/1] (0.00ns)   --->   "%trunc_ln1105_3 = call i5 @_ssdm_op_PartSelect.i5.i8.i32.i32(i8 %loop_11, i32 2, i32 6)" [picnic_impl.c:1105]   --->   Operation 438 'partselect' 'trunc_ln1105_3' <Predicate = (!tmp_14)> <Delay = 0.00>
+ST_74 : Operation 439 [1/1] (0.00ns)   --->   "%zext_ln1105 = zext i5 %trunc_ln1105_3 to i64" [picnic_impl.c:1105]   --->   Operation 439 'zext' 'zext_ln1105' <Predicate = (!tmp_14)> <Delay = 0.00>
+ST_74 : Operation 440 [1/1] (0.00ns)   --->   "%temp_addr_1 = getelementptr inbounds [24 x i32]* %temp, i64 0, i64 %zext_ln1105" [picnic_impl.c:1105]   --->   Operation 440 'getelementptr' 'temp_addr_1' <Predicate = (!tmp_14)> <Delay = 0.00>
+ST_74 : Operation 441 [2/2] (1.75ns)   --->   "%temp_load = load i32* %temp_addr_1, align 4" [picnic_impl.c:1105]   --->   Operation 441 'load' 'temp_load' <Predicate = (!tmp_14)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_74 : Operation 442 [1/1] (0.00ns)   --->   "%zext_ln1105_1 = zext i32 %sext_ln1104 to i64" [picnic_impl.c:1105]   --->   Operation 442 'zext' 'zext_ln1105_1' <Predicate = (!tmp_14)> <Delay = 0.00>
+ST_74 : Operation 443 [1/1] (0.00ns)   --->   "%tmp_addr_12 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1105_1" [picnic_impl.c:1105]   --->   Operation 443 'getelementptr' 'tmp_addr_12' <Predicate = (!tmp_14)> <Delay = 0.00>
+ST_74 : Operation 444 [2/2] (1.80ns)   --->   "%empty_46 = load i8* %tmp_addr_12, align 1" [picnic_impl.c:1105]   --->   Operation 444 'load' 'empty_46' <Predicate = (!tmp_14)> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_74 : Operation 445 [1/1] (1.71ns)   --->   "%loop_19 = add i8 %loop_11, -1" [picnic_impl.c:1104]   --->   Operation 445 'add' 'loop_19' <Predicate = (!tmp_14)> <Delay = 1.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 446 [2/2] (0.00ns)   --->   "call fastcc void @mpc_LowMC_verify_2([876 x i32]* %view1_inputShare, i8 %proof_seed1_offset1_s, [16425 x i8]* %view1_communicatedBits, [876 x i32]* %view1_outputShare, [876 x i32]* %view2_inputShare, [16425 x i8]* %view2_communicatedBits, [876 x i32]* %view2_outputShare, [498 x i8]* %tape_0_tape, [24 x i32]* %temp, [8 x i32]* %plaintext, i2 %challenge_read)" [picnic_impl.c:1107]   --->   Operation 446 'call' <Predicate = (tmp_14)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 75 <SV = 32> <Delay = 3.56>
+ST_75 : Operation 447 [1/2] (1.75ns)   --->   "%temp_load = load i32* %temp_addr_1, align 4" [picnic_impl.c:1105]   --->   Operation 447 'load' 'temp_load' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_75 : Operation 448 [1/2] (1.80ns)   --->   "%empty_46 = load i8* %tmp_addr_12, align 1" [picnic_impl.c:1105]   --->   Operation 448 'load' 'empty_46' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_75 : Operation 449 [1/1] (0.00ns)   --->   "%trunc_ln1105 = trunc i32 %temp_load to i24" [picnic_impl.c:1105]   --->   Operation 449 'trunc' 'trunc_ln1105' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 450 [1/1] (0.00ns)   --->   "%or_ln4 = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %trunc_ln1105, i8 %empty_46)" [picnic_impl.c:1105]   --->   Operation 450 'bitconcatenate' 'or_ln4' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 451 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.bram.i32(i32* %temp_addr_1, i32 %or_ln4, i4 -1)" [picnic_impl.c:1105]   --->   Operation 451 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_75 : Operation 452 [1/1] (0.00ns)   --->   "br label %30" [picnic_impl.c:1104]   --->   Operation 452 'br' <Predicate = true> <Delay = 0.00>
+
+State 76 <SV = 32> <Delay = 1.35>
+ST_76 : Operation 453 [1/2] (0.00ns)   --->   "call fastcc void @mpc_LowMC_verify_2([876 x i32]* %view1_inputShare, i8 %proof_seed1_offset1_s, [16425 x i8]* %view1_communicatedBits, [876 x i32]* %view1_outputShare, [876 x i32]* %view2_inputShare, [16425 x i8]* %view2_communicatedBits, [876 x i32]* %view2_outputShare, [498 x i8]* %tape_0_tape, [24 x i32]* %temp, [8 x i32]* %plaintext, i2 %challenge_read)" [picnic_impl.c:1107]   --->   Operation 453 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_76 : Operation 454 [1/1] (1.35ns)   --->   "br label %33" [picnic_impl.c:1108]   --->   Operation 454 'br' <Predicate = true> <Delay = 1.35>
+
+State 77 <SV = 33> <Delay = 1.75>
+ST_77 : Operation 455 [1/1] (0.00ns)   --->   "%loop_12 = phi i7 [ 0, %32 ], [ %loop_20, %34 ]"   --->   Operation 455 'phi' 'loop_12' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 456 [1/1] (1.23ns)   --->   "%icmp_ln1108 = icmp eq i7 %loop_12, -32" [picnic_impl.c:1108]   --->   Operation 456 'icmp' 'icmp_ln1108' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 457 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 96, i64 96, i64 96)"   --->   Operation 457 'speclooptripcount' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 458 [1/1] (1.66ns)   --->   "%loop_20 = add i7 %loop_12, 1" [picnic_impl.c:1108]   --->   Operation 458 'add' 'loop_20' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 459 [1/1] (0.00ns)   --->   "br i1 %icmp_ln1108, label %35, label %34" [picnic_impl.c:1108]   --->   Operation 459 'br' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 460 [1/1] (0.00ns)   --->   "%trunc_ln1109_1 = call i5 @_ssdm_op_PartSelect.i5.i7.i32.i32(i7 %loop_12, i32 2, i32 6)" [picnic_impl.c:1109]   --->   Operation 460 'partselect' 'trunc_ln1109_1' <Predicate = (!icmp_ln1108)> <Delay = 0.00>
+ST_77 : Operation 461 [1/1] (0.00ns)   --->   "%zext_ln1109 = zext i5 %trunc_ln1109_1 to i64" [picnic_impl.c:1109]   --->   Operation 461 'zext' 'zext_ln1109' <Predicate = (!icmp_ln1108)> <Delay = 0.00>
+ST_77 : Operation 462 [1/1] (0.00ns)   --->   "%temp_addr_2 = getelementptr inbounds [24 x i32]* %temp, i64 0, i64 %zext_ln1109" [picnic_impl.c:1109]   --->   Operation 462 'getelementptr' 'temp_addr_2' <Predicate = (!icmp_ln1108)> <Delay = 0.00>
+ST_77 : Operation 463 [2/2] (1.75ns)   --->   "%temp_load_1 = load i32* %temp_addr_2, align 4" [picnic_impl.c:1109]   --->   Operation 463 'load' 'temp_load_1' <Predicate = (!icmp_ln1108)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_77 : Operation 464 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 464 'ret' <Predicate = (icmp_ln1108)> <Delay = 0.00>
+
+State 78 <SV = 34> <Delay = 3.56>
+ST_78 : Operation 465 [1/2] (1.75ns)   --->   "%temp_load_1 = load i32* %temp_addr_2, align 4" [picnic_impl.c:1109]   --->   Operation 465 'load' 'temp_load_1' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_78 : Operation 466 [1/1] (0.00ns)   --->   "%trunc_ln1109 = trunc i32 %temp_load_1 to i8" [picnic_impl.c:1109]   --->   Operation 466 'trunc' 'trunc_ln1109' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 467 [1/1] (0.00ns)   --->   "%zext_ln1109_1 = zext i7 %loop_12 to i64" [picnic_impl.c:1109]   --->   Operation 467 'zext' 'zext_ln1109_1' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 468 [1/1] (0.00ns)   --->   "%tmp_addr_13 = getelementptr [96 x i8]* %tmp, i64 0, i64 %zext_ln1109_1" [picnic_impl.c:1109]   --->   Operation 468 'getelementptr' 'tmp_addr_13' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 469 [1/1] (1.80ns)   --->   "store i8 %trunc_ln1109, i8* %tmp_addr_13, align 1" [picnic_impl.c:1109]   --->   Operation 469 'store' <Predicate = true> <Delay = 1.80> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_78 : Operation 470 [1/1] (0.00ns)   --->   "%lshr_ln = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %temp_load_1, i32 8, i32 31)" [picnic_impl.c:1110]   --->   Operation 470 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 471 [1/1] (0.00ns)   --->   "%zext_ln1110 = zext i24 %lshr_ln to i32" [picnic_impl.c:1110]   --->   Operation 471 'zext' 'zext_ln1110' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 472 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.bram.i32(i32* %temp_addr_2, i32 %zext_ln1110, i4 -1)" [picnic_impl.c:1110]   --->   Operation 472 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 24> <RAM>
+ST_78 : Operation 473 [1/1] (0.00ns)   --->   "br label %33" [picnic_impl.c:1108]   --->   Operation 473 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.63ns
+The critical path consists of the following:
+	wire read on port 'proof_seed1_offset1' [30]  (0 ns)
+	'mul' operation ('mul_ln1010', picnic_impl.c:1010) [34]  (3.63 ns)
+
+ <State 2>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln1007', picnic_impl.c:1007) with incoming values : ('add_ln1007', picnic_impl.c:1007) [41]  (0 ns)
+	'getelementptr' operation ('temp_addr', picnic_impl.c:1007) [44]  (0 ns)
+	'store' operation ('store_ln1007', picnic_impl.c:1007) of constant <constant:_ssdm_op_Write.bram.i32> on array 'temp', picnic_impl.c:1007 [45]  (1.75 ns)
+
+ <State 3>: 4.6ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1009) [53]  (0 ns)
+	'add' operation ('add_ln1010', picnic_impl.c:1010) [60]  (1.82 ns)
+	'getelementptr' operation ('proof_0_communicate', picnic_impl.c:1010) [62]  (0 ns)
+	'load' operation ('proof_0_communicate_1', picnic_impl.c:1010) on array 'proof_0_communicatedBits' [64]  (2.77 ns)
+
+ <State 4>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('proof_0_communicate_1', picnic_impl.c:1010) on array 'proof_0_communicatedBits' [64]  (2.77 ns)
+	'store' operation ('store_ln1010', picnic_impl.c:1010) of variable 'proof_0_communicate_1', picnic_impl.c:1010 on array 'view2_communicatedBits' [65]  (2.77 ns)
+
+ <State 5>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:231->picnic_impl.c:1073) to 'HashInit' [70]  (1.35 ns)
+
+ <State 6>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.4' [71]  (2.8 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 4.33ns
+The critical path consists of the following:
+	'call' operation ('call_ret6_i1', picnic_impl.c:233->picnic_impl.c:1073) to 'HashFinal' [72]  (4.33 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 5.01ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.1' [75]  (5.01 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 1.55ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238->picnic_impl.c:1073) to 'HashInit' [76]  (1.55 ns)
+
+ <State 13>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238->picnic_impl.c:1073) to 'HashInit' [76]  (1.35 ns)
+
+ <State 14>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.7' [77]  (2.8 ns)
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.8' [78]  (2.8 ns)
+
+ <State 17>: 0ns
+The critical path consists of the following:
+
+ <State 18>: 4.56ns
+The critical path consists of the following:
+	'call' operation ('call_ln1075', picnic_impl.c:1075) to 'createRandomTape13' [86]  (4.56 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 3.21ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.10' [80]  (3.21 ns)
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+ <State 22>: 3.21ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.10' [81]  (3.21 ns)
+
+ <State 23>: 0ns
+The critical path consists of the following:
+
+ <State 24>: 4.33ns
+The critical path consists of the following:
+	'call' operation ('call_ret8_i1', picnic_impl.c:244->picnic_impl.c:1073) to 'HashFinal' [82]  (4.33 ns)
+
+ <State 25>: 0ns
+The critical path consists of the following:
+
+ <State 26>: 5.01ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1073) to 'KeccakWidth1600_Spon.1' [85]  (5.01 ns)
+
+ <State 27>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1076) [89]  (1.35 ns)
+
+ <State 28>: 4.56ns
+The critical path consists of the following:
+	'call' operation ('call_ln1078', picnic_impl.c:1078) to 'createRandomTape13' [104]  (4.56 ns)
+
+ <State 29>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('proof_0_inputShare_3', picnic_impl.c:1077) on array 'proof_0_inputShare' [100]  (2.77 ns)
+	'store' operation ('store_ln1077', picnic_impl.c:1077) of variable 'proof_0_inputShare_3', picnic_impl.c:1077 on array 'view1_inputShare' [101]  (2.77 ns)
+
+ <State 30>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop', picnic_impl.c:1083) with incoming values : ('add_ln1083', picnic_impl.c:1083) [107]  (1.35 ns)
+
+ <State 31>: 4.52ns
+The critical path consists of the following:
+	'phi' operation ('loop', picnic_impl.c:1083) with incoming values : ('add_ln1083', picnic_impl.c:1083) [107]  (0 ns)
+	'add' operation ('add_ln1087', picnic_impl.c:1087) [119]  (1.75 ns)
+	'getelementptr' operation ('view2_inputShare_add_4', picnic_impl.c:1087) [121]  (0 ns)
+	'load' operation ('view2_inputShare_loa_1', picnic_impl.c:1087) on array 'view2_inputShare' [122]  (2.77 ns)
+
+ <State 32>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('view2_inputShare_loa_1', picnic_impl.c:1087) on array 'view2_inputShare' [122]  (2.77 ns)
+	'store' operation ('store_ln1087', picnic_impl.c:1087) of variable 'or_ln3', picnic_impl.c:1087 on array 'view2_inputShare' [128]  (2.77 ns)
+
+ <State 33>: 4.52ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1065) [244]  (0 ns)
+	'add' operation ('add_ln1066', picnic_impl.c:1066) [251]  (1.75 ns)
+	'getelementptr' operation ('proof_0_inputShare_s', picnic_impl.c:1066) [253]  (0 ns)
+	'load' operation ('proof_0_inputShare_1', picnic_impl.c:1066) on array 'proof_0_inputShare' [255]  (2.77 ns)
+
+ <State 34>: 4.58ns
+The critical path consists of the following:
+	'load' operation ('empty_44', picnic_impl.c:1092) on array 'tmp' [157]  (1.81 ns)
+	'store' operation ('store_ln1092', picnic_impl.c:1092) of variable 'empty_44', picnic_impl.c:1092 on array 'tape_0_tape' [162]  (2.77 ns)
+
+ <State 35>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop', picnic_impl.c:1050) with incoming values : ('add_ln1050', picnic_impl.c:1050) [170]  (1.35 ns)
+
+ <State 36>: 4.52ns
+The critical path consists of the following:
+	'phi' operation ('loop', picnic_impl.c:1050) with incoming values : ('add_ln1050', picnic_impl.c:1050) [170]  (0 ns)
+	'add' operation ('add_ln1054', picnic_impl.c:1054) [182]  (1.75 ns)
+	'getelementptr' operation ('view1_inputShare_add_3', picnic_impl.c:1054) [184]  (0 ns)
+	'load' operation ('view1_inputShare_loa_1', picnic_impl.c:1054) on array 'view1_inputShare' [185]  (2.77 ns)
+
+ <State 37>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('view1_inputShare_loa_1', picnic_impl.c:1054) on array 'view1_inputShare' [185]  (2.77 ns)
+	'store' operation ('store_ln1054', picnic_impl.c:1054) of variable 'or_ln1', picnic_impl.c:1054 on array 'view1_inputShare' [191]  (2.77 ns)
+
+ <State 38>: 3.47ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1058) [211]  (0 ns)
+	'add' operation ('add_ln1059', picnic_impl.c:1059) [217]  (1.66 ns)
+	'getelementptr' operation ('tmp_addr_5', picnic_impl.c:1059) [219]  (0 ns)
+	'load' operation ('empty_37', picnic_impl.c:1059) on array 'tmp' [220]  (1.81 ns)
+
+ <State 39>: 4.58ns
+The critical path consists of the following:
+	'load' operation ('empty_37', picnic_impl.c:1059) on array 'tmp' [220]  (1.81 ns)
+	'store' operation ('store_ln1059', picnic_impl.c:1059) of variable 'empty_37', picnic_impl.c:1059 on array 'tape_0_tape' [223]  (2.77 ns)
+
+ <State 40>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:231->picnic_impl.c:1060) to 'HashInit' [226]  (1.35 ns)
+
+ <State 41>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:232->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.4' [227]  (2.8 ns)
+
+ <State 42>: 0ns
+The critical path consists of the following:
+
+ <State 43>: 4.33ns
+The critical path consists of the following:
+	'call' operation ('call_ret6_i', picnic_impl.c:233->picnic_impl.c:1060) to 'HashFinal' [228]  (4.33 ns)
+
+ <State 44>: 0ns
+The critical path consists of the following:
+
+ <State 45>: 5.01ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:234->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.1' [231]  (5.01 ns)
+
+ <State 46>: 0ns
+The critical path consists of the following:
+
+ <State 47>: 1.55ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238->picnic_impl.c:1060) to 'HashInit' [232]  (1.55 ns)
+
+ <State 48>: 1.35ns
+The critical path consists of the following:
+	'call' operation ('ctx.sponge.byteIOIndex', picnic_impl.c:238->picnic_impl.c:1060) to 'HashInit' [232]  (1.35 ns)
+
+ <State 49>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:239->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.7' [233]  (2.8 ns)
+
+ <State 50>: 0ns
+The critical path consists of the following:
+
+ <State 51>: 2.8ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->picnic_impl.c:240->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.8' [234]  (2.8 ns)
+
+ <State 52>: 0ns
+The critical path consists of the following:
+
+ <State 53>: 3.21ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:241->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.10' [235]  (3.21 ns)
+
+ <State 54>: 0ns
+The critical path consists of the following:
+
+ <State 55>: 3.21ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:242->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.10' [236]  (3.21 ns)
+
+ <State 56>: 0ns
+The critical path consists of the following:
+
+ <State 57>: 3.21ns
+The critical path consists of the following:
+	'call' operation ('instance.sponge.byteIOIndex', sha3/KeccakHash.c:41->hash.c:24->hash.c:117->picnic_impl.c:243->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.10' [237]  (3.21 ns)
+
+ <State 58>: 0ns
+The critical path consists of the following:
+
+ <State 59>: 4.33ns
+The critical path consists of the following:
+	'call' operation ('call_ret8_i', picnic_impl.c:244->picnic_impl.c:1060) to 'HashFinal' [238]  (4.33 ns)
+
+ <State 60>: 0ns
+The critical path consists of the following:
+
+ <State 61>: 5.01ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', sha3/KeccakHash.c:81->hash.c:83->picnic_impl.c:245->picnic_impl.c:1060) to 'KeccakWidth1600_Spon.1' [241]  (5.01 ns)
+
+ <State 62>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1065) [244]  (1.35 ns)
+
+ <State 63>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('proof_0_inputShare_1', picnic_impl.c:1066) on array 'proof_0_inputShare' [255]  (2.77 ns)
+	'store' operation ('store_ln1066', picnic_impl.c:1066) of variable 'proof_0_inputShare_1', picnic_impl.c:1066 on array 'view2_inputShare' [256]  (2.77 ns)
+
+ <State 64>: 4.52ns
+The critical path consists of the following:
+	'phi' operation ('loop', picnic_impl.c:1019) with incoming values : ('add_ln1019', picnic_impl.c:1019) [264]  (0 ns)
+	'add' operation ('add_ln1023', picnic_impl.c:1023) [276]  (1.75 ns)
+	'getelementptr' operation ('view1_inputShare_add_1', picnic_impl.c:1023) [278]  (0 ns)
+	'load' operation ('view1_inputShare_loa', picnic_impl.c:1023) on array 'view1_inputShare' [279]  (2.77 ns)
+
+ <State 65>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('view1_inputShare_loa', picnic_impl.c:1023) on array 'view1_inputShare' [279]  (2.77 ns)
+	'store' operation ('store_ln1023', picnic_impl.c:1023) of variable 'or_ln', picnic_impl.c:1023 on array 'view1_inputShare' [285]  (2.77 ns)
+
+ <State 66>: 4.56ns
+The critical path consists of the following:
+	'call' operation ('call_ln1028', picnic_impl.c:1028) to 'createRandomTape13' [320]  (4.56 ns)
+
+ <State 67>: 4.58ns
+The critical path consists of the following:
+	'load' operation ('empty_27', picnic_impl.c:1027) on array 'tmp' [314]  (1.81 ns)
+	'store' operation ('store_ln1027', picnic_impl.c:1027) of variable 'empty_27', picnic_impl.c:1027 on array 'tape_0_tape' [317]  (2.77 ns)
+
+ <State 68>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop', picnic_impl.c:1033) with incoming values : ('add_ln1033', picnic_impl.c:1033) [323]  (1.35 ns)
+
+ <State 69>: 4.52ns
+The critical path consists of the following:
+	'phi' operation ('loop', picnic_impl.c:1033) with incoming values : ('add_ln1033', picnic_impl.c:1033) [323]  (0 ns)
+	'add' operation ('add_ln1037', picnic_impl.c:1037) [335]  (1.75 ns)
+	'getelementptr' operation ('view2_inputShare_add_1', picnic_impl.c:1037) [337]  (0 ns)
+	'load' operation ('view2_inputShare_loa', picnic_impl.c:1037) on array 'view2_inputShare' [338]  (2.77 ns)
+
+ <State 70>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('view2_inputShare_loa', picnic_impl.c:1037) on array 'view2_inputShare' [338]  (2.77 ns)
+	'store' operation ('store_ln1037', picnic_impl.c:1037) of variable 'or_ln2', picnic_impl.c:1037 on array 'view2_inputShare' [344]  (2.77 ns)
+
+ <State 71>: 3.47ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1040) [364]  (0 ns)
+	'add' operation ('add_ln1041', picnic_impl.c:1041) [370]  (1.66 ns)
+	'getelementptr' operation ('tmp_addr_8', picnic_impl.c:1041) [372]  (0 ns)
+	'load' operation ('empty_32', picnic_impl.c:1041) on array 'tmp' [373]  (1.81 ns)
+
+ <State 72>: 4.58ns
+The critical path consists of the following:
+	'load' operation ('empty_32', picnic_impl.c:1041) on array 'tmp' [373]  (1.81 ns)
+	'store' operation ('store_ln1041', picnic_impl.c:1041) of variable 'empty_32', picnic_impl.c:1041 on array 'tape_0_tape' [378]  (2.77 ns)
+
+ <State 73>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1104) [387]  (1.35 ns)
+
+ <State 74>: 1.81ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1104) [387]  (0 ns)
+	'getelementptr' operation ('tmp_addr_12', picnic_impl.c:1105) [398]  (0 ns)
+	'load' operation ('empty_46', picnic_impl.c:1105) on array 'tmp' [399]  (1.81 ns)
+
+ <State 75>: 3.56ns
+The critical path consists of the following:
+	'load' operation ('empty_46', picnic_impl.c:1105) on array 'tmp' [399]  (1.81 ns)
+	'store' operation ('store_ln1105', picnic_impl.c:1105) of constant <constant:_ssdm_op_Write.bram.i32> on array 'temp', picnic_impl.c:1007 [402]  (1.75 ns)
+
+ <State 76>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1108) [409]  (1.35 ns)
+
+ <State 77>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', picnic_impl.c:1108) [409]  (0 ns)
+	'getelementptr' operation ('temp_addr_2', picnic_impl.c:1109) [417]  (0 ns)
+	'load' operation ('temp_load_1', picnic_impl.c:1109) on array 'temp', picnic_impl.c:1007 [418]  (1.75 ns)
+
+ <State 78>: 3.56ns
+The critical path consists of the following:
+	'load' operation ('temp_load_1', picnic_impl.c:1109) on array 'temp', picnic_impl.c:1007 [418]  (1.75 ns)
+	'store' operation ('store_ln1109', picnic_impl.c:1109) of variable 'trunc_ln1109', picnic_impl.c:1109 on array 'tmp' [422]  (1.81 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

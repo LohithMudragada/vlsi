@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vivado HLS Report for 'HashUpdate_2'
+================================================================
+* Date:           Thu May  7 18:00:30 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                       |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |       Loop Name       |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- memset_temp          |       74|       74|         1|          -|          -|    75|    no    |
+        |- HashUpdate_2_label2  |       12|       12|         3|          -|          -|     4|    no    |
+        +-----------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 6 
+4 --> 5 
+5 --> 3 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_47 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %ctx_sponge_byteIOInd)"   --->   Operation 7 'read' 'ctx_sponge_byteIOInd_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%temp = alloca [75 x i8], align 16" [hash.c:34]   --->   Operation 8 'alloca' 'temp' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_1 : Operation 9 [1/1] (1.35ns)   --->   "br label %meminst"   --->   Operation 9 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 1.77>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%phi_ln34 = phi i7 [ 0, %0 ], [ %add_ln34, %meminst ]" [hash.c:34]   --->   Operation 10 'phi' 'phi_ln34' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.66ns)   --->   "%add_ln34 = add i7 %phi_ln34, 1" [hash.c:34]   --->   Operation 11 'add' 'add_ln34' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln34 = zext i7 %phi_ln34 to i64" [hash.c:34]   --->   Operation 12 'zext' 'zext_ln34' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%temp_addr_6 = getelementptr [75 x i8]* %temp, i64 0, i64 %zext_ln34" [hash.c:34]   --->   Operation 13 'getelementptr' 'temp_addr_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.77ns)   --->   "store i8 0, i8* %temp_addr_6, align 1" [hash.c:34]   --->   Operation 14 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_2 : Operation 15 [1/1] (1.23ns)   --->   "%icmp_ln34 = icmp eq i7 %phi_ln34, -54" [hash.c:34]   --->   Operation 15 'icmp' 'icmp_ln34' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @memset_temp_str)"   --->   Operation 16 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 75, i64 75, i64 75)"   --->   Operation 17 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %icmp_ln34, label %.preheader.preheader, label %meminst" [hash.c:34]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.35ns)   --->   "br label %.preheader" [hash.c:37]   --->   Operation 19 'br' <Predicate = (icmp_ln34)> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 1.75>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%loop_0 = phi i5 [ %loop, %1 ], [ 0, %.preheader.preheader ]"   --->   Operation 20 'phi' 'loop_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln37 = zext i5 %loop_0 to i64" [hash.c:37]   --->   Operation 21 'zext' 'zext_ln37' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %loop_0, i32 4)" [hash.c:37]   --->   Operation 22 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%empty_419 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 23 'speclooptripcount' 'empty_419' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "br i1 %tmp, label %2, label %1" [hash.c:37]   --->   Operation 24 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln = call i2 @_ssdm_op_PartSelect.i2.i5.i32.i32(i5 %loop_0, i32 2, i32 3)" [hash.c:38]   --->   Operation 25 'partselect' 'trunc_ln' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln38 = zext i2 %trunc_ln to i64" [hash.c:38]   --->   Operation 26 'zext' 'zext_ln38' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%data_addr = getelementptr [8 x i32]* %data, i64 0, i64 %zext_ln38" [hash.c:38]   --->   Operation 27 'getelementptr' 'data_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 28 [2/2] (1.75ns)   --->   "%temp2 = load i32* %data_addr, align 4" [hash.c:38]   --->   Operation 28 'load' 'temp2' <Predicate = (!tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln37 = trunc i5 %loop_0 to i4" [hash.c:37]   --->   Operation 29 'trunc' 'trunc_ln37' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (1.54ns)   --->   "%loop = add i5 4, %loop_0" [hash.c:37]   --->   Operation 30 'add' 'loop' <Predicate = (!tmp)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [2/2] (1.45ns)   --->   "%instance_sponge_byte = call fastcc i32 @KeccakWidth1600_Spon.9([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_47, [75 x i8]* %temp)" [sha3/KeccakHash.c:41->hash.c:47]   --->   Operation 31 'call' 'instance_sponge_byte' <Predicate = (tmp)> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 3.52>
+ST_4 : Operation 32 [1/2] (1.75ns)   --->   "%temp2 = load i32* %data_addr, align 4" [hash.c:38]   --->   Operation 32 'load' 'temp2' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%trunc_ln39 = trunc i32 %temp2 to i8" [hash.c:39]   --->   Operation 33 'trunc' 'trunc_ln39' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%temp_addr_7 = getelementptr inbounds [75 x i8]* %temp, i64 0, i64 %zext_ln37" [hash.c:39]   --->   Operation 34 'getelementptr' 'temp_addr_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (1.77ns)   --->   "store i8 %trunc_ln39, i8* %temp_addr_7, align 4" [hash.c:39]   --->   Operation 35 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln4 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %temp2, i32 8, i32 15)" [hash.c:41]   --->   Operation 36 'partselect' 'trunc_ln4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%or_ln41 = or i4 %trunc_ln37, 1" [hash.c:41]   --->   Operation 37 'or' 'or_ln41' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln41 = zext i4 %or_ln41 to i64" [hash.c:41]   --->   Operation 38 'zext' 'zext_ln41' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%temp_addr_8 = getelementptr inbounds [75 x i8]* %temp, i64 0, i64 %zext_ln41" [hash.c:41]   --->   Operation 39 'getelementptr' 'temp_addr_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (1.77ns)   --->   "store i8 %trunc_ln4, i8* %temp_addr_8, align 1" [hash.c:41]   --->   Operation 40 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%trunc_ln5 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %temp2, i32 16, i32 23)" [hash.c:43]   --->   Operation 41 'partselect' 'trunc_ln5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%trunc_ln6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %temp2, i32 24, i32 31)" [hash.c:45]   --->   Operation 42 'partselect' 'trunc_ln6' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.77>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str90) nounwind" [hash.c:37]   --->   Operation 43 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "%or_ln43 = or i4 %trunc_ln37, 2" [hash.c:43]   --->   Operation 44 'or' 'or_ln43' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "%zext_ln43 = zext i4 %or_ln43 to i64" [hash.c:43]   --->   Operation 45 'zext' 'zext_ln43' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%temp_addr_9 = getelementptr inbounds [75 x i8]* %temp, i64 0, i64 %zext_ln43" [hash.c:43]   --->   Operation 46 'getelementptr' 'temp_addr_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (1.77ns)   --->   "store i8 %trunc_ln5, i8* %temp_addr_9, align 2" [hash.c:43]   --->   Operation 47 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%or_ln45 = or i4 %trunc_ln37, 3" [hash.c:45]   --->   Operation 48 'or' 'or_ln45' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln45 = zext i4 %or_ln45 to i64" [hash.c:45]   --->   Operation 49 'zext' 'zext_ln45' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%temp_addr = getelementptr inbounds [75 x i8]* %temp, i64 0, i64 %zext_ln45" [hash.c:45]   --->   Operation 50 'getelementptr' 'temp_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (1.77ns)   --->   "store i8 %trunc_ln6, i8* %temp_addr, align 1" [hash.c:45]   --->   Operation 51 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 75> <RAM>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "br label %.preheader" [hash.c:37]   --->   Operation 52 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 0.00>
+ST_6 : Operation 53 [1/2] (0.00ns)   --->   "%instance_sponge_byte = call fastcc i32 @KeccakWidth1600_Spon.9([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_47, [75 x i8]* %temp)" [sha3/KeccakHash.c:41->hash.c:47]   --->   Operation 53 'call' 'instance_sponge_byte' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "ret i32 %instance_sponge_byte" [hash.c:53]   --->   Operation 54 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('phi_ln34', hash.c:34) with incoming values : ('add_ln34', hash.c:34) [12]  (1.35 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln34', hash.c:34) with incoming values : ('add_ln34', hash.c:34) [12]  (0 ns)
+	'getelementptr' operation ('temp_addr_6', hash.c:34) [15]  (0 ns)
+	'store' operation ('store_ln34', hash.c:34) of constant 0 on array 'temp', hash.c:34 [16]  (1.77 ns)
+
+ <State 3>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', hash.c:37) [24]  (0 ns)
+	'getelementptr' operation ('data_addr', hash.c:38) [33]  (0 ns)
+	'load' operation ('temp2', hash.c:38) on array 'data' [34]  (1.75 ns)
+
+ <State 4>: 3.53ns
+The critical path consists of the following:
+	'load' operation ('temp2', hash.c:38) on array 'data' [34]  (1.75 ns)
+	'store' operation ('store_ln39', hash.c:39) of variable 'trunc_ln39', hash.c:39 on array 'temp', hash.c:34 [37]  (1.77 ns)
+
+ <State 5>: 1.77ns
+The critical path consists of the following:
+	'or' operation ('or_ln43', hash.c:43) [45]  (0 ns)
+	'getelementptr' operation ('temp_addr_9', hash.c:43) [47]  (0 ns)
+	'store' operation ('store_ln43', hash.c:43) of variable 'trunc_ln5', hash.c:43 on array 'temp', hash.c:34 [48]  (1.77 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

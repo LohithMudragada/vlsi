@@ -1,0 +1,741 @@
+<stg><name>createRandomTape13</name>
+
+
+<trans_list>
+
+<trans id="59" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="60" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="61" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="62" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="63" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="64" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="65" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="66" from="8" to="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="67" from="9" to="10">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="68" from="10" to="11">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="69" from="11" to="12">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="70" from="12" to="13">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="71" from="13" to="14">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="72" from="14" to="15">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="73" from="15" to="16">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="74" from="16" to="17">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="75" from="17" to="18">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="76" from="18" to="19">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="77" from="19" to="20">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="78" from="20" to="21">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="79" from="21" to="22">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="80" from="22" to="23">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="81" from="23" to="24">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="8" op_0_bw="64">
+<![CDATA[
+._crit_edge:3  %ctx_sponge_state = alloca [200 x i8], align 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_state"/></StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64">
+<![CDATA[
+._crit_edge:4  %ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="27" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64">
+<![CDATA[
+._crit_edge:4  %ctx_sponge_byteIOInd = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 2)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="28" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+._crit_edge:2  %seed_offset1_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %seed_offset1)
+
+]]></Node>
+<StgValue><ssdm name="seed_offset1_read"/></StgValue>
+</operation>
+
+<operation id="29" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="64" op_7_bw="32" op_8_bw="32">
+<![CDATA[
+._crit_edge:5  %ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_37"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="30" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="64" op_7_bw="32" op_8_bw="32">
+<![CDATA[
+._crit_edge:5  %ctx_sponge_byteIOInd_37 = call fastcc i32 @KeccakWidth1600_Spon.4([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd, [3504 x i8]* %seed_0, i8 %seed_offset1_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_37"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="31" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:6  %call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)
+
+]]></Node>
+<StgValue><ssdm name="call_ret9"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="32" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:6  %call_ret9 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_37)
+
+]]></Node>
+<StgValue><ssdm name="call_ret9"/></StgValue>
+</operation>
+
+<operation id="33" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:7  %ctx_sponge_byteIOInd_38 = extractvalue { i32, i32 } %call_ret9, 0
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_38"/></StgValue>
+</operation>
+
+<operation id="34" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:8  %ctx_sponge_squeezing = extractvalue { i32, i32 } %call_ret9, 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_squeezing"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="35" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:9  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="36" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:9  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_38, i32 %ctx_sponge_squeezing, [96 x i8]* %tape, i8 32)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="37" st_id="9" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+._crit_edge:10  %ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_39"/></StgValue>
+</operation>
+</state>
+
+<state id="10" st_id="10">
+
+<operation id="38" st_id="10" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="4" op_3_bw="6" op_4_bw="64" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+._crit_edge:10  %ctx_sponge_byteIOInd_39 = call fastcc i32 @HashInit([200 x i8]* %ctx_sponge_state, i4 -1)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_39"/></StgValue>
+</operation>
+</state>
+
+<state id="11" st_id="11">
+
+<operation id="39" st_id="11" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:11  %ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_40"/></StgValue>
+</operation>
+</state>
+
+<state id="12" st_id="12">
+
+<operation id="40" st_id="12" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:11  %ctx_sponge_byteIOInd_40 = call fastcc i32 @KeccakWidth1600_Spon.15([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_39, [96 x i8]* %tape)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_40"/></StgValue>
+</operation>
+</state>
+
+<state id="13" st_id="13">
+
+<operation id="41" st_id="13" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:12  %ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_41"/></StgValue>
+</operation>
+</state>
+
+<state id="14" st_id="14">
+
+<operation id="42" st_id="14" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:12  %ctx_sponge_byteIOInd_41 = call fastcc i32 @KeccakWidth1600_Spon.8([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_40, [32 x i8]* %salt_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_41"/></StgValue>
+</operation>
+</state>
+
+<state id="15" st_id="15">
+
+<operation id="43" st_id="15" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+._crit_edge:1  %roundNumber_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %roundNumber)
+
+]]></Node>
+<StgValue><ssdm name="roundNumber_read"/></StgValue>
+</operation>
+
+<operation id="44" st_id="15" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:13  %ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_42"/></StgValue>
+</operation>
+</state>
+
+<state id="16" st_id="16">
+
+<operation id="45" st_id="16" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:13  %ctx_sponge_byteIOInd_42 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_41, i8 %roundNumber_read)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_42"/></StgValue>
+</operation>
+</state>
+
+<state id="17" st_id="17">
+
+<operation id="46" st_id="17" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge:0  %playerNumber_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %playerNumber)
+
+]]></Node>
+<StgValue><ssdm name="playerNumber_read"/></StgValue>
+</operation>
+
+<operation id="47" st_id="17" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="8" op_0_bw="1">
+<![CDATA[
+._crit_edge:14  %temp_0 = zext i1 %playerNumber_read to i8
+
+]]></Node>
+<StgValue><ssdm name="temp_0"/></StgValue>
+</operation>
+
+<operation id="48" st_id="17" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:15  %ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_43"/></StgValue>
+</operation>
+</state>
+
+<state id="18" st_id="18">
+
+<operation id="49" st_id="18" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:15  %ctx_sponge_byteIOInd_43 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_42, i8 %temp_0)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_43"/></StgValue>
+</operation>
+</state>
+
+<state id="19" st_id="19">
+
+<operation id="50" st_id="19" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:16  %ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_44"/></StgValue>
+</operation>
+</state>
+
+<state id="20" st_id="20">
+
+<operation id="51" st_id="20" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32" op_3_bw="8" op_4_bw="6" op_5_bw="64" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+._crit_edge:16  %ctx_sponge_byteIOInd_44 = call fastcc i32 @KeccakWidth1600_Spon.10([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_43, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_44"/></StgValue>
+</operation>
+</state>
+
+<state id="21" st_id="21">
+
+<operation id="52" st_id="21" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:17  %call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)
+
+]]></Node>
+<StgValue><ssdm name="call_ret3"/></StgValue>
+</operation>
+</state>
+
+<state id="22" st_id="22">
+
+<operation id="53" st_id="22" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="64" op_0_bw="64" op_1_bw="8" op_2_bw="32" op_3_bw="6" op_4_bw="64" op_5_bw="32" op_6_bw="32">
+<![CDATA[
+._crit_edge:17  %call_ret3 = call fastcc { i32, i32 } @HashFinal([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_44)
+
+]]></Node>
+<StgValue><ssdm name="call_ret3"/></StgValue>
+</operation>
+
+<operation id="54" st_id="22" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:18  %ctx_sponge_byteIOInd_45 = extractvalue { i32, i32 } %call_ret3, 0
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_byteIOInd_45"/></StgValue>
+</operation>
+
+<operation id="55" st_id="22" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="32" op_0_bw="64">
+<![CDATA[
+._crit_edge:19  %ctx_sponge_squeezing_7 = extractvalue { i32, i32 } %call_ret3, 1
+
+]]></Node>
+<StgValue><ssdm name="ctx_sponge_squeezing_7"/></StgValue>
+</operation>
+</state>
+
+<state id="23" st_id="23">
+
+<operation id="56" st_id="23" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:20  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+</state>
+
+<state id="24" st_id="24">
+
+<operation id="57" st_id="24" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="8" op_6_bw="6" op_7_bw="64" op_8_bw="64" op_9_bw="64">
+<![CDATA[
+._crit_edge:20  call fastcc void @KeccakWidth1600_Spon.3([200 x i8]* %ctx_sponge_state, i32 %ctx_sponge_byteIOInd_45, i32 %ctx_sponge_squeezing_7, [96 x i8]* %tape, i8 91)
+
+]]></Node>
+<StgValue><ssdm name="call_ln81"/></StgValue>
+</operation>
+
+<operation id="58" st_id="24" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="0">
+<![CDATA[
+._crit_edge:21  ret void
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

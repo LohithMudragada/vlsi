@@ -1,0 +1,186 @@
+
+
+================================================================
+== Vivado HLS Report for 'createRandomTape13'
+================================================================
+* Date:           Thu May  7 18:44:05 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------+-------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |                                    |                         |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+        |              Instance              |          Module         |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+        +------------------------------------+-------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |grp_KeccakWidth1600_Spon_3_fu_66    |KeccakWidth1600_Spon_3   |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_KeccakWidth1600_Spon_4_fu_82    |KeccakWidth1600_Spon_4   |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_KeccakWidth1600_Spon_15_fu_96   |KeccakWidth1600_Spon_15  |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_KeccakWidth1600_Spon_8_fu_108   |KeccakWidth1600_Spon_8   |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_KeccakWidth1600_Spon_10_fu_120  |KeccakWidth1600_Spon_10  |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_HashInit_fu_133                 |HashInit                 |        ?|        ?|         ?|         ?|      ?|      ?|   none  |
+        |grp_HashFinal_fu_146                |HashFinal                |    18589|    18589| 0.186 ms | 0.186 ms |  18589|  18589|   none  |
+        +------------------------------------+-------------------------+---------+---------+----------+----------+-------+-------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       -|       -|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |       56|      -|   10483|   27720|    0|
+|Memory           |        1|      -|       0|       0|    0|
+|Multiplexer      |        -|      -|       -|     401|    -|
+|Register         |        -|      -|     256|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |       57|      0|   10739|   28121|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      730|    740|  269200|  134600|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        7|      0|       3|      20|    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------+-------------------------+---------+-------+------+------+-----+
+    |              Instance              |          Module         | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +------------------------------------+-------------------------+---------+-------+------+------+-----+
+    |grp_HashFinal_fu_146                |HashFinal                |        8|      0|  1018|  3224|    0|
+    |grp_HashInit_fu_133                 |HashInit                 |        8|      0|  1227|  3665|    0|
+    |grp_KeccakWidth1600_Spon_10_fu_120  |KeccakWidth1600_Spon_10  |        8|      0|  1596|  4117|    0|
+    |grp_KeccakWidth1600_Spon_15_fu_96   |KeccakWidth1600_Spon_15  |        8|      0|  1637|  4142|    0|
+    |grp_KeccakWidth1600_Spon_3_fu_66    |KeccakWidth1600_Spon_3   |        8|      0|  1724|  4248|    0|
+    |grp_KeccakWidth1600_Spon_4_fu_82    |KeccakWidth1600_Spon_4   |        8|      0|  1644|  4182|    0|
+    |grp_KeccakWidth1600_Spon_8_fu_108   |KeccakWidth1600_Spon_8   |        8|      0|  1637|  4142|    0|
+    +------------------------------------+-------------------------+---------+-------+------+------+-----+
+    |Total                               |                         |       56|      0| 10483| 27720|    0|
+    +------------------------------------+-------------------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +--------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |       Memory       |        Module        | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |ctx_sponge_state_U  |createRandomTape1fYi  |        1|  0|   0|    0|   200|    8|     1|         1600|
+    +--------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total               |                      |        1|  0|   0|    0|   200|    8|     1|         1600|
+    +--------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +--------------------------------------------------------------+-----+-----------+-----+-----------+
+    |                             Name                             | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                                                     |  117|         25|    1|         25|
+    |ctx_sponge_state_address0                                     |   41|          8|    8|         64|
+    |ctx_sponge_state_ce0                                          |   41|          8|    1|          8|
+    |ctx_sponge_state_d0                                           |   41|          8|    8|         64|
+    |ctx_sponge_state_we0                                          |   41|          8|    1|          8|
+    |grp_HashFinal_fu_146_ctx_sponge_byteIOInd                     |   15|          3|   32|         96|
+    |grp_HashInit_fu_133_hashPrefix                                |   15|          3|    4|         12|
+    |grp_KeccakWidth1600_Spon_10_fu_120_data_0_read                |   21|          4|    8|         32|
+    |grp_KeccakWidth1600_Spon_10_fu_120_instance_byteIOIndex_read  |   15|          3|   32|         96|
+    |grp_KeccakWidth1600_Spon_3_fu_66_dataByteLen                  |   15|          3|    8|         24|
+    |tape_address0                                                 |   15|          3|    7|         21|
+    |tape_ce0                                                      |   15|          3|    1|          3|
+    |tape_we0                                                      |    9|          2|    1|          2|
+    +--------------------------------------------------------------+-----+-----------+-----+-----------+
+    |Total                                                         |  401|         81|  112|        455|
+    +--------------------------------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------+----+----+-----+-----------+
+    |                       Name                      | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                        |  24|   0|   24|          0|
+    |ctx_sponge_byteIOInd_37_reg_196                  |  32|   0|   32|          0|
+    |ctx_sponge_byteIOInd_40_reg_201                  |  32|   0|   32|          0|
+    |ctx_sponge_byteIOInd_41_reg_206                  |  32|   0|   32|          0|
+    |grp_HashFinal_fu_146_ap_start_reg                |   1|   0|    1|          0|
+    |grp_HashInit_fu_133_ap_start_reg                 |   1|   0|    1|          0|
+    |grp_KeccakWidth1600_Spon_10_fu_120_ap_start_reg  |   1|   0|    1|          0|
+    |grp_KeccakWidth1600_Spon_15_fu_96_ap_start_reg   |   1|   0|    1|          0|
+    |grp_KeccakWidth1600_Spon_3_fu_66_ap_start_reg    |   1|   0|    1|          0|
+    |grp_KeccakWidth1600_Spon_4_fu_82_ap_start_reg    |   1|   0|    1|          0|
+    |grp_KeccakWidth1600_Spon_8_fu_108_ap_start_reg   |   1|   0|    1|          0|
+    |reg_164                                          |  32|   0|   32|          0|
+    |reg_170                                          |  32|   0|   32|          0|
+    |reg_175                                          |  32|   0|   32|          0|
+    |reg_180                                          |  32|   0|   32|          0|
+    |temp_0_reg_216                                   |   1|   0|    8|          7|
+    +-------------------------------------------------+----+----+-----+-----------+
+    |Total                                            | 256|   0|  263|          7|
+    +-------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-----------------+-----+-----+------------+--------------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|ap_start         |  in |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|ap_done          | out |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|ap_idle          | out |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|ap_ready         | out |    1| ap_ctrl_hs | createRandomTape13 | return value |
+|seed_0_address0  | out |   12|  ap_memory |       seed_0       |     array    |
+|seed_0_ce0       | out |    1|  ap_memory |       seed_0       |     array    |
+|seed_0_q0        |  in |    8|  ap_memory |       seed_0       |     array    |
+|seed_offset1     |  in |    8|   ap_none  |    seed_offset1    |    scalar    |
+|salt_0_address0  | out |    5|  ap_memory |       salt_0       |     array    |
+|salt_0_ce0       | out |    1|  ap_memory |       salt_0       |     array    |
+|salt_0_q0        |  in |    8|  ap_memory |       salt_0       |     array    |
+|roundNumber      |  in |    8|   ap_none  |     roundNumber    |    scalar    |
+|playerNumber     |  in |    1|   ap_none  |    playerNumber    |    scalar    |
+|tape_address0    | out |    7|  ap_memory |        tape        |     array    |
+|tape_ce0         | out |    1|  ap_memory |        tape        |     array    |
+|tape_we0         | out |    1|  ap_memory |        tape        |     array    |
+|tape_d0          | out |    8|  ap_memory |        tape        |     array    |
+|tape_q0          |  in |    8|  ap_memory |        tape        |     array    |
++-----------------+-----+-----+------------+--------------------+--------------+
+

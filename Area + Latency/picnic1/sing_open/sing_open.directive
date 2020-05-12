@@ -1,0 +1,38 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="createRandomTape" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="H3_2" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="verifyProof_2" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="Commit_2" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="HashUpdate_2" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label6" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label7" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label8" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label9" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label10" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="deserializeSignature" label="deserializeSignature_label11" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

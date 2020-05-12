@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vivado HLS Report for 'HashFinal'
+================================================================
+* Date:           Thu May  7 17:59:55 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    18589|    18589| 0.186 ms | 0.186 ms |  18589|  18589|   none  |
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.77>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ctx_sponge_byteIOInd_48 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %ctx_sponge_byteIOInd)" [hash.c:71]   --->   Operation 7 'read' 'ctx_sponge_byteIOInd_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%zext_ln149 = zext i32 %ctx_sponge_byteIOInd_48 to i64" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 8 'zext' 'zext_ln149' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%ctx_sponge_state_add = getelementptr [200 x i8]* %ctx_sponge_state, i64 0, i64 %zext_ln149" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 9 'getelementptr' 'ctx_sponge_state_add' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [2/2] (2.77ns)   --->   "%ctx_sponge_state_loa = load i8* %ctx_sponge_state_add, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 10 'load' 'ctx_sponge_state_loa' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+
+State 2 <SV = 1> <Delay = 6.34>
+ST_2 : Operation 11 [1/2] (2.77ns)   --->   "%ctx_sponge_state_loa = load i8* %ctx_sponge_state_add, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 11 'load' 'ctx_sponge_state_loa' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+ST_2 : Operation 12 [1/1] (0.80ns)   --->   "%xor_ln149 = xor i8 %ctx_sponge_state_loa, 31" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 12 'xor' 'xor_ln149' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (2.77ns)   --->   "store i8 %xor_ln149, i8* %ctx_sponge_state_add, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 13 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+
+State 3 <SV = 2> <Delay = 2.77>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%ctx_sponge_state_add_1 = getelementptr [200 x i8]* %ctx_sponge_state, i64 0, i64 167" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 14 'getelementptr' 'ctx_sponge_state_add_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [2/2] (2.77ns)   --->   "%ctx_sponge_state_loa_1 = load i8* %ctx_sponge_state_add_1, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 15 'load' 'ctx_sponge_state_loa_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+
+State 4 <SV = 3> <Delay = 6.34>
+ST_4 : Operation 16 [1/2] (2.77ns)   --->   "%ctx_sponge_state_loa_1 = load i8* %ctx_sponge_state_add_1, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 16 'load' 'ctx_sponge_state_loa_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+ST_4 : Operation 17 [1/1] (0.80ns)   --->   "%xor_ln149_11 = xor i8 %ctx_sponge_state_loa_1, -128" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 17 'xor' 'xor_ln149_11' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 18 [1/1] (2.77ns)   --->   "store i8 %xor_ln149_11, i8* %ctx_sponge_state_add_1, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 18 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 200> <RAM>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 19 [2/2] (0.00ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %ctx_sponge_state)" [sha3/KeccakSpongeWidth1600.c:279->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 19 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 20 [1/2] (0.00ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %ctx_sponge_state)" [sha3/KeccakSpongeWidth1600.c:279->sha3/KeccakHash.c:68->hash.c:73]   --->   Operation 20 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%mrv_i_i = insertvalue { i32, i32 } undef, i32 0, 0"   --->   Operation 21 'insertvalue' 'mrv_i_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%mrv_1_i_i = insertvalue { i32, i32 } %mrv_i_i, i32 1, 1"   --->   Operation 22 'insertvalue' 'mrv_1_i_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "ret { i32, i32 } %mrv_1_i_i" [hash.c:78]   --->   Operation 23 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.77ns
+The critical path consists of the following:
+	wire read on port 'ctx_sponge_byteIOInd' (hash.c:71) [7]  (0 ns)
+	'getelementptr' operation ('ctx_sponge_state_add', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73) [9]  (0 ns)
+	'load' operation ('ctx_sponge_state_loa', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73) on array 'ctx_sponge_state' [10]  (2.77 ns)
+
+ <State 2>: 6.34ns
+The critical path consists of the following:
+	'load' operation ('ctx_sponge_state_loa', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73) on array 'ctx_sponge_state' [10]  (2.77 ns)
+	'xor' operation ('xor_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73) [11]  (0.8 ns)
+	'store' operation ('store_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73) of variable 'xor_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakHash.c:68->hash.c:73 on array 'ctx_sponge_state' [12]  (2.77 ns)
+
+ <State 3>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('ctx_sponge_state_add_1', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73) [13]  (0 ns)
+	'load' operation ('ctx_sponge_state_loa_1', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73) on array 'ctx_sponge_state' [14]  (2.77 ns)
+
+ <State 4>: 6.34ns
+The critical path consists of the following:
+	'load' operation ('ctx_sponge_state_loa_1', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73) on array 'ctx_sponge_state' [14]  (2.77 ns)
+	'xor' operation ('xor_ln149_11', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73) [15]  (0.8 ns)
+	'store' operation ('store_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73) of variable 'xor_ln149_11', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakHash.c:68->hash.c:73 on array 'ctx_sponge_state' [16]  (2.77 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

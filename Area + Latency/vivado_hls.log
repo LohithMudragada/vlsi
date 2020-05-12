@@ -1,0 +1,66 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Sanil' on host 'vlsi' (Windows NT_amd64 version 6.2) on Tue May 12 16:59:16 +0000 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Sanil/Downloads/Project/Latency/Area'
+Sourcing Tcl script 'C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open/csim.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/Sanil/Downloads/Project/Latency/Area/picnic1/sing_open'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a200t-fbg676-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../newtest_sign_2.c in debug mode
+   Compiling ../../../../tree.c in debug mode
+   Compiling ../../../../NIST-KATs/rng.c in debug mode
+   Compiling ../../../../picnic_types.c in debug mode
+   Compiling ../../../../picnic_impl.c in debug mode
+   Compiling ../../../../picnic2_impl.c in debug mode
+   Compiling ../../../../picnic.c in debug mode
+   Compiling ../../../../lowmc_constants.c in debug mode
+   Compiling ../../../../hash.c in debug mode
+   Compiling ../../../../api.c in debug mode
+   Compiling ../../../../NIST-KATs/aes.c in debug mode
+   Compiling ../../../../sha3/KeccakSpongeWidth1600.c in debug mode
+   Compiling ../../../../sha3/KeccakP-1600-reference.c in debug mode
+   Compiling ../../../../sha3/KeccakHash.c in debug mode
+   Generating csim.exe
+../../../../newtest_sign_2.c: In function 'main':
+../../../../newtest_sign_2.c:161:9: warning: implicit declaration of function 'fprint_aes256_struct' [-Wimplicit-function-declaration]
+         fprint_aes256_struct(fp_init);
+         ^~~~~~~~~~~~~~~~~~~~
+../../../../picnic_impl.c: In function 'Commit_2':
+../../../../picnic_impl.c:324:9: warning: implicit declaration of function 'HashUpdate_2' [-Wimplicit-function-declaration]
+         HashUpdate_2(&ctx, view.inputShare, params->stateSizeBytes);
+         ^~~~~~~~~~~~
+../../../../picnic_impl.c: In function 'prove':
+../../../../picnic_impl.c:682:16: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+         memcpy(proof->view3UnruhG, gs->G[(challenge + 2) % 3], view3UnruhLength);
+                ^~~~~
+In file included from ../../../../picnic_impl.c:18:0:
+C:/Xilinx/Vivado/2019.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/string.h:50:18: note: expected 'void * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+   void * __cdecl memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _Size) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+                  ^~~~~~
+../../../../picnic_impl.c: In function 'computeSeeds_2':
+../../../../picnic_impl.c:1630:12: warning: return from incompatible pointer type [-Wincompatible-pointer-types]
+     return allSeeds;
+            ^~~~~~~~
+../../../../picnic.c: In function 'print_signature':
+../../../../picnic.c:756:20: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+             memcpy(proofs[i].view3UnruhG, sigBytes, view3UnruhLength);
+                    ^~~~~~
+In file included from ../../../../picnic.c:13:0:
+C:/Xilinx/Vivado/2019.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/memory.h:37:18: note: expected 'void * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+   void * __cdecl memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _Size) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+                  ^~~~~~
+../../../../picnic.c:759:29: warning: passing argument 2 of 'printHex' makes pointer from integer without a cast [-Wint-conversion]
+             printHex(label, proofs[i].view3UnruhG, view3UnruhLength);
+                             ^~~~~~
+In file included from ../../../../picnic.c:15:0:
+../../../../picnic_impl.h:88:6: note: expected 'const uint8_t * {aka const unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ void printHex(const char* s, const uint8_t* data, size_t len);
+      ^~~~~~~~
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

@@ -1,0 +1,380 @@
+
+
+================================================================
+== Vivado HLS Report for 'KeccakWidth1600_Spon_1'
+================================================================
+* Date:           Fri May  8 13:15:34 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        picnic1
+* Solution:       sing_open
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.579 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1         |        ?|        ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1      |        ?|        ?|     18923|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.1  |      336|      336|         2|          -|          -|   168|    no    |
+        | + Loop 1.2      |        ?|        ?|         2|          -|          -|     ?|    no    |
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 1
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 16
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 6 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 12 8 
+8 --> 9 16 
+9 --> 10 
+10 --> 11 8 
+11 --> 10 
+12 --> 13 
+13 --> 14 
+14 --> 15 16 
+15 --> 14 
+16 --> 7 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.46>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%data_offset1_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %data_offset1)"   --->   Operation 17 'read' 'data_offset1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%data_offset_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %data_offset)"   --->   Operation 18 'read' 'data_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%instance_squeezing_r = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %instance_squeezing_read)"   --->   Operation 19 'read' 'instance_squeezing_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%instance_byteIOIndex = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %instance_byteIOIndex_read)"   --->   Operation 20 'read' 'instance_byteIOIndex' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln394_6 = zext i2 %data_offset1_read to i11" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 21 'zext' 'zext_ln394_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln394_7 = zext i8 %data_offset_read to i11" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 22 'zext' 'zext_ln394_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp = call i10 @_ssdm_op_BitConcatenate.i10.i8.i2(i8 %data_offset_read, i2 0)" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 23 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln394_8 = zext i10 %tmp to i11" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 24 'zext' 'zext_ln394_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln394 = sub i11 %zext_ln394_8, %zext_ln394_7" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 25 'sub' 'sub_ln394' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 26 [1/1] (3.13ns) (root node of TernaryAdder)   --->   "%add_ln394_7 = add i11 %sub_ln394, %zext_ln394_6" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 26 'add' 'add_ln394_7' <Predicate = true> <Delay = 3.13> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_36_cast = call i16 @_ssdm_op_BitConcatenate.i16.i11.i5(i11 %add_ln394_7, i5 0)" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 27 'bitconcatenate' 'tmp_36_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (2.11ns)   --->   "%icmp_ln297 = icmp eq i32 %instance_squeezing_r, 0" [sha3/KeccakSpongeWidth1600.c:297]   --->   Operation 28 'icmp' 'icmp_ln297' <Predicate = true> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (1.35ns)   --->   "br i1 %icmp_ln297, label %1, label %.backedge.preheader" [sha3/KeccakSpongeWidth1600.c:297]   --->   Operation 29 'br' <Predicate = true> <Delay = 1.35>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln149 = zext i32 %instance_byteIOIndex to i64" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 30 'zext' 'zext_ln149' <Predicate = (icmp_ln297)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%instance_state_addr = getelementptr [200 x i8]* %instance_state, i64 0, i64 %zext_ln149" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 31 'getelementptr' 'instance_state_addr' <Predicate = (icmp_ln297)> <Delay = 0.00>
+ST_1 : Operation 32 [2/2] (2.77ns)   --->   "%instance_state_load = load i8* %instance_state_addr, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 32 'load' 'instance_state_load' <Predicate = (icmp_ln297)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+
+State 2 <SV = 1> <Delay = 6.34>
+ST_2 : Operation 33 [1/2] (2.77ns)   --->   "%instance_state_load = load i8* %instance_state_addr, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 33 'load' 'instance_state_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_2 : Operation 34 [1/1] (0.80ns)   --->   "%xor_ln149 = xor i8 %instance_state_load, 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 34 'xor' 'xor_ln149' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (2.77ns)   --->   "store i8 %xor_ln149, i8* %instance_state_addr, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 35 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+
+State 3 <SV = 2> <Delay = 2.77>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%instance_state_addr_4 = getelementptr [200 x i8]* %instance_state, i64 0, i64 167" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 36 'getelementptr' 'instance_state_addr_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [2/2] (2.77ns)   --->   "%instance_state_load_4 = load i8* %instance_state_addr_4, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 37 'load' 'instance_state_load_4' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+
+State 4 <SV = 3> <Delay = 6.34>
+ST_4 : Operation 38 [1/2] (2.77ns)   --->   "%instance_state_load_4 = load i8* %instance_state_addr_4, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 38 'load' 'instance_state_load_4' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_4 : Operation 39 [1/1] (0.80ns)   --->   "%xor_ln149_2 = xor i8 %instance_state_load_4, -128" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 39 'xor' 'xor_ln149_2' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (2.77ns)   --->   "store i8 %xor_ln149_2, i8* %instance_state_addr_4, align 1" [sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 40 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+
+State 5 <SV = 4> <Delay = 1.45>
+ST_5 : Operation 41 [2/2] (1.45ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:279->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 41 'call' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.45>
+ST_6 : Operation 42 [1/2] (0.00ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:279->sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 42 'call' <Predicate = (icmp_ln297)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 43 [1/1] (1.35ns)   --->   "br label %.backedge.preheader" [sha3/KeccakSpongeWidth1600.c:298]   --->   Operation 43 'br' <Predicate = (icmp_ln297)> <Delay = 1.35>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%instance_byteIOIndex_67 = phi i32 [ %instance_byteIOIndex, %0 ], [ 0, %1 ]"   --->   Operation 44 'phi' 'instance_byteIOIndex_67' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%i_35 = alloca i34"   --->   Operation 45 'alloca' 'i_35' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (1.45ns)   --->   "store i34 0, i34* %i_35" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 46 'store' <Predicate = true> <Delay = 1.45>
+ST_6 : Operation 47 [1/1] (1.35ns)   --->   "br label %.backedge" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 47 'br' <Predicate = true> <Delay = 1.35>
+
+State 7 <SV = 6> <Delay = 4.23>
+ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%instance_byteIOIndex_1 = phi i32 [ %instance_byteIOIndex_3, %.backedge.backedge ], [ %instance_byteIOIndex_67, %.backedge.preheader ]" [sha3/KeccakSpongeWidth1600.c:330]   --->   Operation 48 'phi' 'instance_byteIOIndex_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%curData_0_idx = phi i64 [ %add_ln329, %.backedge.backedge ], [ 0, %.backedge.preheader ]" [sha3/KeccakSpongeWidth1600.c:329]   --->   Operation 49 'phi' 'curData_0_idx' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%i_35_load = load i34* %i_35" [sha3/KeccakSpongeWidth1600.c:320]   --->   Operation 50 'load' 'i_35_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_68 = call i29 @_ssdm_op_PartSelect.i29.i34.i32.i32(i34 %i_35_load, i32 5, i32 33)" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 51 'partselect' 'tmp_68' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 52 [1/1] (2.08ns)   --->   "%icmp_ln302 = icmp eq i29 %tmp_68, 0" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 52 'icmp' 'icmp_ln302' <Predicate = true> <Delay = 2.08> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "br i1 %icmp_ln302, label %2, label %10" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 54 [1/1] (2.11ns)   --->   "%icmp_ln303 = icmp eq i32 %instance_byteIOIndex_1, 168" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 54 'icmp' 'icmp_ln303' <Predicate = (icmp_ln302)> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 55 [1/1] (1.35ns)   --->   "br i1 %icmp_ln303, label %3, label %._crit_edge3.critedge" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 55 'br' <Predicate = (icmp_ln302)> <Delay = 1.35>
+ST_7 : Operation 56 [1/1] (0.00ns)   --->   "%trunc_ln303 = trunc i34 %i_35_load to i30" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 56 'trunc' 'trunc_ln303' <Predicate = (icmp_ln302 & icmp_ln303)> <Delay = 0.00>
+ST_7 : Operation 57 [1/1] (2.13ns)   --->   "%add_ln303 = add i30 168, %trunc_ln303" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 57 'add' 'add_ln303' <Predicate = (icmp_ln302 & icmp_ln303)> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 58 [1/1] (2.09ns)   --->   "%icmp_ln303_1 = icmp ugt i30 %add_ln303, 32" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 58 'icmp' 'icmp_ln303_1' <Predicate = (icmp_ln302 & icmp_ln303)> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %icmp_ln303_1, label %._crit_edge1, label %4" [sha3/KeccakSpongeWidth1600.c:303]   --->   Operation 59 'br' <Predicate = (icmp_ln302 & icmp_ln303)> <Delay = 0.00>
+ST_7 : Operation 60 [1/1] (2.23ns)   --->   "%j = sub i34 32, %i_35_load" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 60 'sub' 'j' <Predicate = (icmp_ln302 & icmp_ln303 & !icmp_ln303_1)> <Delay = 2.23> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 61 [1/1] (0.00ns)   --->   "%zext_ln304 = zext i34 %j to i64" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 61 'zext' 'zext_ln304' <Predicate = (icmp_ln302 & icmp_ln303 & !icmp_ln303_1)> <Delay = 0.00>
+ST_7 : Operation 62 [1/1] (1.35ns)   --->   "br label %5" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 62 'br' <Predicate = (icmp_ln302 & icmp_ln303 & !icmp_ln303_1)> <Delay = 1.35>
+ST_7 : Operation 63 [2/2] (1.45ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:317]   --->   Operation 63 'call' <Predicate = (icmp_ln302 & icmp_ln303 & icmp_ln303_1)> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 64 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 64 'ret' <Predicate = (!icmp_ln302)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 3.68>
+ST_8 : Operation 65 [1/1] (0.00ns)   --->   "%j_0 = phi i64 [ %zext_ln304, %4 ], [ %j_17, %KeccakP1600_ExtractBytes.1.exit ]"   --->   Operation 65 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 66 [1/1] (0.00ns)   --->   "%curData_1_rec = phi i64 [ 0, %4 ], [ %add_ln310, %KeccakP1600_ExtractBytes.1.exit ]" [sha3/KeccakSpongeWidth1600.c:310]   --->   Operation 66 'phi' 'curData_1_rec' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 67 [1/1] (2.34ns)   --->   "%icmp_ln304 = icmp ult i64 %j_0, 168" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 67 'icmp' 'icmp_ln304' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 68 [1/1] (0.00ns)   --->   "br i1 %icmp_ln304, label %8, label %6" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 68 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 69 [2/2] (1.45ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:305]   --->   Operation 69 'call' <Predicate = (!icmp_ln304)> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%trunc_ln312 = trunc i64 %j_0 to i34" [sha3/KeccakSpongeWidth1600.c:312]   --->   Operation 70 'trunc' 'trunc_ln312' <Predicate = (icmp_ln304)> <Delay = 0.00>
+ST_8 : Operation 71 [1/1] (2.23ns)   --->   "%sub_ln312 = sub i34 32, %trunc_ln312" [sha3/KeccakSpongeWidth1600.c:312]   --->   Operation 71 'sub' 'sub_ln312' <Predicate = (icmp_ln304)> <Delay = 2.23> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 72 [1/1] (1.45ns)   --->   "store i34 %sub_ln312, i34* %i_35" [sha3/KeccakSpongeWidth1600.c:313]   --->   Operation 72 'store' <Predicate = (icmp_ln304)> <Delay = 1.45>
+ST_8 : Operation 73 [1/1] (1.35ns)   --->   "br label %.backedge.backedge" [sha3/KeccakSpongeWidth1600.c:313]   --->   Operation 73 'br' <Predicate = (icmp_ln304)> <Delay = 1.35>
+
+State 9 <SV = 8> <Delay = 1.35>
+ST_9 : Operation 74 [1/2] (0.00ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:305]   --->   Operation 74 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 75 [1/1] (1.35ns)   --->   "br label %._crit_edge1.i" [sha3/KeccakP-1600-reference.c:390->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 75 'br' <Predicate = true> <Delay = 1.35>
+
+State 10 <SV = 9> <Delay = 2.99>
+ST_10 : Operation 76 [1/1] (0.00ns)   --->   "%loop_0_i = phi i8 [ %loop_52, %7 ], [ 0, %6 ]"   --->   Operation 76 'phi' 'loop_0_i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 77 [1/1] (1.24ns)   --->   "%icmp_ln393_2 = icmp eq i8 %loop_0_i, -88" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 77 'icmp' 'icmp_ln393_2' <Predicate = true> <Delay = 1.24> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 78 [1/1] (1.71ns)   --->   "%loop_52 = add i8 %loop_0_i, 1" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 78 'add' 'loop_52' <Predicate = true> <Delay = 1.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 168, i64 168, i64 168)"   --->   Operation 79 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 80 [1/1] (0.00ns)   --->   "br i1 %icmp_ln393_2, label %KeccakP1600_ExtractBytes.1.exit, label %7" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 80 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 81 [1/1] (0.00ns)   --->   "%zext_ln394_2 = zext i8 %loop_0_i to i64" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 81 'zext' 'zext_ln394_2' <Predicate = (!icmp_ln393_2)> <Delay = 0.00>
+ST_10 : Operation 82 [1/1] (0.00ns)   --->   "%trunc_ln394_2 = trunc i8 %loop_0_i to i7" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 82 'trunc' 'trunc_ln394_2' <Predicate = (!icmp_ln393_2)> <Delay = 0.00>
+ST_10 : Operation 83 [1/1] (0.00ns)   --->   "%instance_state_addr_6 = getelementptr [200 x i8]* %instance_state, i64 0, i64 %zext_ln394_2" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 83 'getelementptr' 'instance_state_addr_6' <Predicate = (!icmp_ln393_2)> <Delay = 0.00>
+ST_10 : Operation 84 [2/2] (2.77ns)   --->   "%instance_state_load_6 = load i8* %instance_state_addr_6, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 84 'load' 'instance_state_load_6' <Predicate = (!icmp_ln393_2)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_10 : Operation 85 [1/1] (2.99ns)   --->   "%add_ln310 = add i64 %curData_1_rec, 168" [sha3/KeccakSpongeWidth1600.c:310]   --->   Operation 85 'add' 'add_ln310' <Predicate = (icmp_ln393_2)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 86 [1/1] (2.99ns)   --->   "%j_17 = add i64 %j_0, -168" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 86 'add' 'j_17' <Predicate = (icmp_ln393_2)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 87 [1/1] (0.00ns)   --->   "br label %5" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 87 'br' <Predicate = (icmp_ln393_2)> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 7.52>
+ST_11 : Operation 88 [1/2] (2.77ns)   --->   "%instance_state_load_6 = load i8* %instance_state_addr_6, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 88 'load' 'instance_state_load_6' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_11 : Operation 89 [1/1] (0.00ns)   --->   "%trunc_ln304 = trunc i64 %curData_1_rec to i7" [sha3/KeccakSpongeWidth1600.c:304]   --->   Operation 89 'trunc' 'trunc_ln304' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 90 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln394_5 = add i7 %trunc_ln394_2, %trunc_ln304" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 90 'add' 'add_ln394_5' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 91 [1/1] (0.00ns)   --->   "%trunc_ln302_3 = trunc i64 %curData_0_idx to i7" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 91 'trunc' 'trunc_ln302_3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 92 [1/1] (2.90ns) (root node of TernaryAdder)   --->   "%add_ln394_4 = add i7 %trunc_ln302_3, %add_ln394_5" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 92 'add' 'add_ln394_4' <Predicate = true> <Delay = 2.90> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 93 [1/1] (0.00ns)   --->   "%zext_ln394_11 = zext i7 %add_ln394_4 to i16" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 93 'zext' 'zext_ln394_11' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 94 [1/1] (1.84ns)   --->   "%add_ln394_9 = add i16 %tmp_36_cast, %zext_ln394_11" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 94 'add' 'add_ln394_9' <Predicate = true> <Delay = 1.84> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 95 [1/1] (0.00ns)   --->   "%zext_ln394_12 = zext i16 %add_ln394_9 to i64" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 95 'zext' 'zext_ln394_12' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 96 [1/1] (0.00ns)   --->   "%data_addr_1 = getelementptr [21024 x i8]* %data, i64 0, i64 %zext_ln394_12" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 96 'getelementptr' 'data_addr_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 97 [1/1] (2.77ns)   --->   "store i8 %instance_state_load_6, i8* %data_addr_1, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 97 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_11 : Operation 98 [1/1] (0.00ns)   --->   "br label %._crit_edge1.i" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:306]   --->   Operation 98 'br' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 7> <Delay = 1.60>
+ST_12 : Operation 99 [1/2] (0.00ns)   --->   "call fastcc void @KeccakP1600_Permute_([200 x i8]* %instance_state)" [sha3/KeccakSpongeWidth1600.c:317]   --->   Operation 99 'call' <Predicate = (icmp_ln303)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 100 [1/1] (1.35ns)   --->   "br label %._crit_edge3.critedge" [sha3/KeccakSpongeWidth1600.c:319]   --->   Operation 100 'br' <Predicate = (icmp_ln303)> <Delay = 1.35>
+ST_12 : Operation 101 [1/1] (0.00ns)   --->   "%trunc_ln320 = trunc i34 %i_35_load to i6" [sha3/KeccakSpongeWidth1600.c:320]   --->   Operation 101 'trunc' 'trunc_ln320' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 102 [1/1] (1.60ns)   --->   "%partialBlock = sub i6 -32, %trunc_ln320" [sha3/KeccakSpongeWidth1600.c:320]   --->   Operation 102 'sub' 'partialBlock' <Predicate = true> <Delay = 1.60> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 8> <Delay = 7.29>
+ST_13 : Operation 103 [1/1] (0.00ns)   --->   "%offset_assign_2 = phi i32 [ 0, %._crit_edge1 ], [ %instance_byteIOIndex_1, %2 ]" [sha3/KeccakSpongeWidth1600.c:330]   --->   Operation 103 'phi' 'offset_assign_2' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 104 [1/1] (0.00ns)   --->   "%zext_ln320 = zext i6 %partialBlock to i32" [sha3/KeccakSpongeWidth1600.c:320]   --->   Operation 104 'zext' 'zext_ln320' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 105 [1/1] (2.18ns)   --->   "%add_ln321 = add i32 %zext_ln320, %offset_assign_2" [sha3/KeccakSpongeWidth1600.c:321]   --->   Operation 105 'add' 'add_ln321' <Predicate = true> <Delay = 2.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 106 [1/1] (2.11ns)   --->   "%icmp_ln321 = icmp ugt i32 %add_ln321, 168" [sha3/KeccakSpongeWidth1600.c:321]   --->   Operation 106 'icmp' 'icmp_ln321' <Predicate = true> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 107 [1/1] (2.18ns)   --->   "%partialBlock_15 = sub i32 168, %offset_assign_2" [sha3/KeccakSpongeWidth1600.c:322]   --->   Operation 107 'sub' 'partialBlock_15' <Predicate = true> <Delay = 2.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 108 [1/1] (0.77ns)   --->   "%partialBlock_16 = select i1 %icmp_ln321, i32 %partialBlock_15, i32 %zext_ln320" [sha3/KeccakSpongeWidth1600.c:321]   --->   Operation 108 'select' 'partialBlock_16' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 109 [1/1] (0.00ns)   --->   "%zext_ln323 = zext i32 %partialBlock_16 to i64" [sha3/KeccakSpongeWidth1600.c:323]   --->   Operation 109 'zext' 'zext_ln323' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln323_3 = zext i32 %partialBlock_16 to i34" [sha3/KeccakSpongeWidth1600.c:323]   --->   Operation 110 'zext' 'zext_ln323_3' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 111 [1/1] (2.23ns)   --->   "%i = add i34 %zext_ln323_3, %i_35_load" [sha3/KeccakSpongeWidth1600.c:323]   --->   Operation 111 'add' 'i' <Predicate = true> <Delay = 2.23> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 112 [1/1] (1.35ns)   --->   "br label %._crit_edge1.i3" [sha3/KeccakP-1600-reference.c:390->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 112 'br' <Predicate = true> <Delay = 1.35>
+
+State 14 <SV = 9> <Delay = 4.95>
+ST_14 : Operation 113 [1/1] (0.00ns)   --->   "%loop_0_i1 = phi i32 [ %loop, %9 ], [ 0, %._crit_edge3.critedge ]"   --->   Operation 113 'phi' 'loop_0_i1' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 114 [1/1] (2.11ns)   --->   "%icmp_ln393 = icmp eq i32 %loop_0_i1, %partialBlock_16" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 114 'icmp' 'icmp_ln393' <Predicate = true> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 115 [1/1] (2.18ns)   --->   "%loop = add nsw i32 %loop_0_i1, 1" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 115 'add' 'loop' <Predicate = true> <Delay = 2.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 116 [1/1] (0.00ns)   --->   "br i1 %icmp_ln393, label %KeccakP1600_ExtractBytes.1.exit11, label %9" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 116 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 117 [1/1] (2.18ns)   --->   "%add_ln394 = add i32 %offset_assign_2, %loop_0_i1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 117 'add' 'add_ln394' <Predicate = (!icmp_ln393)> <Delay = 2.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 118 [1/1] (0.00ns)   --->   "%zext_ln394 = zext i32 %add_ln394 to i64" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 118 'zext' 'zext_ln394' <Predicate = (!icmp_ln393)> <Delay = 0.00>
+ST_14 : Operation 119 [1/1] (0.00ns)   --->   "%instance_state_addr_5 = getelementptr [200 x i8]* %instance_state, i64 0, i64 %zext_ln394" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 119 'getelementptr' 'instance_state_addr_5' <Predicate = (!icmp_ln393)> <Delay = 0.00>
+ST_14 : Operation 120 [2/2] (2.77ns)   --->   "%instance_state_load_5 = load i8* %instance_state_addr_5, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 120 'load' 'instance_state_load_5' <Predicate = (!icmp_ln393)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_14 : Operation 121 [1/1] (0.00ns)   --->   "%trunc_ln394 = trunc i32 %loop_0_i1 to i7" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 121 'trunc' 'trunc_ln394' <Predicate = (!icmp_ln393)> <Delay = 0.00>
+ST_14 : Operation 122 [1/1] (2.18ns)   --->   "%add_ln330 = add i32 %offset_assign_2, %partialBlock_16" [sha3/KeccakSpongeWidth1600.c:330]   --->   Operation 122 'add' 'add_ln330' <Predicate = (icmp_ln393)> <Delay = 2.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 123 [1/1] (1.45ns)   --->   "store i34 %i, i34* %i_35" [sha3/KeccakSpongeWidth1600.c:323]   --->   Operation 123 'store' <Predicate = (icmp_ln393)> <Delay = 1.45>
+ST_14 : Operation 124 [1/1] (1.35ns)   --->   "br label %.backedge.backedge"   --->   Operation 124 'br' <Predicate = (icmp_ln393)> <Delay = 1.35>
+
+State 15 <SV = 10> <Delay = 6.27>
+ST_15 : Operation 125 [1/2] (2.77ns)   --->   "%instance_state_load_5 = load i8* %instance_state_addr_5, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 125 'load' 'instance_state_load_5' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_15 : Operation 126 [1/1] (0.00ns)   --->   "%trunc_ln302 = trunc i64 %curData_0_idx to i7" [sha3/KeccakSpongeWidth1600.c:302]   --->   Operation 126 'trunc' 'trunc_ln302' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 127 [1/1] (1.66ns)   --->   "%add_ln394_3 = add i7 %trunc_ln394, %trunc_ln302" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 127 'add' 'add_ln394_3' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln394_9 = zext i7 %add_ln394_3 to i16" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 128 'zext' 'zext_ln394_9' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 129 [1/1] (1.84ns)   --->   "%add_ln394_8 = add i16 %tmp_36_cast, %zext_ln394_9" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 129 'add' 'add_ln394_8' <Predicate = true> <Delay = 1.84> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 130 [1/1] (0.00ns)   --->   "%zext_ln394_10 = zext i16 %add_ln394_8 to i64" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 130 'zext' 'zext_ln394_10' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 131 [1/1] (0.00ns)   --->   "%data_addr = getelementptr [21024 x i8]* %data, i64 0, i64 %zext_ln394_10" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 131 'getelementptr' 'data_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 132 [1/1] (2.77ns)   --->   "store i8 %instance_state_load_5, i8* %data_addr, align 1" [sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 132 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 21024> <RAM>
+ST_15 : Operation 133 [1/1] (0.00ns)   --->   "br label %._crit_edge1.i3" [sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:325]   --->   Operation 133 'br' <Predicate = true> <Delay = 0.00>
+
+State 16 <SV = 10> <Delay = 2.99>
+ST_16 : Operation 134 [1/1] (0.00ns)   --->   "%instance_byteIOIndex_3 = phi i32 [ %add_ln330, %KeccakP1600_ExtractBytes.1.exit11 ], [ 168, %8 ]" [sha3/KeccakSpongeWidth1600.c:330]   --->   Operation 134 'phi' 'instance_byteIOIndex_3' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node add_ln329)   --->   "%curData_1_rec_pn = phi i64 [ %zext_ln323, %KeccakP1600_ExtractBytes.1.exit11 ], [ %curData_1_rec, %8 ]" [sha3/KeccakSpongeWidth1600.c:323]   --->   Operation 135 'phi' 'curData_1_rec_pn' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 136 [1/1] (2.99ns) (out node of the LUT)   --->   "%add_ln329 = add i64 %curData_1_rec_pn, %curData_0_idx" [sha3/KeccakSpongeWidth1600.c:329]   --->   Operation 136 'add' 'add_ln329' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 137 [1/1] (0.00ns)   --->   "br label %.backedge"   --->   Operation 137 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.46ns
+The critical path consists of the following:
+	wire read on port 'instance_squeezing_read' [13]  (0 ns)
+	'icmp' operation ('icmp_ln297', sha3/KeccakSpongeWidth1600.c:297) [22]  (2.11 ns)
+	multiplexor before 'phi' operation ('instance_byteIOIndex_67') with incoming values : ('instance.byteIOIndex') [37]  (1.35 ns)
+
+ <State 2>: 6.34ns
+The critical path consists of the following:
+	'load' operation ('instance_state_load', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298) on array 'instance_state' [27]  (2.77 ns)
+	'xor' operation ('xor_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298) [28]  (0.8 ns)
+	'store' operation ('store_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298) of variable 'xor_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:265->sha3/KeccakSpongeWidth1600.c:298 on array 'instance_state' [29]  (2.77 ns)
+
+ <State 3>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('instance_state_addr_4', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298) [30]  (0 ns)
+	'load' operation ('instance_state_load_4', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298) on array 'instance_state' [31]  (2.77 ns)
+
+ <State 4>: 6.34ns
+The critical path consists of the following:
+	'load' operation ('instance_state_load_4', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298) on array 'instance_state' [31]  (2.77 ns)
+	'xor' operation ('xor_ln149_2', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298) [32]  (0.8 ns)
+	'store' operation ('store_ln149', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298) of variable 'xor_ln149_2', sha3/KeccakP-1600-reference.c:149->sha3/KeccakSpongeWidth1600.c:270->sha3/KeccakSpongeWidth1600.c:298 on array 'instance_state' [33]  (2.77 ns)
+
+ <State 5>: 1.45ns
+The critical path consists of the following:
+	'call' operation ('call_ln279', sha3/KeccakSpongeWidth1600.c:279->sha3/KeccakSpongeWidth1600.c:298) to 'KeccakP1600_Permute_' [34]  (1.45 ns)
+
+ <State 6>: 1.45ns
+The critical path consists of the following:
+	'alloca' operation ('i') [38]  (0 ns)
+	'store' operation ('store_ln302', sha3/KeccakSpongeWidth1600.c:302) of constant 0 on local variable 'i' [39]  (1.45 ns)
+
+ <State 7>: 4.23ns
+The critical path consists of the following:
+	'load' operation ('i_35_load', sha3/KeccakSpongeWidth1600.c:320) on local variable 'i' [44]  (0 ns)
+	'add' operation ('add_ln303', sha3/KeccakSpongeWidth1600.c:303) [53]  (2.14 ns)
+	'icmp' operation ('icmp_ln303_1', sha3/KeccakSpongeWidth1600.c:303) [54]  (2.09 ns)
+
+ <State 8>: 3.68ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('zext_ln304', sha3/KeccakSpongeWidth1600.c:304) ('j', sha3/KeccakSpongeWidth1600.c:304) [61]  (0 ns)
+	'sub' operation ('sub_ln312', sha3/KeccakSpongeWidth1600.c:312) [95]  (2.23 ns)
+	'store' operation ('store_ln313', sha3/KeccakSpongeWidth1600.c:313) of variable 'sub_ln312', sha3/KeccakSpongeWidth1600.c:312 on local variable 'i' [96]  (1.45 ns)
+
+ <State 9>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop') with incoming values : ('loop', sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:306) [69]  (1.35 ns)
+
+ <State 10>: 3ns
+The critical path consists of the following:
+	'add' operation ('add_ln310', sha3/KeccakSpongeWidth1600.c:310) [90]  (3 ns)
+
+ <State 11>: 7.52ns
+The critical path consists of the following:
+	'add' operation ('add_ln394_5', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306) [80]  (0 ns)
+	'add' operation ('add_ln394_4', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306) [82]  (2.91 ns)
+	'add' operation ('add_ln394_9', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306) [84]  (1.84 ns)
+	'getelementptr' operation ('data_addr_1', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306) [86]  (0 ns)
+	'store' operation ('store_ln394', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306) of variable 'instance_state_load_6', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:306 on array 'data' [87]  (2.77 ns)
+
+ <State 12>: 1.6ns
+The critical path consists of the following:
+	'sub' operation ('partialBlock', sha3/KeccakSpongeWidth1600.c:320) [104]  (1.6 ns)
+
+ <State 13>: 7.29ns
+The critical path consists of the following:
+	'phi' operation ('offset', sha3/KeccakSpongeWidth1600.c:330) with incoming values : ('instance.byteIOIndex') ('add_ln330', sha3/KeccakSpongeWidth1600.c:330) [102]  (0 ns)
+	'add' operation ('add_ln321', sha3/KeccakSpongeWidth1600.c:321) [106]  (2.18 ns)
+	'icmp' operation ('icmp_ln321', sha3/KeccakSpongeWidth1600.c:321) [107]  (2.11 ns)
+	'select' operation ('partialBlock', sha3/KeccakSpongeWidth1600.c:321) [109]  (0.773 ns)
+	'add' operation ('i', sha3/KeccakSpongeWidth1600.c:323) [112]  (2.23 ns)
+
+ <State 14>: 4.95ns
+The critical path consists of the following:
+	'phi' operation ('loop') with incoming values : ('loop', sha3/KeccakP-1600-reference.c:393->sha3/KeccakSpongeWidth1600.c:325) [115]  (0 ns)
+	'add' operation ('add_ln394', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) [120]  (2.18 ns)
+	'getelementptr' operation ('instance_state_addr_5', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) [122]  (0 ns)
+	'load' operation ('instance_state_load_5', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) on array 'instance_state' [123]  (2.77 ns)
+
+ <State 15>: 6.27ns
+The critical path consists of the following:
+	'add' operation ('add_ln394_3', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) [126]  (1.66 ns)
+	'add' operation ('add_ln394_8', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) [128]  (1.84 ns)
+	'getelementptr' operation ('data_addr', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) [130]  (0 ns)
+	'store' operation ('store_ln394', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325) of variable 'instance_state_load_5', sha3/KeccakP-1600-reference.c:394->sha3/KeccakSpongeWidth1600.c:325 on array 'data' [131]  (2.77 ns)
+
+ <State 16>: 3ns
+The critical path consists of the following:
+	'phi' operation ('curData_1_rec_pn', sha3/KeccakSpongeWidth1600.c:323) with incoming values : ('add_ln310', sha3/KeccakSpongeWidth1600.c:310) ('zext_ln323', sha3/KeccakSpongeWidth1600.c:323) [139]  (0 ns)
+	'add' operation ('add_ln329', sha3/KeccakSpongeWidth1600.c:329) [140]  (3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
