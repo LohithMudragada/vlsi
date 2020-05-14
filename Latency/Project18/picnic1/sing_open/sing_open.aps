@@ -23,13 +23,17 @@
     <clock default="false" name="default" period="10"/>
   </clockList>
   <config>
-            
+                
+    
     <config_interface clock_enable="0" expose_global="1" m_axi_addr64="0" m_axi_offset="off" register_io="off" trim_dangling_port="0"/>
-            
+                
+    
     <config_compile blackbox=""/>
-            
+                
+    
     <schedule model="crypto_sign_open"/>
-        
+            
+  
   </config>
   <UIConfigurations>
     <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
